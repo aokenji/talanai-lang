@@ -1,0 +1,109 @@
+{
+  "date": "2026-08-25",
+  "kind": "different_seed",
+  "not_validated": "the redocking gate does not pass; these are rankings, not placements, and no interaction claim follows",
+  "pipeline": "run_replication.py, vina 1.2.7, 3A4A prepared receptor",
+  "protocol": {
+    "box_center": [
+      "21.52",
+      "-7.7",
+      "23.55"
+    ],
+    "box_size": [
+      "30",
+      "30",
+      "30"
+    ],
+    "exhaustiveness": 32,
+    "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+    "seeds": [
+      45,
+      46,
+      47
+    ]
+  },
+  "reproducibility_limit_kcal_mol": 0.1,
+  "reproducibility_limit_note": "this project's convention for run-to-run agreement, not a published Vina precision figure",
+  "results": [
+    {
+      "delta": -0.013,
+      "mean": -10.33,
+      "name": "Rutin",
+      "published": -10.317,
+      "scores": [
+        -10.33,
+        -10.32,
+        -10.34
+      ],
+      "spread": 0.02,
+      "within_reproducibility": true
+    },
+    {
+      "delta": -0.015,
+      "mean": -9.099,
+      "name": "Betulinic Acid",
+      "published": -9.084,
+      "scores": [
+        -9.109,
+        -9.097,
+        -9.091
+      ],
+      "spread": 0.018,
+      "within_reproducibility": true
+    },
+    {
+      "delta": 0.007,
+      "mean": -8.811,
+      "name": "Quercetin",
+      "published": -8.818,
+      "scores": [
+        -8.809,
+        -8.823,
+        -8.802
+      ],
+      "spread": 0.021,
+      "within_reproducibility": true
+    },
+    {
+      "delta": -0.009,
+      "mean": -8.519,
+      "name": "Kaempferol",
+      "published": -8.51,
+      "scores": [
+        -8.531,
+        -8.502,
+        -8.523
+      ],
+      "spread": 0.029,
+      "within_reproducibility": true
+    },
+    {
+      "delta": 0.002,
+      "mean": -7.591,
+      "name": "Oleanolic Acid",
+      "published": -7.593,
+      "scores": [
+        -7.59,
+        -7.599,
+        -7.585
+      ],
+      "spread": 0.014,
+      "within_reproducibility": true
+    },
+    {
+      "delta": 0.08,
+      "mean": -8.626,
+      "name": "Acarbose",
+      "published": -8.706,
+      "scores": [
+        -8.72,
+        -8.708,
+        -8.449
+      ],
+      "spread": 0.271,
+      "within_reproducibility": true
+    }
+  ],
+  "varied": "search seeds only: 45/46/47 against the published 42/43/44. Receptor, box, exhaustiveness and ligand preparation are identical, so any deviation is search convergence, not drift.",
+  "what": "independent replication of the corrected protocol"
+}

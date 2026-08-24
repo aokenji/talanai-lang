@@ -116,15 +116,39 @@ results
   affinity Acarbose        -8.706
 
 # --------------------------------------------------------------------------
-#  The replication block was REMOVED on 2026-08-25 rather than updated.
+#  Replication, run 2026-08-25 by run_replication.py.
 #
-#  It recorded a same-seed re-run from 2026-07-31 (Rutin -8.851, Betulinic
-#  -8.296, Quercetin -7.482, Kaempferol -7.498, Oleanolic -6.916). Those
-#  numbers replicated the PRE-correction screen. Left beside the corrected
-#  results above they deviate by more than a kcal/mol, and RA02 would report a
-#  reproducibility failure that never happened: the pipeline did not drift, the
-#  protocol changed underneath it.
+#  The previous block was removed rather than updated: it recorded a 2026-07-31
+#  re-run of the PRE-correction screen (Rutin -8.851 and so on), which beside
+#  the corrected results above would have read as a reproducibility failure
+#  that never happened. These numbers are the real ones.
 #
-#  Inventing replacement numbers would be fabrication. Re-run the replication
-#  under the corrected protocol and restore the block with the real values.
+#  Different seeds, not the same ones. prep_ringaware embeds with a fixed seed
+#  and Vina is deterministic on identical inputs, so a same-seed re-run would
+#  reproduce the published files byte for byte and measure nothing. RA01 makes
+#  the same point. Seeds 45/46/47 ask whether the ranking survives starting the
+#  search somewhere else.
 # --------------------------------------------------------------------------
+replication
+  date      2026-08-25
+  pipeline  run_replication.py, vina 1.2.7, 3A4A prepared receptor, ligand preparation identical to the published run
+  kind      different_seed
+  rerun     Rutin           -10.330
+  rerun     Betulinic_Acid   -9.099
+  rerun     Quercetin        -8.811
+  rerun     Kaempferol       -8.519
+  rerun     Oleanolic_Acid   -7.591
+  rerun     Acarbose         -8.626
+  note      Every compound replicated inside 0.015 kcal/mol, with seed spreads
+            of 0.014 to 0.029. The reference did not. Acarbose came back at
+            -8.720, -8.708 and -8.449 on the three new seeds, a spread of
+            0.271, against the 0.010 recorded for it on seeds 42/43/44. That is
+            27 times wider, and the widest in the set by a factor of nine.
+            Read plainly: acarbose's apparent convergence on the published
+            seeds was luck, not convergence, and it is the largest and most
+            flexible ligand here at 46 heavy atoms. Any margin against acarbose
+            narrower than roughly 0.27 kcal/mol therefore sits inside the
+            reference's own search noise, which includes Ursolic Acid at 0.070,
+            Isovitexin at 0.057 and Quercetin at 0.112. This is one additional
+            three-seed sample and not a variance estimate; acarbose needs more
+            seeds before any narrow margin against it is quoted as a result.
