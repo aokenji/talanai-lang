@@ -1,0 +1,62 @@
+{
+  "generated": "2026-08-04",
+  "note": "Vinardo rescoring of Vina poses. Same geometry, different function. Does not re-search.",
+  "rows": [
+    {
+      "name": "Rutin",
+      "vina": -10.316666666666668,
+      "vinardo": -5.857
+    },
+    {
+      "name": "Betulinic Acid",
+      "vina": -9.719666666666667,
+      "vinardo": -3.852
+    },
+    {
+      "name": "Ursolic Acid",
+      "vina": -8.716999999999999,
+      "vinardo": -3.37
+    },
+    {
+      "name": "Isovitexin",
+      "vina": -9.355666666666666,
+      "vinardo": -4.535
+    },
+    {
+      "name": "Spinosin",
+      "vina": -9.257,
+      "vinardo": -4.763
+    },
+    {
+      "name": "Luteolin",
+      "vina": -8.484333333333334,
+      "vinardo": -5.225
+    },
+    {
+      "name": "Quercetin",
+      "vina": -8.818333333333333,
+      "vinardo": -5.102
+    },
+    {
+      "name": "Kaempferol",
+      "vina": -8.51,
+      "vinardo": -5.007
+    },
+    {
+      "name": "Vitexin",
+      "vina": -9.489666666666666,
+      "vinardo": -5.703
+    },
+    {
+      "name": "Oleanolic Acid",
+      "vina": -7.919333333333334,
+      "vinardo": -2.614
+    },
+    {
+      "name": "Acarbose",
+      "vina": -8.706000000000001,
+      "vinardo": -4.544
+    }
+  ],
+  "spearman_vina_vs_vinardo": 0.33636363636363636
+}

@@ -1,0 +1,23 @@
+{
+  "box": 30,
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\isomaltose_ringaware.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 32 --num_modes 9 --energy_range 3 --seed 42 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\focused-box\\isomaltose_ringaware_box30.pdbqt",
+  "exhaustiveness": 32,
+  "ligand": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\isomaltose_ringaware.pdbqt",
+  "per_pose_rmsd_A": [
+    9.773,
+    8.01,
+    6.898,
+    10.589,
+    6.693,
+    10.55,
+    9.222,
+    7.632,
+    9.799
+  ],
+  "rank1_score_kcal_mol": -7.111,
+  "reference": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\isomaltose_3axh_ref.pdb",
+  "rmsd_method": "rdkit CalcRMS, no superposition",
+  "seconds": 124.8,
+  "seed": 42,
+  "talanai_version": "0.1.0"
+}

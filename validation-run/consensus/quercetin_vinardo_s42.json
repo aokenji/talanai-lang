@@ -1,0 +1,11 @@
+{
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\screen\\quercetin.pdbqt --scoring vinardo --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 32 --num_modes 9 --energy_range 3 --seed 42 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\consensus\\quercetin_vinardo_s42.pdbqt",
+  "exhaustiveness": 32,
+  "ligand": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\screen\\quercetin.pdbqt",
+  "rank1_score_kcal_mol": -6.413,
+  "scoring": "vinardo",
+  "seconds": 64.2,
+  "seed": 42,
+  "tag": "quercetin_vinardo_s42",
+  "talanai_version": "0.1.0"
+}

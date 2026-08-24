@@ -1,0 +1,190 @@
+{
+  "box_center": [
+    "21.52",
+    "-7.7",
+    "23.55"
+  ],
+  "box_size": [
+    "30",
+    "30",
+    "30"
+  ],
+  "exhaustiveness": 32,
+  "generated": "2026-08-04",
+  "preparation": "ring-aware, all saturated rings verified chairs",
+  "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+  "results": [
+    {
+      "formula": "C27H30O16",
+      "heavy": 43,
+      "hi": -10.31,
+      "lo": -10.33,
+      "mean": -10.316666666666668,
+      "name": "Rutin",
+      "published": -8.857,
+      "scores": [
+        -10.31,
+        -10.31,
+        -10.33
+      ],
+      "spread": 0.019999999999999574
+    },
+    {
+      "formula": "C30H48O3",
+      "heavy": 33,
+      "hi": -9.709,
+      "lo": -9.735,
+      "mean": -9.719666666666667,
+      "name": "Betulinic Acid",
+      "published": -8.29,
+      "scores": [
+        -9.735,
+        -9.709,
+        -9.715
+      ],
+      "spread": 0.0259999999999998
+    },
+    {
+      "formula": "C30H48O3",
+      "heavy": 33,
+      "hi": -8.7,
+      "lo": -8.735,
+      "mean": -8.716999999999999,
+      "name": "Ursolic Acid",
+      "published": -8.105,
+      "scores": [
+        -8.735,
+        -8.716,
+        -8.7
+      ],
+      "spread": 0.03500000000000014
+    },
+    {
+      "formula": "C21H20O10",
+      "heavy": 31,
+      "hi": -9.337,
+      "lo": -9.366,
+      "mean": -9.355666666666666,
+      "name": "Isovitexin",
+      "published": -8.024,
+      "scores": [
+        -9.337,
+        -9.364,
+        -9.366
+      ],
+      "spread": 0.028999999999999915
+    },
+    {
+      "formula": "C28H32O15",
+      "heavy": 43,
+      "hi": -9.247,
+      "lo": -9.263,
+      "mean": -9.257,
+      "name": "Spinosin",
+      "published": -7.859,
+      "scores": [
+        -9.261,
+        -9.247,
+        -9.263
+      ],
+      "spread": 0.016000000000000014
+    },
+    {
+      "formula": "C15H10O6",
+      "heavy": 21,
+      "hi": -8.466,
+      "lo": -8.494,
+      "mean": -8.484333333333334,
+      "name": "Luteolin",
+      "published": -7.733,
+      "scores": [
+        -8.493,
+        -8.494,
+        -8.466
+      ],
+      "spread": 0.02800000000000047
+    },
+    {
+      "formula": "C15H10O7",
+      "heavy": 22,
+      "hi": -8.807,
+      "lo": -8.827,
+      "mean": -8.818333333333333,
+      "name": "Quercetin",
+      "published": -7.503,
+      "scores": [
+        -8.807,
+        -8.821,
+        -8.827
+      ],
+      "spread": 0.019999999999999574
+    },
+    {
+      "formula": "C15H10O6",
+      "heavy": 21,
+      "hi": -8.485,
+      "lo": -8.527,
+      "mean": -8.51,
+      "name": "Kaempferol",
+      "published": -7.479,
+      "scores": [
+        -8.527,
+        -8.485,
+        -8.518
+      ],
+      "spread": 0.041999999999999815
+    },
+    {
+      "formula": "C21H20O10",
+      "heavy": 31,
+      "hi": -9.463,
+      "lo": -9.506,
+      "mean": -9.489666666666666,
+      "name": "Vitexin",
+      "published": -7.469,
+      "scores": [
+        -9.5,
+        -9.506,
+        -9.463
+      ],
+      "spread": 0.04300000000000104
+    },
+    {
+      "formula": "C30H48O3",
+      "heavy": 33,
+      "hi": -7.91,
+      "lo": -7.932,
+      "mean": -7.919333333333334,
+      "name": "Oleanolic Acid",
+      "published": -6.922,
+      "scores": [
+        -7.932,
+        -7.916,
+        -7.91
+      ],
+      "spread": 0.02200000000000024
+    },
+    {
+      "formula": "C25H43NO18",
+      "heavy": 44,
+      "hi": -8.7,
+      "lo": -8.71,
+      "mean": -8.706000000000001,
+      "name": "Acarbose",
+      "published": -6.66,
+      "scores": [
+        -8.7,
+        -8.71,
+        -8.708
+      ],
+      "spread": 0.010000000000001563
+    }
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "validated": false,
+  "validation_note": "the redocking gate does not pass for this configuration. Ranking only. No pose or interaction claims may be derived from this run. See VALIDATION-FINDINGS.md section 4c."
+}

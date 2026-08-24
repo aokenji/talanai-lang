@@ -1,0 +1,15 @@
+{
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\reprepared\\isovitexin.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 32 --num_modes 9 --energy_range 3 --seed 42 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\ringaware\\isovitexin_meeko_ringaware_s42.pdbqt",
+  "exhaustiveness": 32,
+  "ligand": "isovitexin.pdbqt",
+  "ligand_path": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\reprepared\\isovitexin.pdbqt",
+  "pose_file": "D:\\THESIS_VSC\\talanai-lang\\validation-run\\ringaware\\isovitexin_meeko_ringaware_s42.pdbqt",
+  "preparation": "ring-aware: lowest energy among all-chair conformers",
+  "rank1_score_kcal_mol": -9.337,
+  "receptor": "receptor.pdbqt",
+  "returncode": 0,
+  "seconds": 160.1,
+  "seed": 42,
+  "tag": "isovitexin_meeko_ringaware_s42",
+  "talanai_version": "0.1.0"
+}

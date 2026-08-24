@@ -1,0 +1,25 @@
+{
+  "box_center": [
+    "21.52",
+    "-7.7",
+    "23.55"
+  ],
+  "box_size": [
+    "30",
+    "30",
+    "30"
+  ],
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\screen\\acarbose.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 32 --num_modes 9 --energy_range 3 --seed 43 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\full-screen\\acarbose_s43.pdbqt",
+  "exhaustiveness": 32,
+  "ligand": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\screen\\acarbose.pdbqt",
+  "not_validated": "the redocking gate does not pass for this configuration; ranking only, no pose claims",
+  "pose_file": "D:\\THESIS_VSC\\talanai-lang\\validation-run\\full-screen\\acarbose_s43.pdbqt",
+  "preparation": "ring-aware: lowest energy among all-chair conformers",
+  "rank1_score_kcal_mol": -8.71,
+  "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+  "returncode": 0,
+  "seconds": 1135.1,
+  "seed": 43,
+  "tag": "acarbose_s43",
+  "talanai_version": "0.1.0"
+}

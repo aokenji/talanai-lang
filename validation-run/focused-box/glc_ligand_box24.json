@@ -1,0 +1,23 @@
+{
+  "box": 24,
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\validation\\glc_ligand.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 24 --size_y 24 --size_z 24 --exhaustiveness 32 --num_modes 9 --energy_range 3 --seed 42 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\focused-box\\glc_ligand_box24.pdbqt",
+  "exhaustiveness": 32,
+  "ligand": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\validation\\glc_ligand.pdbqt",
+  "per_pose_rmsd_A": [
+    4.431,
+    3.842,
+    6.363,
+    5.8,
+    5.503,
+    5.464,
+    6.998,
+    6.495,
+    7.076
+  ],
+  "rank1_score_kcal_mol": -5.68,
+  "reference": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\validation\\glc_3a4a_601.pdb",
+  "rmsd_method": "rdkit CalcRMS, no superposition",
+  "seconds": 50.4,
+  "seed": 42,
+  "talanai_version": "0.1.0"
+}

@@ -1,0 +1,40 @@
+{
+  "date": "2026-08-13",
+  "ligand_efficiency_caveat": "Vina's score divides its conformation-dependent term by (1 + 0.05846 * rotatable_bonds). Catechin and epicatechin have 2 rotatable bonds each, far fewer than most of the existing 10-compound screen (3-16). A strong raw score here is expected partly because of this normalization favoring small, rigid molecules, not purely because of binding strength. Ligand efficiency (|score|/heavy atoms) does not remove this confound, it inverts it. Report rotatable-bond count and this caveat alongside any score from this run.",
+  "pilot": "flavan-3-ol screen (catechin, epicatechin)",
+  "protocol": {
+    "box_center": [
+      "21.52",
+      "-7.7",
+      "23.55"
+    ],
+    "box_size": [
+      "30",
+      "30",
+      "30"
+    ],
+    "exhaustiveness": 32,
+    "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+    "seeds": [
+      42,
+      43,
+      44
+    ]
+  },
+  "reference_acarbose": -8.706,
+  "results": [
+    {
+      "mean": -8.494,
+      "name": "Catechin",
+      "rotatable_bonds": 2,
+      "spread": 0.007
+    },
+    {
+      "mean": -8.523,
+      "name": "Epicatechin",
+      "rotatable_bonds": 2,
+      "spread": 0.029
+    }
+  ],
+  "status": "PILOT - not applied to compounds.js or the live site"
+}

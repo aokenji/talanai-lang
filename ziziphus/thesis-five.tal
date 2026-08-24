@@ -1,0 +1,30 @@
+# ==========================================================================
+#  ziziphus/thesis-five
+#  The five compounds of the defended screen.
+#
+#  GENUS-LEVEL. These compounds are documented across Ziziphus species. None
+#  of them was isolated from Ziziphus talanai material. R804 refuses any
+#  library in this namespace that declares a species scope, so the honesty
+#  boundary is enforced by the loader rather than by remembering.
+#
+#  Identities and reported sources: docking_assets/docking_data/SOURCES.md
+#  Structures: canonical SMILES from PubChem, RDKit ETKDGv3 + Meeko 0.7.1
+# ==========================================================================
+
+library thesis-five
+  scope       genus Ziziphus
+  source      PubChem CIDs, with reported occurrences from the literature
+  note        Candidate compounds selected at genus level for a species with
+              little direct phytochemical characterisation. Predicted binding,
+              not demonstrated activity.
+
+  compound    Rutin           C27H30O16  5280805
+  reported_in Rutin           Z. jujuba, Z. mauritiana
+  compound    Betulinic_Acid  C30H48O3   64971
+  reported_in Betulinic_Acid  Z. mauritiana, Z. spina-christi
+  compound    Quercetin       C15H10O7   5280343
+  reported_in Quercetin       Z. jujuba, Z. spina-christi
+  compound    Kaempferol      C15H10O6   5280863
+  reported_in Kaempferol      Z. jujuba, Z. mauritiana
+  compound    Oleanolic_Acid  C30H48O3   10494
+  reported_in Oleanolic_Acid  Z. jujuba, Z. mauritiana, Z. spina-christi

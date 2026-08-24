@@ -1,0 +1,28 @@
+{
+  "best_of_ensemble_rmsd_A": 3.502,
+  "best_pose_index": 4,
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\glc_reembedded.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 512 --num_modes 9 --energy_range 3 --seed 42 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\orientation\\pipeline_e512_s42.pdbqt",
+  "crystal_orientation_in_ensemble": false,
+  "exhaustiveness": 512,
+  "ligand": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\glc_reembedded.pdbqt",
+  "ligand_kind": "pipeline",
+  "per_pose_rmsd_A": [
+    5.36,
+    3.865,
+    4.03,
+    3.502,
+    6.869,
+    7.359,
+    7.559,
+    6.582,
+    7.92
+  ],
+  "pose_file": "D:\\THESIS_VSC\\talanai-lang\\validation-run\\orientation\\pipeline_e512_s42.pdbqt",
+  "rank1_rmsd_A": 5.36,
+  "rank1_score_kcal_mol": -5.773,
+  "returncode": 0,
+  "rmsd_method": "rdkit CalcRMS, symmetry-corrected, no superposition",
+  "seconds": 570.1,
+  "seed": 42,
+  "talanai_version": "0.1.0"
+}

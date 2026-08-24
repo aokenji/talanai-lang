@@ -1,0 +1,61 @@
+{
+  "generated": "2026-08-04",
+  "rows": [
+    {
+      "name": "Rutin",
+      "vina": -10.316666666666668,
+      "vinardo_dock": -6.742
+    },
+    {
+      "name": "Betulinic Acid",
+      "vina": -9.719666666666667,
+      "vinardo_dock": -4.918
+    },
+    {
+      "name": "Ursolic Acid",
+      "vina": -8.716999999999999,
+      "vinardo_dock": -3.83
+    },
+    {
+      "name": "Isovitexin",
+      "vina": -9.355666666666666,
+      "vinardo_dock": -5.937
+    },
+    {
+      "name": "Spinosin",
+      "vina": -9.257,
+      "vinardo_dock": -4.969
+    },
+    {
+      "name": "Luteolin",
+      "vina": -8.484333333333334,
+      "vinardo_dock": -6.759
+    },
+    {
+      "name": "Quercetin",
+      "vina": -8.818333333333333,
+      "vinardo_dock": -6.413
+    },
+    {
+      "name": "Kaempferol",
+      "vina": -8.51,
+      "vinardo_dock": -6.261
+    },
+    {
+      "name": "Vitexin",
+      "vina": -9.489666666666666,
+      "vinardo_dock": -6.951
+    },
+    {
+      "name": "Oleanolic Acid",
+      "vina": -7.919333333333334,
+      "vinardo_dock": -2.647
+    },
+    {
+      "name": "Acarbose",
+      "vina": -8.706000000000001,
+      "vinardo_dock": -4.581
+    }
+  ],
+  "spearman": 0.33636363636363636
+}

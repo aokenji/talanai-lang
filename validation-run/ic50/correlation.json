@@ -1,0 +1,117 @@
+{
+  "caveat": "Published IC50s vary by up to 90-fold for the same compound and enzyme. No single true value exists to correlate against.",
+  "changes_sign": false,
+  "generated": "2026-08-05",
+  "method": "Spearman between predicted score and log10 IC50 in uM, yeast alpha-glucosidase only, computed with the lowest, geometric-mean and highest published value per compound",
+  "rows": [
+    {
+      "fold_spread": 3.326771653543307,
+      "geo": 10.127725669673987,
+      "hi": 16.9,
+      "lo": 5.08,
+      "n_sources": 3,
+      "name": "Ursolic Acid",
+      "vina": -8.716999999999999,
+      "vinardo": -3.83
+    },
+    {
+      "fold_spread": 5.606299212598426,
+      "geo": 13.172199294976805,
+      "hi": 35.6,
+      "lo": 6.35,
+      "n_sources": 3,
+      "name": "Oleanolic Acid",
+      "vina": -7.919333333333334,
+      "vinardo": -2.647
+    },
+    {
+      "fold_spread": 1.5877358490566036,
+      "geo": 13.356571416347835,
+      "hi": 16.83,
+      "lo": 10.6,
+      "n_sources": 2,
+      "name": "Betulinic Acid",
+      "vina": -9.719666666666667,
+      "vinardo": -4.918
+    },
+    {
+      "fold_spread": 6.882352941176471,
+      "geo": 38.503974402769074,
+      "hi": 117.0,
+      "lo": 17.0,
+      "n_sources": 3,
+      "name": "Quercetin",
+      "vina": -8.818333333333333,
+      "vinardo": -6.413
+    },
+    {
+      "fold_spread": 14.859742228961334,
+      "geo": 50.845255432537634,
+      "hi": 196.0,
+      "lo": 13.19,
+      "n_sources": 2,
+      "name": "Rutin",
+      "vina": -10.316666666666668,
+      "vinardo": -6.742
+    },
+    {
+      "fold_spread": 2.34683695869088,
+      "geo": 67.7623640547605,
+      "hi": 117.6,
+      "lo": 50.11,
+      "n_sources": 3,
+      "name": "Vitexin",
+      "vina": -9.489666666666666,
+      "vinardo": -6.951
+    },
+    {
+      "fold_spread": 5.325077399380805,
+      "geo": 71.5021258761204,
+      "hi": 172.0,
+      "lo": 32.3,
+      "n_sources": 3,
+      "name": "Luteolin",
+      "vina": -8.484333333333334,
+      "vinardo": -6.759
+    },
+    {
+      "fold_spread": 2.5084233261339093,
+      "geo": 73.32995295239182,
+      "hi": 116.14,
+      "lo": 46.3,
+      "n_sources": 2,
+      "name": "Isovitexin",
+      "vina": -9.355666666666666,
+      "vinardo": -5.937
+    },
+    {
+      "fold_spread": 1.0,
+      "geo": 230.00000000000006,
+      "hi": 230.0,
+      "lo": 230.0,
+      "n_sources": 1,
+      "name": "Kaempferol",
+      "vina": -8.51,
+      "vinardo": -6.261
+    },
+    {
+      "fold_spread": 9.245054945054944,
+      "geo": 488.20458707376633,
+      "hi": 841.3,
+      "lo": 91.0,
+      "n_sources": 5,
+      "name": "Acarbose",
+      "vina": -8.706000000000001,
+      "vinardo": -4.581
+    }
+  ],
+  "spearman": {
+    "vina_geo": 0.11515151515151516,
+    "vina_hi": 0.16363636363636364,
+    "vina_lo": 0.09090909090909091,
+    "vinardo_geo": -0.34545454545454546,
+    "vinardo_hi": -0.41818181818181815,
+    "vinardo_lo": -0.44242424242424244
+  },
+  "swing": 0.07272727272727272
+}

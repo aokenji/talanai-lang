@@ -1,0 +1,34 @@
+{
+  "best_of_ensemble_rmsd_A": 6.693,
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\isomaltose_ringaware.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 32 --num_modes 9 --energy_range 3 --seed 42 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\gate-retest\\isomaltose_ringaware_e32_s42.pdbqt",
+  "control": "3_isomaltose_crossdock_ringaware",
+  "exhaustiveness": 32,
+  "is_gate": true,
+  "ligand": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\isomaltose_ringaware.pdbqt",
+  "per_pose_rmsd_A": [
+    9.773,
+    8.01,
+    6.898,
+    10.589,
+    6.693,
+    10.55,
+    9.222,
+    7.632,
+    9.799
+  ],
+  "preparation": "ring-aware: lowest energy among all-chair conformers",
+  "previous_gate_rmsd_A": 2.895,
+  "rank1_rmsd_A": 9.773,
+  "rank1_score_kcal_mol": -7.111,
+  "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+  "reference": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\isomaltose_3axh_ref.pdb",
+  "ring_theta": [
+    176.61623765545673,
+    175.45873044769857
+  ],
+  "rmsd_method": "rdkit CalcRMS, no superposition",
+  "seconds": 154.0,
+  "seed": 42,
+  "talanai_version": "0.1.0",
+  "threshold_A": 2.0
+}

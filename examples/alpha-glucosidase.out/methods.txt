@@ -1,0 +1,20 @@
+Molecular docking was performed against alpha-glucosidase (PDB 3A4A, 1.6
+A), Saccharomyces cerevisiae isomaltase used as a structural surrogate for
+human intestinal alpha-glucosidase. The receptor was prepared raw cleaned
+3A4A, heteroatoms and waters removed, Vina assigns atom types. Ligands
+were prepared with rdkit ETKDGv3 + MMFF94, meeko 0.7.1 at pH 7.4. The
+search box measured 30 x 30 x 30 A centred at (21.52, -7.70, 23.55), on
+GLC 601. The box encloses Asp215, Glu277, Asp352. Docking used AutoDock
+Vina 1.2.7; exhaustiveness 8; 9 modes; energy range 3 kcal/mol; seed 42. A
+single seed was used, so reported values are reproducible rather than
+replicate means. Redocking of GLC 601 on a receptor prepared meeko, polar
+H and Gasteiger charges, in a 18 A box at exhaustiveness 16 gave redock
+RMSD 0.52 A, within the accepted 2.0 A criterion. This control was run
+under a different receptor preparation from the screen, which used raw
+cleaned 3A4A, heteroatoms and waters removed, Vina assigns atom types, and
+it therefore validates pose recovery rather than the screening protocol
+itself. Compounds were selected at the level of genus Ziziphus; they are
+candidate compounds documented across the genus rather than isolated from
+a single species, and binding is predicted in silico rather than
+demonstrated. A same-seed replication of 5 compounds through TalanaiDock
+(vina 1.2.7, 3A4A, seed 42) agreed to within 0.021 kcal/mol.

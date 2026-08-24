@@ -1,0 +1,118 @@
+{
+  "arm": "cyclopeptide alkaloids",
+  "not_validated": "redocking gate does not pass; ranking only, no pose or interaction claims",
+  "protocol": {
+    "box_center": [
+      "21.52",
+      "-7.7",
+      "23.55"
+    ],
+    "box_size": [
+      "30",
+      "30",
+      "30"
+    ],
+    "exhaustiveness": 32,
+    "preparation": "ring-aware",
+    "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+    "seeds": [
+      42,
+      43,
+      44
+    ]
+  },
+  "reference_acarbose": -8.706,
+  "results": [
+    {
+      "formula": "C36H49N5O5",
+      "mean": -7.953,
+      "name": "Amphibine D",
+      "pubchem_cid": 5318120,
+      "scores": [
+        -7.983,
+        -7.974,
+        -7.903
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "spread": 0.08,
+      "stem": "amphibine_d"
+    },
+    {
+      "formula": "C31H42N4O4",
+      "mean": -7.259,
+      "name": "Sanjoinine A",
+      "pubchem_cid": 11731186,
+      "scores": [
+        -7.312,
+        -7.249,
+        -7.217
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "spread": 0.095,
+      "stem": "sanjoinine_a"
+    },
+    {
+      "formula": "C32H41N5O5",
+      "mean": -7.077,
+      "name": "Mauritine A",
+      "pubchem_cid": 11353668,
+      "scores": [
+        -7.07,
+        -7.215,
+        -6.945
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "spread": 0.27,
+      "stem": "mauritine_a"
+    },
+    {
+      "formula": "C33H49N5O6",
+      "mean": -6.948,
+      "name": "Zizyphine A",
+      "pubchem_cid": 6324833,
+      "scores": [
+        -7.075,
+        -6.854,
+        -6.916
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "spread": 0.221,
+      "stem": "zizyphine_a"
+    },
+    {
+      "formula": "C28H44N4O4",
+      "mean": -6.739,
+      "name": "Frangulanine",
+      "pubchem_cid": 163078670,
+      "scores": [
+        -6.748,
+        -6.854,
+        -6.616
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "spread": 0.238,
+      "stem": "frangulanine"
+    }
+  ],
+  "skipped": []
+}

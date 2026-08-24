@@ -1,0 +1,95 @@
+# ==========================================================================
+#  A blank Talanai experiment. Copy this, fill it in, delete these comments.
+#
+#  Everything marked REQUIRED is required because leaving it out would make
+#  the result uninterpretable, not because the software is fussy. The reason
+#  is given next to each one.
+#
+#  Check your file as you go. It costs nothing and needs no docking engine:
+#      tal check my-experiment.tal
+# ==========================================================================
+
+study "One line saying what this screen is"
+  author       your name
+  date         2026-01-01
+  claim_scope  genus Ziziphus
+  # REQUIRED. What is this a claim about? If your compounds are documented
+  # across a genus rather than isolated from one species, say the genus.
+  # Talanai refuses a species-level claim on genus-level evidence.
+
+receptor 3A4A
+  name          alpha-glucosidase
+  organism      Saccharomyces cerevisiae isomaltase
+  surrogate_for human intestinal alpha-glucosidase
+  # Say so when the structure is a stand-in. It is standard practice and the
+  # first thing a reviewer asks. Burying it is what causes trouble.
+  resolution    1.6 A
+  file          path\to\receptor.pdb
+  # Optional, but with it Talanai can verify the box really contains the
+  # pocket instead of taking your word for it.
+  prepare       raw cleaned, waters and hetatms removed
+  # REQUIRED. Waters, hetatms, hydrogens and charges all move the score.
+  # "raw" is a perfectly good answer. No answer is not.
+
+site
+  center        0.00 0.00 0.00
+  size          24 24 24
+  # REQUIRED. Three coordinates, three lengths.
+  anchored_on   LIG 601
+  must_enclose  Asp215 Glu277 Asp352
+  # Name the residues that define the pocket. An unanchored box is the
+  # commonest way to get a perfect search in the wrong place.
+
+control
+  redock         LIG 601
+  measure        redock_rmsd
+  # Not "rmsd". That word means two different things in docking work.
+  require        under 2.0 A
+  ligand_file    path\to\crystal_ligand.pdbqt
+  reference_file path\to\crystal_ligand.pdb
+  prepare        raw cleaned, waters and hetatms removed
+  # REQUIRED once you have a result. It must match the receptor preparation
+  # above, or the control validates a protocol that is not this one.
+  result         n.d.
+  source
+  # Run it with:  tal control my-experiment.tal
+  # That writes a run record and prints the two lines to paste back here.
+  # Until result and source are filled in, docking stays locked.
+
+ligands
+  source        ziziphus/thesis-five
+  dir           path\to\prepared\ligands
+  prepare       rdkit ETKDGv3 + MMFF94, meeko 0.7.1
+  protonate     pH 7.4
+  # The structure drawn in a paper is not what exists at pH 7.4.
+  compound      Quercetin  C15H10O7  quercetin.pdbqt
+  # name, then formula, then the prepared file. The formula is what makes the
+  # ligand-efficiency column possible.
+
+reference Acarbose
+  formula       C25H43NO18
+  prepare       rdkit ETKDGv3 + MMFF94, meeko 0.7.1
+  # Must match the ligand preparation. Two preparations are two assays and
+  # must not share a column.
+  role          clinical comparator
+
+dock
+  engine         vina 1.2.7
+  exhaustiveness 32
+  modes          9
+  energy_range   3
+  seeds          42 43 44
+  # Three seeds, not one. One seed repeated gives the same answer every time,
+  # which is reproducibility, not convergence. If the three agree to about
+  # 0.1 kcal/mol the number is solid.
+
+rank
+  by affinity
+  by ligand_efficiency
+  # Vina scores rise with molecular size, so raw score alone partly ranks by
+  # molecular weight. The second ranking divides that back out.
+
+report csv poses methods
+
+# results and replication get filled in after the run. Leave them out until
+# then rather than writing placeholders.

@@ -1,0 +1,33 @@
+{
+  "box_center": [
+    "21.52",
+    "-7.7",
+    "23.55"
+  ],
+  "box_size": [
+    "30",
+    "30",
+    "30"
+  ],
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\isomaltose.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 32 --num_modes 9 --energy_range 3 --seed 42 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\controls\\3_isomaltose_crossdock_pose.pdbqt",
+  "control": "3_isomaltose_crossdock",
+  "exhaustiveness": 32,
+  "is_gate": true,
+  "ligand": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\isomaltose.pdbqt",
+  "pose_file": "D:\\THESIS_VSC\\talanai-lang\\validation-run\\controls\\3_isomaltose_crossdock_pose.pdbqt",
+  "purpose": "THE GATE. Cognate alpha-1,6 substrate of this isomaltase, 23 heavy atoms, cross-docked from 3AXH so it also tests induced fit. Reference is superposed into 3A4A's frame.",
+  "rank1_score_kcal_mol": -8.084,
+  "rdkit_rmsd_A": 2.895,
+  "rdkit_rmsd_note": "rdkit CalcRMS, symmetry-corrected, NO superposition; shape-only GetBestRMS 2.150 A",
+  "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+  "reference": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\isomaltose_3axh_ref.pdb",
+  "returncode": 0,
+  "seconds": 339.8,
+  "seed": 42,
+  "talanai_rmsd_A": 1.494,
+  "talanai_rmsd_is_exact": false,
+  "talanai_rmsd_method": "LOWER BOUND, nearest same-element atom, correspondence unresolved (atom names differ between pose and reference)",
+  "talanai_version": "0.1.0",
+  "verdict": "FAIL",
+  "verdict_reason": "symmetry-corrected 2.895 A against 2.0 A"
+}

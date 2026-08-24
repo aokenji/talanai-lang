@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use Talanai, please cite it as below."
+title: "Talanai: a language for describing molecular docking experiments, and a validator that refuses the ones that could not mean what they claim to mean"
+abstract: >-
+  Talanai is a domain-specific language in which one docking experiment is
+  written down completely: receptor, site, control, ligands, search settings and
+  results. A `.tal` file is meant to be read by a biologist and executed by a
+  computer, in that order. The validator applies 35 rules across parsing,
+  control validity, geometry, sampling, preparation, ranking and claim scope,
+  at three severities, and refuses an experiment whose control does not
+  validate the protocol that produced its numbers.
+type: software
+authors:
+  - family-names: Rivera
+    given-names: Ken Alexander T.
+    orcid: "https://orcid.org/0009-0006-2016-8507"
+    affiliation: "Mabalacat City College, Mabalacat City, Pampanga, Philippines"
+keywords:
+  - molecular docking
+  - AutoDock Vina
+  - reproducibility
+  - domain-specific language
+  - protocol validation
+  - alpha-glucosidase
+  - Ziziphus
+
+# LICENCE IS DELIBERATELY UNSET, and needs a decision before any release.
+#
+# TalanaiHub's site content is CC BY 4.0, which is right for data and prose and
+# wrong for software: it is not an OSI-approved open source licence. The Journal
+# of Open Source Software, the most realistic venue for a tools paper on this,
+# requires an OSI-approved licence. The usual split is code under MIT or
+# Apache-2.0 with data and content staying CC BY 4.0.
+#
+# Add `license: MIT` (or Apache-2.0) here and a matching LICENSE file before
+# minting a DOI.
+
+# REPOSITORY AND DOI ARE UNSET FOR THE SAME REASON.
+#
+# Per the 2026-08-20 publication decision, the Zenodo software DOI should be
+# minted through the GitHub integration off a release tag, and only AFTER the
+# language has driven a real run. A Zenodo record is permanent, so releasing a
+# tool in its weakest state makes that state the first citable artefact. Fill in
+# repository-code, and doi once minted.

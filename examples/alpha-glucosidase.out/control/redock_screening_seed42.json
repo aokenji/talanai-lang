@@ -1,0 +1,79 @@
+{
+  "best_pose_rmsd_A": 6.933,
+  "box_center": [
+    21.52,
+    -7.7,
+    23.55
+  ],
+  "box_size": [
+    30.0,
+    30.0,
+    30.0
+  ],
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\receptor_clean.pdb --ligand D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\validation\\glc_ligand.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30.0 --size_y 30.0 --size_z 30.0 --exhaustiveness 8 --num_modes 9 --energy_range 3 --seed 42 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\examples\\alpha-glucosidase.out\\control\\redock_screening_seed42.pdbqt",
+  "cpu": 4,
+  "energy_range": 3,
+  "exhaustiveness": 8,
+  "kind": "redock_control",
+  "label": "screening",
+  "ligand": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\validation\\glc_ligand.pdbqt",
+  "num_modes": 9,
+  "per_pose_rmsd_A": [
+    7.046,
+    12.449,
+    7.362,
+    12.392,
+    6.933,
+    12.265,
+    8.209,
+    12.757,
+    8.606
+  ],
+  "pose_file": "D:\\THESIS_VSC\\talanai-lang\\examples\\alpha-glucosidase.out\\control\\redock_screening_seed42.pdbqt",
+  "rank1_rmsd_A": 7.046,
+  "rank1_rmsd_A_superseded": true,
+  "rank1_score_kcal_mol": -4.024,
+  "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\receptor_clean.pdb",
+  "recomputed_2026_08_03": {
+    "best_pose_rmsd_A": 5.536,
+    "exact": false,
+    "how_to_reproduce": "python -c \"from talanai import control; control.rmsd(control.read_heavy_atoms(POSE, model=1), control.read_heavy_atoms(REFERENCE))\"",
+    "method": "LOWER BOUND, nearest same-element atom, no superposition. Atom correspondence is unresolvable because the pose names every atom C or O while the reference uses C1..C6 / O1..O6. A lower bound above the threshold is conclusive for failure; below it is not a pass.",
+    "per_pose_rmsd_A": [
+      6.164,
+      11.414,
+      6.43,
+      11.102,
+      5.536,
+      11.086,
+      6.885,
+      11.572,
+      7.127
+    ],
+    "rank1_rmsd_A": 6.164,
+    "reference": "docking_data/validation/glc_3a4a_601.pdb",
+    "source_pose_file": "redock_screening_seed42.pdbqt",
+    "talanai_version": "0.1.0",
+    "threshold_A": 2.0,
+    "verdict": "FAILED. Every one of the nine poses exceeds 2.0 A by a wide margin."
+  },
+  "reference": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\validation\\glc_3a4a_601.pdb",
+  "returncode": 0,
+  "rmsd_atoms_matched": 12,
+  "rmsd_method": "heavy-atom, by file order, no superposition",
+  "rmsd_symmetry_corrected": false,
+  "seconds": 9.5,
+  "seed": 42,
+  "superseded_by": {
+    "current_method": "LOWER BOUND, nearest same-element atom, correspondence unresolved (atom names differ between pose and reference)",
+    "current_value_A": 6.164,
+    "current_value_source": "BUILD-SPEC.md section 12 (case 'A screening'); the identical table in REDOCK-PROTOCOL.md section 1",
+    "field": "rank1_rmsd_A",
+    "note": "best_pose_rmsd_A and per_pose_rmsd_A in this record were computed by the same withdrawn method; do not cite them. The recomputed_2026_08_03 block below supersedes all three, and was measured from the stored pose file rather than transcribed from any document.",
+    "stale_method": "heavy-atom, by file order, no superposition",
+    "stale_value_A": 7.046,
+    "superseded_date": "2026-08-03",
+    "why_withdrawn": "this method paired pose and reference heavy atoms strictly by file order without first checking that the two files list the same elements in the same sequence. Here they do not: the pose lists elements C,C,C,C,C,O,O,O,O,C,O,O while the crystal reference lists C,C,C,C,C,C,O,O,O,O,O,O, so file-order pairing matched atoms such as pose O5 against reference C6. The method has been removed from control.py; the current rmsd() only trusts file-order pairing (case 2) after confirming the element sequences match, and otherwise falls back to a same-element nearest-atom lower bound (case 3)."
+  },
+  "vina": "vina.exe"
+}

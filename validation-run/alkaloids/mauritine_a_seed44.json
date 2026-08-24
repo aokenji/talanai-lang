@@ -1,0 +1,26 @@
+{
+  "arm": "cyclopeptide alkaloids",
+  "box_center": [
+    "21.52",
+    "-7.7",
+    "23.55"
+  ],
+  "box_size": [
+    "30",
+    "30",
+    "30"
+  ],
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\alkaloids\\mauritine_a.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 32 --num_modes 9 --energy_range 3 --seed 44 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\alkaloids\\mauritine_a_seed44.pdbqt",
+  "exhaustiveness": 32,
+  "ligand": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\alkaloids\\mauritine_a.pdbqt",
+  "not_validated": "the redocking gate does not pass for this configuration; ranking only, no pose claims",
+  "pose_file": "D:\\THESIS_VSC\\talanai-lang\\validation-run\\alkaloids\\mauritine_a_seed44.pdbqt",
+  "preparation": "ring-aware: lowest energy among all-chair conformers",
+  "rank1_score_kcal_mol": -6.945,
+  "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+  "returncode": 0,
+  "seconds": 738.5,
+  "seed": 44,
+  "tag": "mauritine_a_seed44",
+  "talanai_version": "0.1.0"
+}

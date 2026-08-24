@@ -1,0 +1,7 @@
+compound,formula,heavy_atoms,affinity_kcal_per_mol,ligand_efficiency,rerun_kcal_per_mol
+Rutin,C27H30O16,43,-8.857,0.206,-8.851
+Betulinic Acid,C30H48O3,33,-8.290,0.251,-8.296
+Quercetin,C15H10O7,22,-7.503,0.341,-7.482
+Kaempferol,C15H10O6,21,-7.479,0.356,-7.498
+Oleanolic Acid,C30H48O3,33,-6.922,0.210,-6.916
+Acarbose,C25H43NO18,44,-6.660,0.151,

@@ -1,0 +1,52 @@
+{
+  "check": "ligand protonation state (C-28 carboxylate)",
+  "date": "2026-08-13",
+  "note": "This is a CHECK. compounds.js and the live site were not modified by this run.",
+  "prior_protonated_live": {
+    "Betulinic Acid": -9.72,
+    "Oleanolic Acid": -7.919,
+    "Ursolic Acid": -8.651
+  },
+  "prior_protonated_live_spread": {
+    "Betulinic Acid": 0.026,
+    "Oleanolic Acid": 0.022,
+    "Ursolic Acid": 0.038
+  },
+  "protocol": {
+    "box_center": [
+      "21.52",
+      "-7.7",
+      "23.55"
+    ],
+    "box_size": [
+      "30",
+      "30",
+      "30"
+    ],
+    "exhaustiveness": 32,
+    "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+    "seeds": [
+      42,
+      43,
+      44
+    ]
+  },
+  "reference_acarbose": -8.706,
+  "results": [
+    {
+      "mean": -9.084,
+      "name": "Betulinic Acid",
+      "spread": 0.021
+    },
+    {
+      "mean": -7.593,
+      "name": "Oleanolic Acid",
+      "spread": 0.019
+    },
+    {
+      "mean": -8.776,
+      "name": "Ursolic Acid",
+      "spread": 0.033
+    }
+  ]
+}

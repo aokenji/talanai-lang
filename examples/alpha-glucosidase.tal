@@ -1,0 +1,130 @@
+# ==========================================================================
+#  Alpha-glucosidase screening, genus Ziziphus
+#  The defended thesis screen, written as a Talanai experiment file.
+#
+#  Every value is traced to a file on disk, not typed from memory:
+#    parameters   D:\BALAKATDBV2\src\data\protocol.js   (PROTOCOL)
+#    affinities   D:\BALAKATDBV2\src\data\compounds.js  (checked by tests/)
+#    corrections  D:\BALAKATDBV2\src\data\protocol.js   (CORRECTIONS)
+#    provenance   talanaidock\...\docking_assets\docking_data\SOURCES.md
+#    control      talanaidock\...\docking_data\validation\validation.json
+#
+#  Re-synced 2026-08-25. This file previously described the ORIGINAL May 2026
+#  screen: raw-receptor preparation, exhaustiveness 8, one seed, and the
+#  pre-correction affinities. Three corrections have been applied since
+#  (2026-08-04 receptor atom typing, ring-aware ligand prep, exhaustiveness
+#  8 -> 32 and one seed -> three; 2026-08-11 stereo-specified SMILES;
+#  2026-08-13 C-28 deprotonation). Everything below is the corrected screen.
+# ==========================================================================
+
+study "Alpha-glucosidase screening, genus Ziziphus"
+  author       Ken Alexander Rivera
+  date         2026-05-23
+  doi          10.5281/zenodo.20384660
+  claim_scope  genus Ziziphus       # not Ziziphus talanai. R801 enforces this.
+
+receptor 3A4A
+  name          alpha-glucosidase
+  organism      Saccharomyces cerevisiae isomaltase
+  surrogate_for human intestinal alpha-glucosidase
+  resolution    1.6 A
+  file          D:\THESIS_VSC\BALAKATDBV2\talanaidock\dist\TalanaiDock\app\docking_assets\docking_data\prepared\receptor.pdbqt
+  prepare       meeko, polar H and Gasteiger charges
+  prepare_note  The 2026-08-04 correction moved the screen off the raw cleaned
+                3A4A onto the Meeko-prepared receptor with AutoDock
+                hydrogen-bond atom typing. protocol.js records receptorPrep as
+                "Meeko, with AutoDock hydrogen-bond atom typing". The control
+                below ran on this same preparation, which is what R106 checks.
+
+site
+  center        21.52 -7.70 23.55
+  size          30 30 30
+  anchored_on   GLC 601
+  anchor_note   centroid of the co-crystallised glucose
+  must_enclose  Asp215 Glu277 Asp352
+
+control
+  redock         GLC 601
+  measure        redock_rmsd
+  require        under 2.0 A
+  ligand_file    D:\THESIS_VSC\BALAKATDBV2\talanaidock\dist\TalanaiDock\app\docking_assets\docking_data\validation\glc_ligand.pdbqt
+  reference_file D:\THESIS_VSC\BALAKATDBV2\talanaidock\dist\TalanaiDock\app\docking_assets\docking_data\validation\glc_3a4a_601.pdb
+  receptor_file  D:\THESIS_VSC\BALAKATDBV2\talanaidock\dist\TalanaiDock\app\docking_assets\docking_data\prepared\receptor.pdbqt
+  seed           42
+  result         0.519 A
+  source         docking_assets/docking_data/validation/validation.json, generated 2026-06-16
+  prepare        meeko, polar H and Gasteiger charges
+  box_size       18 18 18
+  exhaustiveness 16
+  result_note    Self-docking: the crystal ligand's own coordinates are redocked
+                 into the receptor that conformed around them. validation.json
+                 states an independently built copy of the same molecule misses
+                 by 5.9 A, and that a naive dock into the 30 A screening box
+                 does not reproduce the pose. Recorded here so the difference is
+                 visible rather than implied. The box differs from the screen's,
+                 and R104 is expected to say so.
+
+ligands
+  source        ziziphus/thesis-five
+  dir           D:\THESIS_VSC\BALAKATDBV2\talanaidock\dist\TalanaiDock\app\docking_assets\docking_data\ligands
+  prepare       rdkit ETKDGv3 + MMFF94 with ring-aware conformer selection, meeko 0.7.1
+  protonate     pH 7.4
+  note          The 2026-08-13 correction deprotonated the C-28 carboxylic acid
+                 (COO-) of the triterpene acids, the form that predominates at
+                 physiological pH. Betulinic and oleanolic acid kept their
+                 verdicts; ursolic acid flipped from losing to acarbose by 0.055
+                 to beating it by 0.070 kcal/mol. Both margins are narrow.
+  compound      Rutin           C27H30O16   rutin.pdbqt
+  compound      Betulinic_Acid  C30H48O3    betulinic.pdbqt
+  compound      Quercetin       C15H10O7    quercetin.pdbqt
+  compound      Kaempferol      C15H10O6    kaempferol.pdbqt
+  compound      Oleanolic_Acid  C30H48O3    oleanolic.pdbqt
+
+reference Acarbose
+  formula       C25H43NO18
+  prepare       rdkit ETKDGv3 + MMFF94 with ring-aware conformer selection, meeko 0.7.1
+  role          clinical comparator, docked under identical settings
+  note          Positive control for this assay, not a therapeutic benchmark.
+                Acarbose inhibits mammalian alpha-glucosidase strongly but the
+                yeast enzyme used here only weakly (Oki et al. 1999), so read
+                these as relative rankings within one protocol.
+
+dock
+  engine         vina 1.2.7
+  exhaustiveness 32
+  modes          9
+  energy_range   3
+  seeds          42 43 44
+
+rank
+  by affinity
+  by ligand_efficiency
+
+report csv poses methods
+
+# --------------------------------------------------------------------------
+#  Results. affinity in kcal/mol, mean of seeds 42/43/44.
+#  Current corrected values from src/data/compounds.js, after the 2026-08-04,
+#  2026-08-11 and 2026-08-13 corrections.
+# --------------------------------------------------------------------------
+results
+  affinity Rutin           -10.317
+  affinity Betulinic_Acid  -9.084
+  affinity Quercetin       -8.818
+  affinity Kaempferol      -8.510
+  affinity Oleanolic_Acid  -7.593
+  affinity Acarbose        -8.706
+
+# --------------------------------------------------------------------------
+#  The replication block was REMOVED on 2026-08-25 rather than updated.
+#
+#  It recorded a same-seed re-run from 2026-07-31 (Rutin -8.851, Betulinic
+#  -8.296, Quercetin -7.482, Kaempferol -7.498, Oleanolic -6.916). Those
+#  numbers replicated the PRE-correction screen. Left beside the corrected
+#  results above they deviate by more than a kcal/mol, and RA02 would report a
+#  reproducibility failure that never happened: the pipeline did not drift, the
+#  protocol changed underneath it.
+#
+#  Inventing replacement numbers would be fabrication. Re-run the replication
+#  under the corrected protocol and restore the block with the real values.
+# --------------------------------------------------------------------------

@@ -1,0 +1,15 @@
+{
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\reprepared\\ursolic.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 32 --num_modes 9 --energy_range 3 --seed 43 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\ringaware\\ursolic_meeko_ringaware_s43.pdbqt",
+  "exhaustiveness": 32,
+  "ligand": "ursolic.pdbqt",
+  "ligand_path": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\reprepared\\ursolic.pdbqt",
+  "pose_file": "D:\\THESIS_VSC\\talanai-lang\\validation-run\\ringaware\\ursolic_meeko_ringaware_s43.pdbqt",
+  "preparation": "ring-aware: lowest energy among all-chair conformers",
+  "rank1_score_kcal_mol": -8.716,
+  "receptor": "receptor.pdbqt",
+  "returncode": 0,
+  "seconds": 67.8,
+  "seed": 43,
+  "tag": "ursolic_meeko_ringaware_s43",
+  "talanai_version": "0.1.0"
+}

@@ -1,0 +1,33 @@
+{
+  "box_center": [
+    "21.52",
+    "-7.7",
+    "23.55"
+  ],
+  "box_size": [
+    "30",
+    "30",
+    "30"
+  ],
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\glc_reembedded.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 32 --num_modes 9 --energy_range 3 --seed 42 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\controls\\2_reembedded_glucose_pose.pdbqt",
+  "control": "2_reembedded_glucose",
+  "exhaustiveness": 32,
+  "is_gate": false,
+  "ligand": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\glc_reembedded.pdbqt",
+  "pose_file": "D:\\THESIS_VSC\\talanai-lang\\validation-run\\controls\\2_reembedded_glucose_pose.pdbqt",
+  "purpose": "tests that the ligand pipeline produces a chemically correct molecule. Not a harder search.",
+  "rank1_score_kcal_mol": -5.775,
+  "rdkit_rmsd_A": 5.358,
+  "rdkit_rmsd_note": "rdkit CalcRMS, symmetry-corrected, NO superposition; shape-only GetBestRMS 1.265 A",
+  "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+  "reference": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\validation\\glc_3a4a_601.pdb",
+  "returncode": 0,
+  "seconds": 77.2,
+  "seed": 42,
+  "talanai_rmsd_A": 3.959,
+  "talanai_rmsd_is_exact": false,
+  "talanai_rmsd_method": "LOWER BOUND, nearest same-element atom, correspondence unresolved (atom names differ between pose and reference)",
+  "talanai_version": "0.1.0",
+  "verdict": "FAIL",
+  "verdict_reason": "lower bound 3.959 A exceeds 2.0 A, conclusive"
+}

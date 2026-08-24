@@ -1,0 +1,46 @@
+{
+  "date": "2026-08-11",
+  "fix": "stereochemistry correction",
+  "prior": {
+    "Isovitexin": -9.356,
+    "Ursolic Acid": -8.717,
+    "Vitexin": -9.49
+  },
+  "protocol": {
+    "box_center": [
+      "21.52",
+      "-7.7",
+      "23.55"
+    ],
+    "box_size": [
+      "30",
+      "30",
+      "30"
+    ],
+    "exhaustiveness": 32,
+    "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+    "seeds": [
+      42,
+      43,
+      44
+    ]
+  },
+  "reference_acarbose": -8.706,
+  "results": [
+    {
+      "mean": -8.651,
+      "name": "Ursolic Acid",
+      "spread": 0.038
+    },
+    {
+      "mean": -9.637,
+      "name": "Vitexin",
+      "spread": 0.03
+    },
+    {
+      "mean": -8.763,
+      "name": "Isovitexin",
+      "spread": 0.043
+    }
+  ]
+}

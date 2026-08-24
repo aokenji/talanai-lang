@@ -1,0 +1,784 @@
+{
+  "generated": "2026-08-05",
+  "purpose": "Published experimental IC50 values for alpha-glucosidase inhibition, gathered to validate a molecular docking ranking. Primary target: Saccharomyces cerevisiae (yeast) enzyme, the assay matching PDB 3A4A.",
+  "molecular_weights_used_for_conversion_g_per_mol": {
+    "quercetin": 302.236,
+    "rutin": 610.517,
+    "kaempferol": 286.239,
+    "luteolin": 286.239,
+    "vitexin": 432.38,
+    "isovitexin": 432.38,
+    "betulinic_acid": 456.70,
+    "ursolic_acid": 456.70,
+    "oleanolic_acid": 456.70,
+    "acarbose": 645.60
+  },
+  "note_on_confidence": "high = value read directly from the primary paper's abstract/full text by this search (quote captured); medium = value found via search-engine summary of the paper and/or enzyme organism not explicitly confirmed in the retrievable text; low = database/secondary compilation or incomplete bibliographic metadata.",
+  "compounds": {
+    "Acarbose": {
+      "yeast_values": [
+        {
+          "ic50_value": 815.4,
+          "ic50_unit": "uM",
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae, type I (Sigma-Aldrich)",
+          "substrate": "pNPG (p-nitrophenyl-alpha-D-glucopyranoside), 2 mM",
+          "pH": 6.8,
+          "temperature_C": 37,
+          "citation": {
+            "authors": "Djeujo FM, Ragazzi E, Urettini M, Sauro B, Cichero E, Tonelli M, Froldi G.",
+            "year": 2022,
+            "title": "Magnolol and Luteolin Inhibition of alpha-Glucosidase Activity: Kinetics and Type of Interaction Detected by In Vitro and In Silico Studies",
+            "journal": "Pharmaceuticals (Basel)",
+            "volume_pages": "15(2):205",
+            "doi": "10.3390/ph15020205",
+            "pmcid": "PMC8880268"
+          },
+          "quote": "The IC50 values of magnolol and luteolin were 32.6 uM and 32.3 uM, respectively, 25 times lower than those of acarbose (IC50 = 815.4 uM under the same conditions).",
+          "confidence": "high"
+        },
+        {
+          "ic50_value": 841.3,
+          "ic50_unit": "uM",
+          "ic50_sd": 29.6,
+          "enzyme_source": "yeast",
+          "organism": "yeast alpha-glucosidase (Sigma-Aldrich); species labeled 'yeast', not explicitly re-stated as S. cerevisiae in the retrieved text",
+          "substrate": "pNPG, 2.5 mM",
+          "pH": 6.8,
+          "temperature_C": 37,
+          "citation": {
+            "authors": "Chen S, Lin B, Gu J, et al.",
+            "year": 2022,
+            "title": "Binding Interaction of Betulinic Acid to alpha-Glucosidase and Its Alleviation on Postprandial Hyperglycemia",
+            "journal": "Molecules",
+            "volume_pages": "27(8):2517",
+            "doi": "10.3390/molecules27082517",
+            "pmcid": "PMC9032457"
+          },
+          "quote": "Acarbose ... IC50 value of 841.3 +/- 29.6 uM, representing approximately 50-fold weaker inhibition than betulinic acid.",
+          "confidence": "high"
+        },
+        {
+          "ic50_value": 91,
+          "ic50_unit": "uM",
+          "ic50_as_reported": "0.091 mmol/L",
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae (indicated by MeSH indexing on PubMed record; not an explicit sentence in the abstract)",
+          "substrate": "not stated in abstract",
+          "pH": null,
+          "temperature_C": null,
+          "citation": {
+            "authors": "Li YQ, Zhou FC, Gao F, Bian JS, Shan F.",
+            "year": 2009,
+            "title": "Comparative evaluation of quercetin, isoquercetin and rutin as inhibitors of alpha-glucosidase",
+            "journal": "J Agric Food Chem",
+            "volume_pages": "57(24):11463-8",
+            "doi": "10.1021/jf903083h",
+            "pmid": "19938837"
+          },
+          "quote": "Acarbose (control): 0.091 mmol/L, alongside quercetin 0.017 mmol/L, isoquercetin 0.185 mmol/L, rutin 0.196 mmol/L.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 780.2,
+          "ic50_unit": "uM",
+          "ic50_sd": 1.04,
+          "enzyme_source": "yeast (as characterized in secondary summary; not independently confirmed against the full text, which could not be retrieved past a login/CAPTCHA wall)",
+          "organism": "not independently confirmed",
+          "substrate": "microplate-based pNPG assay (per abstract-level description)",
+          "pH": null,
+          "temperature_C": null,
+          "citation": {
+            "authors": "Hong HC, Li SL, Zhang XQ, Ye WC, Zhang QW.",
+            "year": 2013,
+            "title": "Flavonoids with alpha-glucosidase inhibitory activities and their contents in the leaves of Morus atropurpurea",
+            "journal": "Chinese Medicine",
+            "volume_pages": "8:19",
+            "doi": "10.1186/1749-8546-8-19",
+            "pmcid": "PMC4016240"
+          },
+          "quote": "The alpha-glucosidase assay used acarbose as a positive control with an IC50 of 780.2 +/- 1.04 uM; rutin and astragalin showed IC50 values of 13.19 +/- 1.10 and 15.82 +/- 1.11 uM respectively.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 569.43,
+          "ic50_unit": "uM",
+          "ic50_sd": 9.98,
+          "enzyme_source": "yeast",
+          "organism": "baker's yeast (Saccharomyces cerevisiae)",
+          "substrate": "pNPG, 1 mmol/L",
+          "pH": 6.8,
+          "temperature_C": 37,
+          "citation": {
+            "authors": "Wu PP, et al.",
+            "year": 2017,
+            "title": "Synthesis and biological evaluation of novel ursolic acid analogues as potential alpha-glucosidase inhibitors",
+            "journal": "Scientific Reports",
+            "volume_pages": "7:45578",
+            "doi": "10.1038/srep45578",
+            "pmcid": "PMC5372089"
+          },
+          "quote": "Acarbose IC50 (positive control): 569.43 +/- 9.98 uM; native ursolic acid IC50 = 5.08 +/- 0.70 uM.",
+          "confidence": "high"
+        }
+      ],
+      "qualitative_primary_finding": {
+        "citation": {
+          "authors": "Oki T, Matsui T, Osajima Y.",
+          "year": 1999,
+          "title": "Inhibitory effect of alpha-glucosidase inhibitors varies according to its origin",
+          "journal": "J Agric Food Chem",
+          "volume_pages": "47(2):550-3",
+          "doi": "10.1021/jf980788t",
+          "pmid": "10563931"
+        },
+        "quote": "Voglibose, acarbose and glucono-1,5-lactone strongly inhibited mammalian AGHs, whereas no or less inhibition was observed in yeast AGH. (+)-catechin was a good inhibitor against yeast AGH but did not retard mammalian AGH activity.",
+        "note": "Same abstract reports IC50 = 1.3 x 10^-1 mM (130 uM) for (+)-catechin and IC50 = 2.6 x 10^-2 mM (26 uM) for voglibose against yeast AGH, but gives no numeric IC50 for acarbose itself.",
+        "confidence": "high"
+      },
+      "non_yeast_or_unconfirmed_organism_values_excluded_from_range": [
+        {
+          "ic50_value": 139.4,
+          "ic50_unit": "ug/mL",
+          "ic50_converted": "215.9 uM (MW 645.60 g/mol)",
+          "enzyme_source": "unconfirmed - could not access methods section to determine organism",
+          "citation": {
+            "authors": "Subhan M, Sanachai K, Sungthong B, Datham S, Ratha J, Puthongking P.",
+            "year": 2025,
+            "title": "Comparison in vitro and in silico studies of phenolic acids and flavonoids on alpha-glucosidase inhibition",
+            "journal": "Journal of Pharmacy & Pharmacognosy Research",
+            "volume_pages": "13(1):311-323",
+            "doi": "10.56499/jppres24.2081_13.1.311"
+          },
+          "quote": "quercetin (QE; IC50 = 0.85 ug/mL) ... than acarbose (IC50 = 139.4 ug/mL)",
+          "confidence": "low",
+          "reason_excluded": "enzyme source/organism not verifiable from the accessible text (PDF would not render); could be yeast or mammalian"
+        }
+      ]
+    },
+    "Quercetin": {
+      "yeast_values": [
+        {
+          "ic50_value": 6.10,
+          "ic50_unit": "ug/mL",
+          "ic50_converted": "20.18 uM (MW 302.236 g/mol)",
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae",
+          "substrate": "pNPG (p-nitrophenyl-alpha-D-glucopyranoside)",
+          "pH": 6.8,
+          "temperature_C": 37,
+          "citation": {
+            "authors": "He C, Liu X, Jiang Z, Geng S, Ma H, Liu B.",
+            "year": 2019,
+            "title": "Interaction Mechanism of Flavonoids and alpha-Glucosidase: Experimental and Molecular Modelling Studies",
+            "journal": "Foods",
+            "volume_pages": "8(9):355",
+            "doi": "10.3390/foods8090355",
+            "pmid": "31438605"
+          },
+          "quote": "Table 1 IC50 (ug/mL): Quercetin 6.10; Luteolin 27.22; Rutin >500.",
+          "confidence": "high"
+        },
+        {
+          "ic50_value": 117,
+          "ic50_unit": "uM",
+          "ic50_sd": 1.9,
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae",
+          "substrate": "4-nitrophenyl beta-D-glucopyranoside (pNPG)",
+          "citation": {
+            "authors": "Nguyen NH, Tran NMA, Duong TH, Vo GV.",
+            "year": 2023,
+            "title": "alpha-Glucosidase inhibitory activities of flavonoid derivatives isolated from Bouea macrophylla: in vitro and in silico studies",
+            "journal": "RSC Advances",
+            "volume_pages": "13(12):8190-8201",
+            "doi": "10.1039/D3RA00650F"
+          },
+          "quote": "Quercetin (compound 5) showed an IC50 of 117 +/- 1.9 uM; kaempferol (compound 3) ... IC50 value of 230 +/- 2.7 uM.",
+          "confidence": "high"
+        },
+        {
+          "ic50_value": 17,
+          "ic50_unit": "uM",
+          "ic50_as_reported": "0.017 mmol/L",
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae (MeSH-indicated, not an explicit abstract sentence)",
+          "citation": {
+            "authors": "Li YQ, Zhou FC, Gao F, Bian JS, Shan F.",
+            "year": 2009,
+            "title": "Comparative evaluation of quercetin, isoquercetin and rutin as inhibitors of alpha-glucosidase",
+            "journal": "J Agric Food Chem",
+            "volume_pages": "57(24):11463-8",
+            "doi": "10.1021/jf903083h",
+            "pmid": "19938837"
+          },
+          "quote": "Quercetin: 0.017 mmol/L; isoquercetin: 0.185 mmol/L; rutin: 0.196 mmol/L; acarbose (control): 0.091 mmol/L.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 28.7,
+          "ic50_unit": "uM",
+          "ic50_sd": 1.2,
+          "enzyme_source": "likely yeast (standard pNPG protocol) but organism not independently confirmed by direct fetch",
+          "organism": "unconfirmed",
+          "citation": {
+            "authors": "Park MJ, Kang YH.",
+            "year": 2020,
+            "title": "Isolation of Isocoumarins and Flavonoids as alpha-Glucosidase Inhibitors from Agrimonia pilosa L.",
+            "journal": "Molecules",
+            "volume_pages": "25(11):2572",
+            "doi": "10.3390/molecules25112572"
+          },
+          "quote": "Table 2: Quercetin (6) 28.7 +/- 1.2 uM; Luteolin (5) 65.8 +/- 1.9 uM; Vitexin (7) 117.6 +/- 3.6 uM; Isovitexin (8) 46.3 +/- 1.7 uM.",
+          "confidence": "medium"
+        }
+      ],
+      "organism_unconfirmed_values": [
+        {
+          "ic50_value": 0.85,
+          "ic50_unit": "ug/mL",
+          "ic50_converted": "2.81 uM (MW 302.236 g/mol)",
+          "citation": {
+            "authors": "Subhan M, Sanachai K, Sungthong B, Datham S, Ratha J, Puthongking P.",
+            "year": 2025,
+            "title": "Comparison in vitro and in silico studies of phenolic acids and flavonoids on alpha-glucosidase inhibition",
+            "journal": "Journal of Pharmacy & Pharmacognosy Research",
+            "volume_pages": "13(1):311-323",
+            "doi": "10.56499/jppres24.2081_13.1.311"
+          },
+          "quote": "quercetin (QE; IC50 = 0.85 ug/mL) and gallic acid (GA; IC50 = 26.19 ug/mL) significantly inhibited alpha-glucosidase activity",
+          "confidence": "low",
+          "reason": "enzyme organism not verifiable (PDF unreadable by this search)"
+        },
+        {
+          "ic50_value": 7.97,
+          "ic50_unit": "uM",
+          "ic50_sd": 0.89,
+          "citation": {
+            "authors": "unconfirmed - full author list not retrievable",
+            "year": 2024,
+            "title": "Quercetin analogs as alpha-glucosidase inhibitors with antidiabetic activity",
+            "journal": "likely Food Bioscience (inferred from ScienceDirect identifier prefix, not independently confirmed)",
+            "sciencedirect_pii": "S2212429224001433"
+          },
+          "quote": "(value reported in indexed search snippet; abstract page returned HTTP 403 and could not be directly read)",
+          "confidence": "low",
+          "reason": "bibliographic metadata incomplete; enzyme organism not confirmed; could not access full text"
+        }
+      ]
+    },
+    "Kaempferol": {
+      "yeast_values": [
+        {
+          "ic50_value": 230,
+          "ic50_unit": "uM",
+          "ic50_sd": 2.7,
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae",
+          "substrate": "4-nitrophenyl beta-D-glucopyranoside (pNPG)",
+          "citation": {
+            "authors": "Nguyen NH, Tran NMA, Duong TH, Vo GV.",
+            "year": 2023,
+            "title": "alpha-Glucosidase inhibitory activities of flavonoid derivatives isolated from Bouea macrophylla: in vitro and in silico studies",
+            "journal": "RSC Advances",
+            "volume_pages": "13(12):8190-8201",
+            "doi": "10.1039/D3RA00650F"
+          },
+          "quote": "The known compound 3 was identified as kaempferol, which showed a potent inhibitory activity on alpha-glucosidase with an IC50 value of 230 +/- 2.7 uM.",
+          "confidence": "high"
+        }
+      ],
+      "group_level_context_not_compound_specific": {
+        "citation": {
+          "authors": "Tadera K, Minami Y, Takamatsu K, Matsuoka T.",
+          "year": 2006,
+          "title": "Inhibition of alpha-glucosidase and alpha-amylase by flavonoids",
+          "journal": "J Nutr Sci Vitaminol (Tokyo)",
+          "volume_pages": "52(2):149-53",
+          "doi": "10.3177/jnsv.52.149",
+          "pmid": "16802696"
+        },
+        "quote": "Yeast alpha-glucosidase showed potent inhibition by the anthocyanidin, isoflavone and flavonol groups with the IC50 values less than 15 microM.",
+        "note": "Kaempferol is a flavonol, so this is directional group-level context, not a compound-specific number. Individual per-compound table values from this paper could not be retrieved (paywalled).",
+        "confidence": "high for the group statement; not applicable as a per-compound value"
+      },
+      "note": "Only one compound-specific yeast IC50 source found for kaempferol despite being a common flavonoid - notably sparse relative to quercetin/luteolin."
+    },
+    "Luteolin": {
+      "yeast_values": [
+        {
+          "ic50_value": 32.3,
+          "ic50_unit": "uM",
+          "ic50_sd": 1.17,
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae, type I (Sigma-Aldrich)",
+          "substrate": "pNPG, 2 mM",
+          "pH": 6.8,
+          "temperature_C": 37,
+          "citation": {
+            "authors": "Djeujo FM, Ragazzi E, Urettini M, Sauro B, Cichero E, Tonelli M, Froldi G.",
+            "year": 2022,
+            "title": "Magnolol and Luteolin Inhibition of alpha-Glucosidase Activity: Kinetics and Type of Interaction Detected by In Vitro and In Silico Studies",
+            "journal": "Pharmaceuticals (Basel)",
+            "volume_pages": "15(2):205",
+            "doi": "10.3390/ph15020205",
+            "pmcid": "PMC8880268"
+          },
+          "quote": "The IC50 values of magnolol and luteolin were 32.6 uM and 32.3 uM, respectively, 25 times lower than those of acarbose.",
+          "confidence": "high"
+        },
+        {
+          "ic50_value": 27.22,
+          "ic50_unit": "ug/mL",
+          "ic50_converted": "95.1 uM (MW 286.239 g/mol)",
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae",
+          "substrate": "pNPG",
+          "pH": 6.8,
+          "temperature_C": 37,
+          "citation": {
+            "authors": "He C, Liu X, Jiang Z, Geng S, Ma H, Liu B.",
+            "year": 2019,
+            "title": "Interaction Mechanism of Flavonoids and alpha-Glucosidase: Experimental and Molecular Modelling Studies",
+            "journal": "Foods",
+            "volume_pages": "8(9):355",
+            "doi": "10.3390/foods8090355",
+            "pmid": "31438605"
+          },
+          "quote": "Table 1 IC50 (ug/mL): Luteolin 27.22.",
+          "confidence": "high"
+        },
+        {
+          "ic50_value": 65.8,
+          "ic50_unit": "uM",
+          "ic50_sd": 1.9,
+          "enzyme_source": "likely yeast (pNPG protocol), organism not independently confirmed",
+          "citation": {
+            "authors": "Park MJ, Kang YH.",
+            "year": 2020,
+            "title": "Isolation of Isocoumarins and Flavonoids as alpha-Glucosidase Inhibitors from Agrimonia pilosa L.",
+            "journal": "Molecules",
+            "volume_pages": "25(11):2572",
+            "doi": "10.3390/molecules25112572"
+          },
+          "quote": "Table 2: Luteolin (5) 65.8 +/- 1.9 uM.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 172,
+          "ic50_unit": "uM",
+          "ic50_as_reported": "(1.72 +/- 0.05) x 10^-4 mol/L",
+          "enzyme_source": "not explicitly stated in the retrievable abstract",
+          "organism": "unconfirmed",
+          "citation": {
+            "authors": "Yan J, Zhang G, Pan J, Wang Y.",
+            "year": 2014,
+            "title": "alpha-Glucosidase inhibition by luteolin: kinetics, interaction and molecular docking",
+            "journal": "Int J Biol Macromol",
+            "volume_pages": "64:213-23",
+            "doi": "10.1016/j.ijbiomac.2013.12.007",
+            "pmid": "24333230"
+          },
+          "quote": "Luteolin reversibly inhibited alpha-glucosidase in a noncompetitive manner with an IC50 value of (1.72 +/- 0.05) x 10^-4 mol/L.",
+          "confidence": "medium"
+        }
+      ]
+    },
+    "Rutin": {
+      "yeast_values": [
+        {
+          "ic50_value": 196,
+          "ic50_unit": "uM",
+          "ic50_as_reported": "0.196 mmol/L",
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae (MeSH-indicated)",
+          "citation": {
+            "authors": "Li YQ, Zhou FC, Gao F, Bian JS, Shan F.",
+            "year": 2009,
+            "title": "Comparative evaluation of quercetin, isoquercetin and rutin as inhibitors of alpha-glucosidase",
+            "journal": "J Agric Food Chem",
+            "volume_pages": "57(24):11463-8",
+            "doi": "10.1021/jf903083h",
+            "pmid": "19938837"
+          },
+          "quote": "Rutin: 0.196 mmol/L.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": ">500",
+          "ic50_unit": "ug/mL",
+          "ic50_converted": ">819 uM (MW 610.517 g/mol)",
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae",
+          "substrate": "pNPG",
+          "pH": 6.8,
+          "temperature_C": 37,
+          "citation": {
+            "authors": "He C, Liu X, Jiang Z, Geng S, Ma H, Liu B.",
+            "year": 2019,
+            "title": "Interaction Mechanism of Flavonoids and alpha-Glucosidase: Experimental and Molecular Modelling Studies",
+            "journal": "Foods",
+            "volume_pages": "8(9):355",
+            "doi": "10.3390/foods8090355",
+            "pmid": "31438605"
+          },
+          "quote": "Table 1 IC50 (ug/mL): Rutin >500 (weakest of the 15 flavonoids tested, alongside naringin, hesperidin, baicalin).",
+          "confidence": "high"
+        },
+        {
+          "ic50_value": 13.19,
+          "ic50_unit": "uM",
+          "ic50_sd": 1.10,
+          "enzyme_source": "not independently confirmed (full text blocked by login/CAPTCHA wall)",
+          "organism": "unconfirmed",
+          "citation": {
+            "authors": "Hong HC, Li SL, Zhang XQ, Ye WC, Zhang QW.",
+            "year": 2013,
+            "title": "Flavonoids with alpha-glucosidase inhibitory activities and their contents in the leaves of Morus atropurpurea",
+            "journal": "Chinese Medicine",
+            "volume_pages": "8:19",
+            "doi": "10.1186/1749-8546-8-19",
+            "pmcid": "PMC4016240"
+          },
+          "quote": "Rutin and astragalin showed high alpha-glucosidase inhibitory activities with IC50 values of 13.19 +/- 1.10 and 15.82 +/- 1.11 uM, respectively; acarbose positive control IC50 = 780.2 +/- 1.04 uM.",
+          "confidence": "medium"
+        }
+      ],
+      "note": "Rutin shows the widest cross-lab spread of any compound in this dataset: ~13 uM to >819 uM, roughly a 60-fold range. This is flagged explicitly in Caveats."
+    },
+    "Vitexin": {
+      "yeast_values": [
+        {
+          "ic50_value": 52.80,
+          "ic50_unit": "uM",
+          "ic50_sd": 1.65,
+          "enzyme_source": "likely yeast (docking performed against MAL12 active site of Saccharomyces cerevisiae per companion description) - not independently confirmed by direct fetch of the abstract text",
+          "organism": "unconfirmed by direct fetch",
+          "citation": {
+            "authors": "Ni M, Hu X, Gong D, Zhang G.",
+            "year": 2020,
+            "title": "Inhibitory mechanism of vitexin on alpha-glucosidase and its synergy with acarbose",
+            "journal": "Food Hydrocolloids",
+            "volume_pages": "105:105824",
+            "doi": "10.1016/j.foodhyd.2020.105824"
+          },
+          "quote": "Vitexin ... possessed a remarkably higher inhibitory activity than acarbose with its IC50 value of 52.80 +/- 1.65 uM.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 117.6,
+          "ic50_unit": "uM",
+          "ic50_sd": 3.6,
+          "enzyme_source": "likely yeast (pNPG protocol), organism not independently confirmed",
+          "citation": {
+            "authors": "Park MJ, Kang YH.",
+            "year": 2020,
+            "title": "Isolation of Isocoumarins and Flavonoids as alpha-Glucosidase Inhibitors from Agrimonia pilosa L.",
+            "journal": "Molecules",
+            "volume_pages": "25(11):2572",
+            "doi": "10.3390/molecules25112572"
+          },
+          "quote": "Table 2: Vitexin (7) 117.6 +/- 3.6 uM.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 50.11,
+          "ic50_unit": "uM",
+          "enzyme_source": "not independently confirmed",
+          "organism": "unconfirmed",
+          "citation": {
+            "authors": "Lv R, Liu J, Li S, Gong D, Wang L, Yuan X, Chen X, Li Y.",
+            "year": 2025,
+            "title": "Discovery of vitexin, isovitexin and catechin as hypoglycemic factors in mung bean via metabolomics combined with in vitro experiments",
+            "journal": "Food Production, Processing and Nutrition",
+            "volume_pages": "7:41",
+            "doi": "10.1186/s43014-025-00318-z"
+          },
+          "quote": "Vitexin inhibited alpha-glucosidase activity via an uncompetitive inhibition mechanism (IC50 = 50.11 uM), whereas isovitexin functioned through a competitive inhibition mechanism (IC50 = 116.14 uM).",
+          "confidence": "medium"
+        }
+      ]
+    },
+    "Isovitexin": {
+      "yeast_values": [
+        {
+          "ic50_value": 46.3,
+          "ic50_unit": "uM",
+          "ic50_sd": 1.7,
+          "enzyme_source": "likely yeast (pNPG protocol), organism not independently confirmed",
+          "citation": {
+            "authors": "Park MJ, Kang YH.",
+            "year": 2020,
+            "title": "Isolation of Isocoumarins and Flavonoids as alpha-Glucosidase Inhibitors from Agrimonia pilosa L.",
+            "journal": "Molecules",
+            "volume_pages": "25(11):2572",
+            "doi": "10.3390/molecules25112572"
+          },
+          "quote": "Compounds 1-8 exhibited significant dose-dependent AGI potential, with IC50 values of 24.2-117.6 uM. Table 2: Isovitexin (8) 46.3 +/- 1.7 uM.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 116.14,
+          "ic50_unit": "uM",
+          "enzyme_source": "not independently confirmed",
+          "organism": "unconfirmed",
+          "citation": {
+            "authors": "Lv R, Liu J, Li S, Gong D, Wang L, Yuan X, Chen X, Li Y.",
+            "year": 2025,
+            "title": "Discovery of vitexin, isovitexin and catechin as hypoglycemic factors in mung bean via metabolomics combined with in vitro experiments",
+            "journal": "Food Production, Processing and Nutrition",
+            "volume_pages": "7:41",
+            "doi": "10.1186/s43014-025-00318-z"
+          },
+          "quote": "isovitexin functioned through a competitive inhibition mechanism (IC50 = 116.14 uM).",
+          "confidence": "medium"
+        }
+      ],
+      "note": "Sparse as anticipated - only two independently-sourced yeast-assay values located, versus five or more for quercetin/luteolin."
+    },
+    "Spinosin": {
+      "yeast_values": [],
+      "not_found": true,
+      "note": "No alpha-glucosidase IC50 data of any kind (yeast, mammalian, or otherwise) could be located for spinosin after multiple targeted searches. Published spinosin literature concentrates on sedative/hypnotic, anxiolytic, neuroprotective, cardioprotective, and anti-melanogenic activity, and its pharmacokinetics; alpha-glucosidase inhibition does not appear to have been tested and reported in the accessible literature."
+    },
+    "Betulinic acid": {
+      "yeast_values": [
+        {
+          "ic50_value": 10.6,
+          "ic50_unit": "uM",
+          "ic50_as_reported": "(1.06 +/- 0.02) x 10^-5 mol/L",
+          "enzyme_source": "not explicitly stated in the retrievable abstract, but the same research group's companion 2018 paper on oleanolic/ursolic acid (Ding et al., Int J Biol Macromol) explicitly used Saccharomyces cerevisiae with an identical assay design",
+          "organism": "probable Saccharomyces cerevisiae, not independently confirmed for this specific paper",
+          "citation": {
+            "authors": "Ding H, Wu X, Pan J, Hu X, Gong D, Zhang G.",
+            "year": 2018,
+            "title": "New Insights into the Inhibition Mechanism of Betulinic Acid on alpha-Glucosidase",
+            "journal": "J Agric Food Chem",
+            "volume_pages": "66(27):7065-7075",
+            "doi": "10.1021/acs.jafc.8b02992",
+            "pmid": "29902001"
+          },
+          "quote": "Betulinic acid exhibited an IC50 of (1.06 +/- 0.02) x 10^-5 mol/L against alpha-glucosidase, demonstrating stronger inhibition of alpha-glucosidase than acarbose (mixed-type inhibition).",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 16.83,
+          "ic50_unit": "uM",
+          "ic50_sd": 1.16,
+          "enzyme_source": "yeast",
+          "organism": "yeast alpha-glucosidase (Sigma-Aldrich)",
+          "substrate": "pNPG, 2.5 mM",
+          "pH": 6.8,
+          "temperature_C": 37,
+          "citation": {
+            "authors": "Chen S, Lin B, Gu J, et al.",
+            "year": 2022,
+            "title": "Binding Interaction of Betulinic Acid to alpha-Glucosidase and Its Alleviation on Postprandial Hyperglycemia",
+            "journal": "Molecules",
+            "volume_pages": "27(8):2517",
+            "doi": "10.3390/molecules27082517",
+            "pmcid": "PMC9032457"
+          },
+          "quote": "Betulinic acid IC50 = 16.83 +/- 1.16 uM; acarbose IC50 = 841.3 +/- 29.6 uM (same assay), ~50-fold weaker.",
+          "confidence": "high"
+        }
+      ]
+    },
+    "Ursolic acid": {
+      "yeast_values": [
+        {
+          "ic50_value": 16.9,
+          "ic50_unit": "uM",
+          "ic50_as_reported": "(1.69 +/- 0.03) x 10^-5 mol/L",
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae (MeSH-indicated)",
+          "citation": {
+            "authors": "Ding H, Hu X, Xu X, Zhang G, Gong D.",
+            "year": 2018,
+            "title": "Inhibitory mechanism of two allosteric inhibitors, oleanolic acid and ursolic acid on alpha-glucosidase",
+            "journal": "Int J Biol Macromol",
+            "volume_pages": "107(Pt B):1844-1855",
+            "doi": "10.1016/j.ijbiomac.2017.10.040",
+            "pmid": "29030193"
+          },
+          "quote": "Ursolic acid: (1.69 +/- 0.03) x 10^-5 mol/L; oleanolic acid: (6.35 +/- 0.02) x 10^-6 mol/L. Reversible, non-competitive, allosteric binding.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 12.1,
+          "ic50_unit": "uM",
+          "ic50_sd": 1.0,
+          "enzyme_source": "not stated in abstract",
+          "organism": "unconfirmed",
+          "citation": {
+            "authors": "Zhang BW, Xing Y, Wen C, Yu XX, Sun WL, Xiu ZL, Dong YS.",
+            "year": 2017,
+            "title": "Pentacyclic triterpenes as alpha-glucosidase and alpha-amylase inhibitors: Structure-activity relationships and the synergism with acarbose",
+            "journal": "Bioorg Med Chem Lett",
+            "volume_pages": "27(22):5065-5070",
+            "doi": "10.1016/j.bmcl.2017.09.027",
+            "pmid": "28964635"
+          },
+          "quote": "Oleanolic acid: 35.6 +/- 2.6 uM; ursolic acid: 12.1 +/- 1.0 uM (against alpha-glucosidase).",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 5.08,
+          "ic50_unit": "uM",
+          "ic50_sd": 0.70,
+          "enzyme_source": "yeast",
+          "organism": "baker's yeast (Saccharomyces cerevisiae)",
+          "substrate": "pNPG, 1 mmol/L",
+          "pH": 6.8,
+          "temperature_C": 37,
+          "citation": {
+            "authors": "Wu PP, et al.",
+            "year": 2017,
+            "title": "Synthesis and biological evaluation of novel ursolic acid analogues as potential alpha-glucosidase inhibitors",
+            "journal": "Scientific Reports",
+            "volume_pages": "7:45578",
+            "doi": "10.1038/srep45578",
+            "pmcid": "PMC5372089"
+          },
+          "quote": "Native ursolic acid IC50 = 5.08 +/- 0.70 uM; acarbose (positive control) IC50 = 569.43 +/- 9.98 uM.",
+          "confidence": "high"
+        },
+        {
+          "ic50_value": 3.1,
+          "ic50_unit": "ug/mL",
+          "ic50_converted": "6.79 uM (MW 456.70 g/mol)",
+          "enzyme_source": "not stated in abstract",
+          "organism": "unconfirmed",
+          "citation": {
+            "authors": "Poongunran J, Perera HKI, Jayasinghe L, Fernando IT, Sivakanesan R, Araya H, Fujimoto Y.",
+            "year": 2017,
+            "title": "Bioassay-guided fractionation and identification of alpha-amylase inhibitors from Syzygium cumini leaves",
+            "journal": "Pharmaceutical Biology",
+            "volume_pages": "55(1):206-211",
+            "doi": "10.1080/13880209.2016.1257031",
+            "pmid": "27927056"
+          },
+          "quote": "Pure ursolic acid and oleanolic acid showed IC50 values of 6.7 and 57.4 ug/mL respectively against alpha-amylase and 3.1 and 44.1 ug/mL respectively against alpha-glucosidase.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 0.213,
+          "ic50_unit": "mg/mL",
+          "ic50_converted": "466.4 uM (MW 456.70 g/mol)",
+          "enzyme_source": "not stated in abstract",
+          "organism": "unconfirmed",
+          "citation": {
+            "authors": "Wang J, Zhao J, Yan Y, Liu D, Wang C, Wang H.",
+            "year": 2020,
+            "title": "Inhibition of glycosidase by ursolic acid: in vitro, in vivo and in silico study",
+            "journal": "J Sci Food Agric",
+            "volume_pages": "100(3):986-994",
+            "doi": "10.1002/jsfa.10098",
+            "pmid": "31650545"
+          },
+          "quote": "The half-maximal inhibitory concentration (IC50) of ursolic acid on alpha-amylase and alpha-glucosidase was 0.482 +/- 0.12 mg/mL and 0.213 +/- 0.042 mg/mL, respectively.",
+          "confidence": "medium"
+        }
+      ],
+      "note": "Ursolic acid shows an approximately 90-fold spread across labs (5.08 uM to 466.4 uM), comparable in magnitude to the spread seen for rutin. Enzyme organism is confirmed yeast in only two of five sources."
+    },
+    "Oleanolic acid": {
+      "yeast_values": [
+        {
+          "ic50_value": 6.35,
+          "ic50_unit": "uM",
+          "ic50_as_reported": "(6.35 +/- 0.02) x 10^-6 mol/L",
+          "enzyme_source": "yeast",
+          "organism": "Saccharomyces cerevisiae (MeSH-indicated)",
+          "citation": {
+            "authors": "Ding H, Hu X, Xu X, Zhang G, Gong D.",
+            "year": 2018,
+            "title": "Inhibitory mechanism of two allosteric inhibitors, oleanolic acid and ursolic acid on alpha-glucosidase",
+            "journal": "Int J Biol Macromol",
+            "volume_pages": "107(Pt B):1844-1855",
+            "doi": "10.1016/j.ijbiomac.2017.10.040",
+            "pmid": "29030193"
+          },
+          "quote": "Oleanolic acid: (6.35 +/- 0.02) x 10^-6 mol/L.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 35.6,
+          "ic50_unit": "uM",
+          "ic50_sd": 2.6,
+          "enzyme_source": "not stated in abstract",
+          "organism": "unconfirmed",
+          "citation": {
+            "authors": "Zhang BW, Xing Y, Wen C, Yu XX, Sun WL, Xiu ZL, Dong YS.",
+            "year": 2017,
+            "title": "Pentacyclic triterpenes as alpha-glucosidase and alpha-amylase inhibitors: Structure-activity relationships and the synergism with acarbose",
+            "journal": "Bioorg Med Chem Lett",
+            "volume_pages": "27(22):5065-5070",
+            "doi": "10.1016/j.bmcl.2017.09.027",
+            "pmid": "28964635"
+          },
+          "quote": "Oleanolic acid: 35.6 +/- 2.6 uM.",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 10.11,
+          "ic50_unit": "uM",
+          "ic50_sd": 0.30,
+          "enzyme_source": "not stated",
+          "organism": "unconfirmed",
+          "citation": {
+            "authors": "Castellano JM, Guinda A, Macias L, Santos-Lozano JM, Lapetra J, Rada M.",
+            "year": 2016,
+            "title": "Free radical scavenging and alpha-glucosidase inhibition, two potential mechanisms involved in the anti-diabetic activity of oleanolic acid",
+            "journal": "Grasas y Aceites",
+            "volume_pages": "67(3):e142",
+            "doi": "10.3989/gya.1237153"
+          },
+          "quote": "OA may capture ABTS and peroxyl radicals, and exert a strong and non-competitive inhibition of alpha-glucosidase (IC50 10.11 +/- 0.30 uM).",
+          "confidence": "medium"
+        },
+        {
+          "ic50_value": 44.1,
+          "ic50_unit": "ug/mL",
+          "ic50_converted": "96.6 uM (MW 456.70 g/mol)",
+          "enzyme_source": "not stated in abstract",
+          "organism": "unconfirmed",
+          "citation": {
+            "authors": "Poongunran J, Perera HKI, Jayasinghe L, Fernando IT, Sivakanesan R, Araya H, Fujimoto Y.",
+            "year": 2017,
+            "title": "Bioassay-guided fractionation and identification of alpha-amylase inhibitors from Syzygium cumini leaves",
+            "journal": "Pharmaceutical Biology",
+            "volume_pages": "55(1):206-211",
+            "doi": "10.1080/13880209.2016.1257031",
+            "pmid": "27927056"
+          },
+          "quote": "Pure ursolic acid and oleanolic acid ... IC50 values of ... 3.1 and 44.1 ug/mL respectively, against alpha-glucosidase.",
+          "confidence": "medium"
+        }
+      ],
+      "note": "Approximately 15-fold spread across labs (6.35 to 96.6 uM)."
+    }
+  },
+  "discarded_uncitable_values": [
+    {
+      "compound": "Rutin",
+      "claimed_value": "0.037 uM",
+      "reason": "A search-engine summary asserted this value ('Rutin had a stronger inhibition of alpha-glucosidase (IC50 = 0.037 uM) activities than quercetin') but no specific paper could be attributed to it after follow-up searching. Given it is roughly 350x more potent than every other rutin value found, and could not be traced to a retrievable primary source, it is excluded per the no-invention rule rather than reported."
+    },
+    {
+      "compound": "Acarbose",
+      "claimed_value": "177.47 ug/mL and 200 ug/mL",
+      "reason": "Appeared only in an unattributed search-engine synthesis ('acarbose exhibited 50% inhibition of yeast enzyme activity at the concentration of 177.47 +/- 6.28 ug/mL and 200 ug/mL'); no specific source paper could be identified on follow-up. Excluded."
+    },
+    {
+      "compound": "Isovitexin",
+      "claimed_value": "68.71 ug/mL",
+      "reason": "Appeared only in an unattributed search-engine synthesis with no traceable source paper. Excluded."
+    },
+    {
+      "compound": "Quercetin",
+      "claimed_value": "4.80 ug/mL",
+      "reason": "Search summary stated this appears 'in multiple research studies' without identifying a specific one. Could not be traced to a single citable paper on follow-up. Excluded."
+    }
+  ]
+}

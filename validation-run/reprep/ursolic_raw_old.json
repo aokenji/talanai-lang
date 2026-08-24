@@ -1,0 +1,13 @@
+{
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\receptor_clean.pdb --ligand D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\ligands\\ursolic.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 8 --num_modes 9 --energy_range 3 --seed 42 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\reprep\\ursolic_raw_old.pdbqt",
+  "exhaustiveness": 8,
+  "ligand": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\ligands\\ursolic.pdbqt",
+  "pose_file": "D:\\THESIS_VSC\\talanai-lang\\validation-run\\reprep\\ursolic_raw_old.pdbqt",
+  "rank1_score_kcal_mol": -9.097,
+  "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\receptor_clean.pdb",
+  "returncode": 0,
+  "seconds": 41.7,
+  "seed": 42,
+  "tag": "ursolic_raw_old",
+  "talanai_version": "0.1.0"
+}

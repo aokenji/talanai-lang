@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+
+# validation-run/ and validation-inputs/ are deliberately NOT ignored.
+# They are the evidence base: src/data/protocol.js cites run records by path
+# ("run records in validation-run/full-screen/"), and a claim whose evidence is
+# untracked is a claim nobody can check. ~9 MB total, small enough for plain git.
