@@ -24,21 +24,18 @@ keywords:
   - alpha-glucosidase
   - Ziziphus
 
-# LICENCE IS DELIBERATELY UNSET, and needs a decision before any release.
-#
-# TalanaiHub's site content is CC BY 4.0, which is right for data and prose and
-# wrong for software: it is not an OSI-approved open source licence. The Journal
-# of Open Source Software, the most realistic venue for a tools paper on this,
-# requires an OSI-approved licence. The usual split is code under MIT or
-# Apache-2.0 with data and content staying CC BY 4.0.
-#
-# Add `license: MIT` (or Apache-2.0) here and a matching LICENSE file before
-# minting a DOI.
+license: MIT
+repository-code: "https://github.com/aokenji/talanai-lang"
 
-# REPOSITORY AND DOI ARE UNSET FOR THE SAME REASON.
+# MIT covers the software. TalanaiHub's data and prose stay CC BY 4.0, and the
+# run records under validation-run/ are research data under those terms. CC BY
+# is right for data and wrong for software: it is not OSI-approved, and JOSS
+# requires one. See LICENSE for the scope note.
+
+# DOI IS STILL UNSET, deliberately.
 #
-# Per the 2026-08-20 publication decision, the Zenodo software DOI should be
-# minted through the GitHub integration off a release tag, and only AFTER the
-# language has driven a real run. A Zenodo record is permanent, so releasing a
-# tool in its weakest state makes that state the first citable artefact. Fill in
-# repository-code, and doi once minted.
+# Per the 2026-08-20 publication decision the Zenodo software DOI is minted
+# through the GitHub integration off a release tag, and only AFTER the language
+# has driven a real run. It now has: run_replication.py produced the 2026-08-25
+# convergence test. A Zenodo record is permanent, so the tag should be cut when
+# the repository is in a state worth citing forever. Add `doi:` once minted.
