@@ -140,15 +140,20 @@ replication
   rerun     Oleanolic_Acid   -7.591
   rerun     Acarbose         -8.626
   note      Every compound replicated inside 0.015 kcal/mol, with seed spreads
-            of 0.014 to 0.029. The reference did not. Acarbose came back at
-            -8.720, -8.708 and -8.449 on the three new seeds, a spread of
-            0.271, against the 0.010 recorded for it on seeds 42/43/44. That is
-            27 times wider, and the widest in the set by a factor of nine.
-            Read plainly: acarbose's apparent convergence on the published
-            seeds was luck, not convergence, and it is the largest and most
-            flexible ligand here at 46 heavy atoms. Any margin against acarbose
-            narrower than roughly 0.27 kcal/mol therefore sits inside the
-            reference's own search noise, which includes Ursolic Acid at 0.070,
-            Isovitexin at 0.057 and Quercetin at 0.112. This is one additional
-            three-seed sample and not a variance estimate; acarbose needs more
-            seeds before any narrow margin against it is quoted as a result.
+            of 0.014 to 0.029. Acarbose looked like an exception, returning
+            -8.720, -8.708 and -8.449 for a spread of 0.271 against the 0.010
+            recorded on seeds 42/43/44. That reading was wrong, and the way it
+            was wrong is worth keeping. A sweep to twelve seeds
+            (run_acarbose_seeds.py, 2026-08-25) shows eleven of them landing at
+            a mean of -8.711 with a spread of 0.021, in line with every other
+            compound and within 0.005 of the published -8.706. One seed, 47,
+            came in at -8.449. So this is not wide variance, it is an
+            occasional SEARCH FAILURE at a rate of 1 in 12: exhaustiveness 32
+            usually finds the basin for this ligand and sometimes does not. The
+            distinction matters because the noise floor for margins against the
+            reference is the basin spread of 0.021, not the 0.271 that one miss
+            produces. Ursolic Acid at 0.070, Isovitexin at 0.057 and Quercetin
+            at 0.112 all clear it. What the failure rate does argue is against
+            trusting a small number of seeds: three seeds have roughly a one in
+            four chance of containing a miss, and a miss moves the reference by
+            0.26, which is larger than any of those margins.

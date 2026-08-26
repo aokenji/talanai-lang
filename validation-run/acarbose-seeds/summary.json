@@ -1,0 +1,35 @@
+{
+  "basin_mean_kcal_mol": -8.711,
+  "basin_n": 11,
+  "basin_spread_kcal_mol": 0.021,
+  "best_kcal_mol": -8.72,
+  "date": "2026-08-27",
+  "does_not_change": "no published value is altered by this run; src/data/compounds.js is untouched",
+  "full_spread_kcal_mol": 0.271,
+  "miss_rate": "1/12",
+  "miss_seeds": [
+    47
+  ],
+  "miss_threshold_kcal_mol": 0.1,
+  "miss_threshold_note": "this project's run-to-run convention, used as a did-not-reach-the-same-answer threshold, not a published Vina precision figure",
+  "n_seeds": 12,
+  "not_validated": "the redocking gate does not pass; this measures search behaviour, not pose accuracy",
+  "published_kcal_mol": -8.706,
+  "published_spread_kcal_mol": 0.01,
+  "question": "is the wide replication spread scatter, or an occasional search failure?",
+  "seeds": {
+    "42": -8.7,
+    "43": -8.71,
+    "44": -8.708,
+    "45": -8.72,
+    "46": -8.708,
+    "47": -8.449,
+    "48": -8.714,
+    "49": -8.718,
+    "50": -8.714,
+    "51": -8.699,
+    "52": -8.718,
+    "53": -8.711
+  },
+  "what": "acarbose seed sweep at exhaustiveness 32"
+}
