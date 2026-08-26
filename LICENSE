@@ -19,18 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Scope note. This MIT licence covers the SOFTWARE in this repository: the
-Talanai language, its validator and the scripts that run it.
-
-It does not change the licence of the scientific content it describes.
-TalanaiHub's data and prose remain CC BY 4.0. The run records under
-validation-run/ and validation-inputs/ are research data belonging to the
-Ziziphus alpha-glucosidase study and are distributed here as the evidence
-behind the rules, under that study's CC BY 4.0 terms.
-
-The split is deliberate: CC BY 4.0 is right for data and wrong for software,
-being not an OSI-approved open source licence, and the Journal of Open Source
-Software requires one.
