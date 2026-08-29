@@ -29,14 +29,25 @@ from talanai import chem                          # noqa: E402
 COMPOUNDS_JS = r"D:\BALAKATDBV2\src\data\compounds.js"
 EXPERIMENT = os.path.join(ROOT, "examples", "alpha-glucosidase.tal")
 
-EXPECTED = {
-    "Rutin": -8.857,
-    "Betulinic Acid": -8.290,
-    "Quercetin": -7.503,
-    "Kaempferol": -7.479,
-    "Oleanolic Acid": -6.922,
-    "Acarbose": -6.660,
-}
+# The compounds this experiment file must cover. Their values are deliberately
+# NOT listed here: they are read from compounds.js at run time, which is the
+# whole point of this test. A literal table of affinities sitting beside the
+# canonical dataset is a second copy of it, and the second copy is the one that
+# goes stale.
+#
+# This file used to pin the May 2026 affinities (Rutin -8.857, Acarbose -6.660,
+# and so on) and went on asserting them after three corrections had superseded
+# them, while the docstring above claimed the numbers were never typed in here.
+# The withdrawn values are preserved on purpose, in TalanaiHub's REPRODUCIBILITY
+# record and in the Zenodo deposit. They do not belong in a live assertion.
+REQUIRED = [
+    "Rutin",
+    "Betulinic Acid",
+    "Quercetin",
+    "Kaempferol",
+    "Oleanolic Acid",
+    "Acarbose",
+]
 
 
 def read_compounds_js(path):
@@ -59,6 +70,7 @@ def read_compounds_js(path):
 
 def main():
     failures = []
+    incomplete = False
     print("")
     print("  Talanai acceptance test")
     print("  experiment : %s" % os.path.relpath(EXPERIMENT, ROOT))
@@ -71,21 +83,22 @@ def main():
     efficiencies = {n.replace("_", " "): v
                     for n, v in experiment.ligand_efficiencies().items()}
 
-    # 1. every expected compound is present, with the thesis value
-    print("    %-18s %10s %10s %9s  %s"
-          % ("compound", "expected", "in .tal", "per atom", ""))
-    for name, expected in sorted(EXPECTED.items(), key=lambda kv: kv[1]):
+    # 1. coverage: every required compound is present in the experiment file.
+    #    Values are not checked here. Section 2 checks them, against the
+    #    canonical dataset rather than against a copy of it.
+    print("    %-18s %10s %9s  %s"
+          % ("compound", "in .tal", "per atom", ""))
+    for name in REQUIRED:
         got = affinities.get(name)
         efficiency = efficiencies.get(name)
-        ok = got is not None and abs(got - expected) < 1e-9
-        print("    %-18s %10.3f %10s %9s  %s"
-              % (name, expected,
+        print("    %-18s %10s %9s  %s"
+              % (name,
                  "%.3f" % got if got is not None else "MISSING",
                  "%.3f" % efficiency if efficiency else "-",
-                 "ok" if ok else "FAIL"))
-        if not ok:
-            failures.append("%s: expected %.3f, file has %s"
-                            % (name, expected, got))
+                 "ok" if got is not None else "FAIL"))
+        if got is None:
+            failures.append("%s is required but absent from the experiment file"
+                            % name)
 
     # 2. the same values, read live from the canonical dataset
     print("")
@@ -113,7 +126,9 @@ def main():
                     continue
             print("    %-18s matches compounds.js               ok" % name)
     else:
-        print("    compounds.js not found, live comparison skipped")
+        incomplete = True
+        print("    compounds.js is not reachable at that path.")
+        print("    Coverage was checked. No affinity was verified.")
 
     # 3. ligand efficiency inverts the ranking, which is the point of column 4
     print("")
@@ -134,6 +149,12 @@ def main():
         for item in failures:
             print("    %s" % item)
         return 1
+    if incomplete:
+        # Not a pass. Nothing was compared against the canonical dataset, and a
+        # test that verifies nothing must not print the word that means it did.
+        print("  INCOMPLETE. Coverage passed, but the canonical dataset was out")
+        print("  of reach, so no affinity was checked against it.")
+        return 2
     print("  PASSED. The experiment file matches compounds.js exactly.")
     return 0
 

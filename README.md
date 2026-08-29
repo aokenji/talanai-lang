@@ -34,8 +34,11 @@ python tests/test_rules.py
 python tests/acceptance.py
 ```
 
-On the thesis protocol, `check` currently **refuses**, on R106. That is the
-tool working.
+On the thesis protocol as it stood in May 2026, `check` **refused**, on R106.
+After the three corrections of August 2026 it **accepts**, with one warning and
+two recorded items. Both outcomes are the tool working: the refusal is what it
+is for, and the acceptance is what closing the finding looks like. The findings
+and their closures are listed below rather than quietly dropped.
 
 ## The five commands
 
@@ -118,25 +121,41 @@ executes local Vina offline and never contacts the Hugging Face Space.
 `tal control` does not yet run the control itself; it locates Vina and tells
 you what to record. That is the next thing to build.
 
-## Open items in the thesis protocol
+## What the validator found, and what closed it
 
 Found by running the validator against the real files, not by reading them.
+Every blocking finding below is now closed. They are kept on the page because a
+tool that only ever shows its clean state is not evidence of anything.
 
-1. **R106, blocking.** The redocking control in
-   `docking_data/validation/validation.json` was run on the **Meeko-prepared**
-   receptor, in an 18 Å box, at exhaustiveness 16. The screen ran on the **raw
-   cleaned** receptor (`receptor_clean.pdb`, which `SOURCES.md` calls the file
-   "used as the thesis ran it"), in a 30 Å box, at exhaustiveness 8. The
-   control therefore validates a protocol that is not the screening protocol,
-   in exactly the dimension this project already learned changes the number.
-   Redocking once on the screening receptor would close it.
-2. **R401, R501.** Exhaustiveness 8 on a 30 Å cube, single seed. The
-   2026-07-31 replication was same-seed, so it demonstrates pipeline fidelity
-   rather than search convergence. A three-seed run answers the other question.
-3. **R702.** Ligand efficiency inverts the ranking. Rutin wins on raw score
-   and finishes last of the five per heavy atom; Kaempferol leads. Everything
-   still beats acarbose on both measures, so the conclusion holds, but the
-   panel will ask.
+1. **R106, was blocking, closed 2026-08-04.** The redocking control in
+   `docking_data/validation/validation.json` had been run on the
+   **Meeko-prepared** receptor, in an 18 Å box, at exhaustiveness 16. The screen
+   ran on the **raw cleaned** receptor (`receptor_clean.pdb`, which `SOURCES.md`
+   calls the file "used as the thesis ran it"), in a 30 Å box, at exhaustiveness
+   8. The control therefore validated a protocol that was not the screening
+   protocol, in exactly the dimension this project had already learned changes
+   the number. Closed by moving the screen onto the Meeko-prepared receptor,
+   one of the three variables in the 2026-08-04 correction.
+2. **R401, R501, closed 2026-08-04.** Exhaustiveness 8 on a 30 Å cube, single
+   seed, with a same-seed replication that demonstrated pipeline fidelity rather
+   than search convergence. Closed by re-running at exhaustiveness 32 across
+   seeds 42/43/44 and carrying the per-compound spread as data.
+3. **R702, standing, and not a defect.** Ligand efficiency inverts the ranking.
+   Rutin wins on raw score and finishes last of the five per heavy atom;
+   Kaempferol leads. On raw score three of the five beat acarbose and two do
+   not; per heavy atom all five do. The panel will ask.
+
+Still open on the current file, and correctly so:
+
+- **WARN R104.** The control ran in a tighter box than the screen. Focused-box
+  redocking is standard and asks an easier question, so it is flagged rather
+  than refused: no reader should assume the RMSD validates the screening search.
+- **RECORD R306.** Whether the pose contacts the catalytic site is UNVERIFIED.
+  The redocking gate is self-docking biased, and an independently built
+  conformer of the same molecule misses by 5.9 Å. This protocol ranks
+  compounds; it does not place them, and no pose-level claim rests on it.
+- **RECORD RA01.** The replication used different seeds, which is the only way
+  replicating a deterministic pipeline measures anything at all.
 
 ## Reconcile
 
