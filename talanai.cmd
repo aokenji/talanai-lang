@@ -1,5 +1,5 @@
 @echo off
-rem Talanai exhibit demo for Windows. Just run: demo
+rem Talanai exhibit demo for Windows. Just run: talanai
 rem Four beats, no network and no engine needed. See tools/demo.py.
 rem Uses TalanaiDock's bundled interpreter when TALANAI_PYTHON points at it.
 if defined TALANAI_PYTHON (
