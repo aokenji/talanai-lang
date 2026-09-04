@@ -40,12 +40,27 @@ import time
 from . import __version__ as TALANAI_VERSION
 
 
+# AutoDock atom types are not element symbols. Most read correctly from their
+# first character, including the hydrogen-bond ACCEPTOR types 'OA', 'NA' and
+# 'SA', which mean acceptor oxygen, nitrogen and sulfur and NOT sodium. Three
+# do not, and taking the first character of those is wrong:
+#
+#   A     AROMATIC CARBON. Read as element 'A' it matches nothing in a crystal
+#         reference, so rmsd() falls through to case 3, finds no reference atom
+#         of that element and returns no value at all. Every aromatic ligand is
+#         affected: ten of the fifteen prepared ligands in this study carry
+#         'A', and the only ligand ever redocked, alpha-D-glucopyranose, is one
+#         of the five that does not. That is why this never surfaced in a run.
+#   Cl    read as 'C', which let a chlorine pair against a carbon in case 3.
+#   Br    read as 'B'.
+_ELEMENT_OVERRIDES = {"A": "C", "CL": "CL", "BR": "BR"}
+
+
 def _element(name, kind):
     """Element symbol from a PDB atom name or an AutoDock type. 'OA' -> O."""
     kind = (kind or "").strip()
     if kind and kind[0].isalpha():
-        return kind[0].upper() if len(kind) == 1 or kind[1].islower() is False \
-            else kind[:1].upper()
+        return _ELEMENT_OVERRIDES.get(kind.upper(), kind[0].upper())
     name = (name or "").strip()
     return name[:1].upper() if name else "?"
 
