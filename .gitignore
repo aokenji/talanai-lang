@@ -13,3 +13,7 @@ __pycache__/
 # shards were pulled in library_manifest.json. The manifest is the reproducible
 # artefact; the bytes are not worth a repository.
 validation-inputs/enrichment/zinc_library.smi
+
+# The enrichment run log. Reproducible by rerunning; the run RECORDS under
+# validation-run/enrichment/ are the evidence, not the console transcript.
+enrichment_run.log

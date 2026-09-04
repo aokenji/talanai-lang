@@ -58,6 +58,10 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
+from rdkit import Chem, RDLogger                 # noqa: E402
+from rdkit.Chem import AllChem                    # noqa: E402
+RDLogger.DisableLog("rdApp.*")
+
 from talanai import control as tal_control       # noqa: E402
 import prep_ringaware as ringaware               # noqa: E402
 
@@ -93,6 +97,18 @@ def prepare(smiles, stem, confs):
         return path, cached["all_chairs"], cached["note"]
 
     os.makedirs(os.path.dirname(path), exist_ok=True)
+
+    # Cheap feasibility check FIRST. prepare_ring_aware embeds `confs`
+    # conformers, and on a molecule RDKit cannot embed at all it grinds through
+    # every one of them before raising: one ZINC decoy sat there for over
+    # eleven minutes before failing. A single capped attempt answers the same
+    # question in about a second, so an impossible ligand costs a second rather
+    # than a quarter of an hour.
+    probe = Chem.AddHs(Chem.MolFromSmiles(smiles) or Chem.Mol())
+    if probe.GetNumAtoms() == 0 or AllChem.EmbedMolecule(
+            probe, randomSeed=0xF00D, maxAttempts=50) != 0:
+        raise RuntimeError("RDKit cannot embed this molecule (probe failed)")
+
     result = ringaware.prepare_ring_aware(smiles, confs)
     thetas = result["thetas"]
     chairs = ringaware.all_chairs(thetas) if thetas else True
@@ -228,13 +244,33 @@ def main():
     # prepare() caches to disk, so nothing is repeated across runs.
     print("  DOCKING  (ligands are prepared as they come up)")
     print("  " + "-" * 74)
-    done_now, elapsed, not_chairs = 0, 0.0, []
+    done_now, elapsed, not_chairs, skipped = 0, 0.0, [], []
     for i, item in enumerate(work, 1):
         record_path = os.path.join(OUT, item["tag"] + ".json")
         if os.path.isfile(record_path):
             continue
 
-        path, chairs, note = prepare(item["smiles"], item["tag"], CONFORMERS)
+        # A molecule RDKit cannot embed is a molecule that leaves the
+        # benchmark, not a reason to lose the other 170. One ZINC decoy raised
+        # "embedding produced no conformers" and took a whole overnight run
+        # with it. Record the failure so the count stays auditable, and carry
+        # on. An ACTIVE failing here is different and is shouted about: the
+        # active set is only nine, and losing one silently would matter.
+        try:
+            path, chairs, note = prepare(item["smiles"], item["tag"], CONFORMERS)
+        except Exception as error:                       # noqa: BLE001
+            with open(record_path, "w", encoding="utf-8") as handle:
+                json.dump({"tag": item["tag"], "role": item["role"],
+                           "name": item["name"], "smiles": item["smiles"],
+                           "error": "preparation failed: %s: %s"
+                                    % (type(error).__name__, error),
+                           "excluded_from_benchmark": True},
+                          handle, indent=2, sort_keys=True)
+            skipped.append((item["role"], item["tag"]))
+            print("    [%4d/%4d] %-34s PREP FAILED  %s%s"
+                  % (i, len(work), item["tag"][:34], type(error).__name__,
+                     "   <-- AN ACTIVE" if item["role"] == "active" else ""))
+            continue
         item["extra"]["all_chairs"] = chairs
         item["extra"]["ring_note"] = note
         if not chairs:
@@ -259,6 +295,20 @@ def main():
             break
 
     print("")
+    if skipped:
+        actives_lost = [t for role, t in skipped if role == "active"]
+        print("  %d ligand(s) could not be prepared and are excluded from the"
+              % len(skipped))
+        print("  benchmark. Each has a record saying why, so the decoy count")
+        print("  stays auditable rather than quietly shrinking.")
+        if actives_lost:
+            print("")
+            print("  *** %d of these were ACTIVES: %s"
+                  % (len(actives_lost), ", ".join(actives_lost)))
+            print("  *** The active set is only nine. Losing one changes what")
+            print("  *** this benchmark can resolve. Do not report the result")
+            print("  *** without saying so.")
+        print("")
     if not_chairs:
         print("  %d ligand(s) this session could not be given all-chair rings."
               % len(not_chairs))
