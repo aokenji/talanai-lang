@@ -208,57 +208,71 @@ def main():
     print("  %d already recorded, %d to go" % (already, len(work) - already))
     print("")
 
-    print("  STEP 1  ring-aware preparation")
+    if args.prep_only:
+        print("  PREPARING EVERY LIGAND  (--prep-only)")
+        print("  " + "-" * 74)
+        not_chairs = []
+        for i, item in enumerate(work, 1):
+            _path, chairs, _note = prepare(item["smiles"], item["tag"], CONFORMERS)
+            if not chairs:
+                not_chairs.append(item["tag"])
+            if i % 25 == 0 or i == len(work):
+                print("    prepared %d / %d" % (i, len(work)))
+        print("")
+        print("    %d of %d could not be given all-chair rings."
+              % (len(not_chairs), len(work)))
+        return
+
+    # Preparation is LAZY, done immediately before each docking, so that
+    # --limit 3 costs three preparations rather than a hundred and eighty.
+    # prepare() caches to disk, so nothing is repeated across runs.
+    print("  DOCKING  (ligands are prepared as they come up)")
     print("  " + "-" * 74)
-    not_chairs = []
+    done_now, elapsed, not_chairs = 0, 0.0, []
     for i, item in enumerate(work, 1):
+        record_path = os.path.join(OUT, item["tag"] + ".json")
+        if os.path.isfile(record_path):
+            continue
+
         path, chairs, note = prepare(item["smiles"], item["tag"], CONFORMERS)
-        item["path"] = path
         item["extra"]["all_chairs"] = chairs
         item["extra"]["ring_note"] = note
         if not chairs:
             not_chairs.append(item["tag"])
-        if i % 25 == 0 or i == len(work):
-            print("    prepared %d / %d" % (i, len(work)))
-    if not_chairs:
-        print("")
-        print("    %d ligand(s) could not be given all-chair rings." % len(not_chairs))
-        print("    They are still docked. analyze_enrichment.py reports the")
-        print("    result with and without them, because a decoy handed a bad")
-        print("    ring is a decoy that was set up to lose.")
 
-    if args.prep_only:
-        print("")
-        print("  --prep-only, stopping before docking.")
-        return
-
-    print("")
-    print("  STEP 2  docking")
-    print("  " + "-" * 74)
-    done_now = 0
-    elapsed = 0.0
-    for i, item in enumerate(work, 1):
-        record, cached = dock(item["path"], item["tag"], item["role"],
-                              item["name"], item["extra"])
-        if cached:
-            continue
+        record, _cached = dock(path, item["tag"], item["role"], item["name"],
+                               item["extra"])
         done_now += 1
         elapsed += record.get("seconds", 0)
         score = record.get("rank1_score_kcal_mol")
         remaining = len(work) - i
-        eta = (elapsed / done_now) * remaining / 3600 if done_now else 0
-        print("    [%4d/%4d] %-34s %8s  %5.0fs   eta %4.1f h"
+        eta = (elapsed / done_now) * remaining / 3600
+        print("    [%4d/%4d] %-34s %8s  %5.0fs   eta %4.1f h  %s"
               % (i, len(work), item["tag"][:34],
                  ("%.3f" % score) if score is not None else "FAILED",
-                 record.get("seconds", 0), eta))
+                 record.get("seconds", 0), eta, note))
         if args.limit and done_now >= args.limit:
             print("")
-            print("    --limit of %d reached, stopping. Rerun to continue."
+            print("    --limit of %d reached. Rerun without it to continue;"
                   % args.limit)
+            print("    everything already recorded is skipped.")
             break
 
     print("")
-    print("  %d new dockings this session. Records in %s" % (done_now, OUT))
+    if not_chairs:
+        print("  %d ligand(s) this session could not be given all-chair rings."
+              % len(not_chairs))
+        print("  They are docked anyway. analyze_enrichment.py reports the")
+        print("  result with and without them, because a ligand handed a")
+        print("  strained ring was set up to lose.")
+        print("")
+    if done_now:
+        print("  %d dockings this session, %.1f s each on average."
+              % (done_now, elapsed / done_now))
+        print("  Projected for the remaining %d: %.1f hours."
+              % (len(work) - done_now,
+                 (elapsed / done_now) * (len(work) - done_now) / 3600))
+    print("  Records in %s" % OUT)
     print("  Next: python analyze_enrichment.py")
     print("")
 

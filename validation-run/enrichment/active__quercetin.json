@@ -1,0 +1,32 @@
+{
+  "all_chairs": true,
+  "box_center": [
+    "21.52",
+    "-7.7",
+    "23.55"
+  ],
+  "box_size": [
+    "30",
+    "30",
+    "30"
+  ],
+  "command": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\vina.exe --receptor D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt --ligand D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\enrichment\\ligands\\active__quercetin.pdbqt --center_x 21.52 --center_y -7.7 --center_z 23.55 --size_x 30 --size_y 30 --size_z 30 --exhaustiveness 32 --num_modes 9 --energy_range 3 --seed 42 --cpu 4 --out D:\\THESIS_VSC\\talanai-lang\\validation-run\\enrichment\\poses\\active__quercetin.pdbqt",
+  "conformers_embedded": 150,
+  "exhaustiveness": 32,
+  "ligand": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\enrichment\\ligands\\active__quercetin.pdbqt",
+  "n_yeast_ic50_sources": 4,
+  "name": "Quercetin",
+  "pose_file": "D:\\THESIS_VSC\\talanai-lang\\validation-run\\enrichment\\poses\\active__quercetin.pdbqt",
+  "preparation": "ring-aware conformer selection, meeko",
+  "pubchem_cid": 5280343,
+  "rank1_score_kcal_mol": -8.38,
+  "receptor": "D:\\THESIS_VSC\\BALAKATDBV2\\talanaidock\\dist\\TalanaiDock\\app\\docking_assets\\docking_data\\prepared\\receptor.pdbqt",
+  "returncode": 0,
+  "ring_note": "no saturated six-ring",
+  "role": "active",
+  "scope": "Enrichment run. The redocking gate does not pass for this protocol, so this is a claim about score separation only, never about pose.",
+  "seconds": 58.0,
+  "seed": 42,
+  "tag": "active__quercetin",
+  "validated": false
+}

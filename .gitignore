@@ -6,3 +6,10 @@ __pycache__/
 # They are the evidence base: src/data/protocol.js cites run records by path
 # ("run records in validation-run/full-screen/"), and a claim whose evidence is
 # untracked is a claim nobody can check. ~9 MB total, small enough for plain git.
+
+# The ZINC decoy source library is the one exception to the rule above. It is
+# ~126 MB, it is not evidence, and it is not ours: it is a slice of ZINC20
+# fetched by fetch_decoy_library.py, which records exactly which tranches and
+# shards were pulled in library_manifest.json. The manifest is the reproducible
+# artefact; the bytes are not worth a repository.
+validation-inputs/enrichment/zinc_library.smi

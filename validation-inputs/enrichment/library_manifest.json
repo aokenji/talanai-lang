@@ -1,0 +1,292 @@
+{
+  "actives_property_space": [
+    {
+      "logp": 1.99,
+      "mw": 302.24,
+      "name": "Quercetin",
+      "tranche": "DD"
+    },
+    {
+      "logp": -1.69,
+      "mw": 610.52,
+      "name": "Rutin",
+      "tranche": "KA"
+    },
+    {
+      "logp": 2.28,
+      "mw": 286.24,
+      "name": "Kaempferol",
+      "tranche": "CE"
+    },
+    {
+      "logp": 7.09,
+      "mw": 456.71,
+      "name": "Betulinic Acid",
+      "tranche": "JK"
+    },
+    {
+      "logp": 7.23,
+      "mw": 456.71,
+      "name": "Oleanolic Acid",
+      "tranche": "JK"
+    },
+    {
+      "logp": 2.28,
+      "mw": 286.24,
+      "name": "Luteolin",
+      "tranche": "CE"
+    },
+    {
+      "logp": 0.09,
+      "mw": 432.38,
+      "name": "Vitexin",
+      "tranche": "IC"
+    },
+    {
+      "logp": 0.09,
+      "mw": 432.38,
+      "name": "Isovitexin",
+      "tranche": "IC"
+    },
+    {
+      "logp": 7.09,
+      "mw": 456.71,
+      "name": "Ursolic Acid",
+      "tranche": "JK"
+    }
+  ],
+  "caveat": "Decoys are PRESUMED inactive. Any genuine active in here counts as a false positive and lowers the measured enrichment, so this cannot inflate the result.",
+  "library_file": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\enrichment\\zinc_library.smi",
+  "shards_fetched": [
+    {
+      "bytes": 2066824,
+      "molecules": 52160,
+      "shard": "BDAA.smi",
+      "tranche": "BD"
+    },
+    {
+      "bytes": 1229429,
+      "molecules": 31901,
+      "shard": "BEAA.smi",
+      "tranche": "BE"
+    },
+    {
+      "bytes": 1006762,
+      "molecules": 26674,
+      "shard": "BFAA.smi",
+      "tranche": "BF"
+    },
+    {
+      "bytes": 2092422,
+      "molecules": 42639,
+      "shard": "CCAA.smi",
+      "tranche": "CC"
+    },
+    {
+      "bytes": 4221548,
+      "molecules": 88611,
+      "shard": "CDAA.smi",
+      "tranche": "CD"
+    },
+    {
+      "bytes": 2602217,
+      "molecules": 56161,
+      "shard": "CEAA.smi",
+      "tranche": "CE"
+    },
+    {
+      "bytes": 2518694,
+      "molecules": 55160,
+      "shard": "CFAA.smi",
+      "tranche": "CF"
+    },
+    {
+      "bytes": 1529045,
+      "molecules": 28172,
+      "shard": "DCAA.smi",
+      "tranche": "DC"
+    },
+    {
+      "bytes": 3346261,
+      "molecules": 63209,
+      "shard": "DDAA.smi",
+      "tranche": "DD"
+    },
+    {
+      "bytes": 2229399,
+      "molecules": 42915,
+      "shard": "DEAA.smi",
+      "tranche": "DE"
+    },
+    {
+      "bytes": 2228280,
+      "molecules": 43667,
+      "shard": "DFAA.smi",
+      "tranche": "DF"
+    },
+    {
+      "bytes": 1826610,
+      "molecules": 31453,
+      "shard": "ECAA.smi",
+      "tranche": "EC"
+    },
+    {
+      "bytes": 4474303,
+      "molecules": 78824,
+      "shard": "EDAA.smi",
+      "tranche": "ED"
+    },
+    {
+      "bytes": 3183818,
+      "molecules": 57082,
+      "shard": "EEAA.smi",
+      "tranche": "EE"
+    },
+    {
+      "bytes": 87131,
+      "molecules": 1206,
+      "shard": "HBAA.smi",
+      "tranche": "HB"
+    },
+    {
+      "bytes": 392574,
+      "molecules": 5615,
+      "shard": "HCAA.smi",
+      "tranche": "HC"
+    },
+    {
+      "bytes": 1194933,
+      "molecules": 17698,
+      "shard": "HDAA.smi",
+      "tranche": "HD"
+    },
+    {
+      "bytes": 20574,
+      "molecules": 268,
+      "shard": "IBAA.smi",
+      "tranche": "IB"
+    },
+    {
+      "bytes": 86090,
+      "molecules": 1202,
+      "shard": "ICAA.smi",
+      "tranche": "IC"
+    },
+    {
+      "bytes": 358900,
+      "molecules": 5228,
+      "shard": "IDAA.smi",
+      "tranche": "ID"
+    },
+    {
+      "bytes": 769149,
+      "molecules": 11870,
+      "shard": "IJAA.smi",
+      "tranche": "IJ"
+    },
+    {
+      "bytes": 1176304,
+      "molecules": 18038,
+      "shard": "IKAA.smi",
+      "tranche": "IK"
+    },
+    {
+      "bytes": 30806,
+      "molecules": 282,
+      "shard": "JAAA.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 30934,
+      "molecules": 372,
+      "shard": "JBAA.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 94510,
+      "molecules": 1197,
+      "shard": "JCAA.smi",
+      "tranche": "JC"
+    },
+    {
+      "bytes": 334568,
+      "molecules": 4460,
+      "shard": "JDAA.smi",
+      "tranche": "JD"
+    },
+    {
+      "bytes": 1126636,
+      "molecules": 16305,
+      "shard": "JJAA.smi",
+      "tranche": "JJ"
+    },
+    {
+      "bytes": 2180690,
+      "molecules": 31486,
+      "shard": "JKAA.smi",
+      "tranche": "JK"
+    },
+    {
+      "bytes": 192745,
+      "molecules": 1356,
+      "shard": "KAAA.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 125354,
+      "molecules": 1074,
+      "shard": "KBAA.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 619633,
+      "molecules": 7322,
+      "shard": "KJAA.smi",
+      "tranche": "KJ"
+    },
+    {
+      "bytes": 2929598,
+      "molecules": 33210,
+      "shard": "KKAA.smi",
+      "tranche": "KK"
+    }
+  ],
+  "source": "ZINC20 2D tranches, files.docking.org",
+  "total_megabytes": 46.3,
+  "total_molecules": 856817,
+  "tranches_requested": [
+    "BD",
+    "BE",
+    "BF",
+    "CC",
+    "CD",
+    "CE",
+    "CF",
+    "DC",
+    "DD",
+    "DE",
+    "DF",
+    "EC",
+    "ED",
+    "EE",
+    "HB",
+    "HC",
+    "HD",
+    "IB",
+    "IC",
+    "ID",
+    "IJ",
+    "IK",
+    "JA",
+    "JB",
+    "JC",
+    "JD",
+    "JJ",
+    "JK",
+    "KA",
+    "KB",
+    "KJ",
+    "KK"
+  ],
+  "why_zinc": "purchasable compound space, largely unassayed, so a decoy drawn from it is plausibly inactive. ChEMBL would seed real actives into the decoy set."
+}

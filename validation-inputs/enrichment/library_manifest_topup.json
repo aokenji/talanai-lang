@@ -1,0 +1,888 @@
+{
+  "actives_property_space": [
+    {
+      "logp": 1.99,
+      "mw": 302.24,
+      "name": "Quercetin",
+      "tranche": "DD"
+    },
+    {
+      "logp": -1.69,
+      "mw": 610.52,
+      "name": "Rutin",
+      "tranche": "KA"
+    },
+    {
+      "logp": 2.28,
+      "mw": 286.24,
+      "name": "Kaempferol",
+      "tranche": "CE"
+    },
+    {
+      "logp": 7.09,
+      "mw": 456.71,
+      "name": "Betulinic Acid",
+      "tranche": "JK"
+    },
+    {
+      "logp": 7.23,
+      "mw": 456.71,
+      "name": "Oleanolic Acid",
+      "tranche": "JK"
+    },
+    {
+      "logp": 2.28,
+      "mw": 286.24,
+      "name": "Luteolin",
+      "tranche": "CE"
+    },
+    {
+      "logp": 0.09,
+      "mw": 432.38,
+      "name": "Vitexin",
+      "tranche": "IC"
+    },
+    {
+      "logp": 0.09,
+      "mw": 432.38,
+      "name": "Isovitexin",
+      "tranche": "IC"
+    },
+    {
+      "logp": 7.09,
+      "mw": 456.71,
+      "name": "Ursolic Acid",
+      "tranche": "JK"
+    }
+  ],
+  "caveat": "Decoys are PRESUMED inactive. Any genuine active in here counts as a false positive and lowers the measured enrichment, so this cannot inflate the result.",
+  "library_file": "D:\\THESIS_VSC\\talanai-lang\\validation-inputs\\enrichment\\zinc_library.smi",
+  "shards_fetched": [
+    {
+      "bytes": 30806,
+      "molecules": 0,
+      "shard": "JAAA.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 144080,
+      "molecules": 1400,
+      "shard": "JAAB.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 18367,
+      "molecules": 160,
+      "shard": "JAAC.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 5800288,
+      "molecules": 71652,
+      "shard": "JAAD.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 579797,
+      "molecules": 6492,
+      "shard": "JAAE.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 856316,
+      "molecules": 7912,
+      "shard": "JAAF.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 3662,
+      "molecules": 34,
+      "shard": "JABA.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 8446,
+      "molecules": 79,
+      "shard": "JABB.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 1982,
+      "molecules": 16,
+      "shard": "JABC.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 141539,
+      "molecules": 1633,
+      "shard": "JABD.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 30005,
+      "molecules": 296,
+      "shard": "JABE.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 18056,
+      "molecules": 167,
+      "shard": "JABF.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 2086,
+      "molecules": 19,
+      "shard": "JACA.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 6320,
+      "molecules": 64,
+      "shard": "JACB.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 672,
+      "molecules": 7,
+      "shard": "JACC.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 54794,
+      "molecules": 703,
+      "shard": "JACD.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 13022,
+      "molecules": 126,
+      "shard": "JACE.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 85603,
+      "molecules": 819,
+      "shard": "JACF.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 7938,
+      "molecules": 73,
+      "shard": "JAEA.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 24186,
+      "molecules": 237,
+      "shard": "JAEB.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 3998,
+      "molecules": 41,
+      "shard": "JAEC.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 120882,
+      "molecules": 1521,
+      "shard": "JAED.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 115366,
+      "molecules": 1305,
+      "shard": "JAEE.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 204897,
+      "molecules": 1928,
+      "shard": "JAEF.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 572,
+      "molecules": 7,
+      "shard": "JAGA.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 3349,
+      "molecules": 40,
+      "shard": "JAGB.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 1294,
+      "molecules": 13,
+      "shard": "JAGC.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 437211,
+      "molecules": 5539,
+      "shard": "JAGD.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 15432,
+      "molecules": 168,
+      "shard": "JAGE.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 28206,
+      "molecules": 278,
+      "shard": "JAGF.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 487,
+      "molecules": 5,
+      "shard": "JAIB.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 164,
+      "molecules": 2,
+      "shard": "JAID.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 183,
+      "molecules": 2,
+      "shard": "JAIE.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 829,
+      "molecules": 9,
+      "shard": "JAIF.smi",
+      "tranche": "JA"
+    },
+    {
+      "bytes": 30934,
+      "molecules": 0,
+      "shard": "JBAA.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 154975,
+      "molecules": 1881,
+      "shard": "JBAB.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 9216,
+      "molecules": 103,
+      "shard": "JBAC.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 37819344,
+      "molecules": 468277,
+      "shard": "JBAD.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 2983943,
+      "molecules": 38579,
+      "shard": "JBAE.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 603661,
+      "molecules": 6398,
+      "shard": "JBAF.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 2952,
+      "molecules": 33,
+      "shard": "JBBA.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 9871,
+      "molecules": 117,
+      "shard": "JBBB.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 620,
+      "molecules": 6,
+      "shard": "JBBC.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 1323585,
+      "molecules": 15204,
+      "shard": "JBBD.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 52925,
+      "molecules": 618,
+      "shard": "JBBE.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 23113,
+      "molecules": 246,
+      "shard": "JBBF.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 3209,
+      "molecules": 34,
+      "shard": "JBCA.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 16189,
+      "molecules": 179,
+      "shard": "JBCB.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 1099,
+      "molecules": 10,
+      "shard": "JBCC.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 339458,
+      "molecules": 4320,
+      "shard": "JBCD.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 22169,
+      "molecules": 249,
+      "shard": "JBCE.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 216684,
+      "molecules": 2245,
+      "shard": "JBCF.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 6002,
+      "molecules": 70,
+      "shard": "JBEA.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 23539,
+      "molecules": 262,
+      "shard": "JBEB.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 2525,
+      "molecules": 27,
+      "shard": "JBEC.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 1319625,
+      "molecules": 16381,
+      "shard": "JBED.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 658392,
+      "molecules": 8469,
+      "shard": "JBEE.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 198914,
+      "molecules": 1989,
+      "shard": "JBEF.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 1281,
+      "molecules": 17,
+      "shard": "JBGA.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 9795,
+      "molecules": 130,
+      "shard": "JBGB.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 157,
+      "molecules": 2,
+      "shard": "JBGC.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 2173594,
+      "molecules": 27431,
+      "shard": "JBGD.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 26862,
+      "molecules": 357,
+      "shard": "JBGE.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 33156,
+      "molecules": 357,
+      "shard": "JBGF.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 334,
+      "molecules": 4,
+      "shard": "JBIA.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 906,
+      "molecules": 10,
+      "shard": "JBIB.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 2261,
+      "molecules": 26,
+      "shard": "JBIE.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 366,
+      "molecules": 4,
+      "shard": "JBIF.smi",
+      "tranche": "JB"
+    },
+    {
+      "bytes": 192745,
+      "molecules": 0,
+      "shard": "KAAA.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 507001,
+      "molecules": 3519,
+      "shard": "KAAB.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 92925,
+      "molecules": 632,
+      "shard": "KAAC.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 46640,
+      "molecules": 378,
+      "shard": "KAAD.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 2215892,
+      "molecules": 15679,
+      "shard": "KAAE.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 7886655,
+      "molecules": 51523,
+      "shard": "KAAF.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 7781,
+      "molecules": 46,
+      "shard": "KABA.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 22925,
+      "molecules": 147,
+      "shard": "KABB.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 4962,
+      "molecules": 33,
+      "shard": "KABC.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 4093,
+      "molecules": 24,
+      "shard": "KABD.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 133265,
+      "molecules": 844,
+      "shard": "KABE.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 188957,
+      "molecules": 1407,
+      "shard": "KABF.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 15001,
+      "molecules": 102,
+      "shard": "KACA.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 55265,
+      "molecules": 386,
+      "shard": "KACB.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 5187,
+      "molecules": 35,
+      "shard": "KACC.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 399,
+      "molecules": 5,
+      "shard": "KACD.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 147299,
+      "molecules": 960,
+      "shard": "KACE.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 1711569,
+      "molecules": 11232,
+      "shard": "KACF.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 44542,
+      "molecules": 308,
+      "shard": "KAEA.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 103567,
+      "molecules": 714,
+      "shard": "KAEB.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 16055,
+      "molecules": 104,
+      "shard": "KAEC.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 12165,
+      "molecules": 81,
+      "shard": "KAED.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 498317,
+      "molecules": 3463,
+      "shard": "KAEE.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 1688621,
+      "molecules": 11070,
+      "shard": "KAEF.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 5356,
+      "molecules": 43,
+      "shard": "KAGA.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 15258,
+      "molecules": 123,
+      "shard": "KAGB.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 9237,
+      "molecules": 68,
+      "shard": "KAGC.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 580,
+      "molecules": 6,
+      "shard": "KAGD.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 64515,
+      "molecules": 472,
+      "shard": "KAGE.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 281278,
+      "molecules": 2015,
+      "shard": "KAGF.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 148,
+      "molecules": 1,
+      "shard": "KAIB.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 215,
+      "molecules": 2,
+      "shard": "KAIC.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 815,
+      "molecules": 7,
+      "shard": "KAIE.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 2838,
+      "molecules": 21,
+      "shard": "KAIF.smi",
+      "tranche": "KA"
+    },
+    {
+      "bytes": 125354,
+      "molecules": 0,
+      "shard": "KBAA.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 255359,
+      "molecules": 1892,
+      "shard": "KBAB.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 28776,
+      "molecules": 223,
+      "shard": "KBAC.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 34146,
+      "molecules": 349,
+      "shard": "KBAD.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 1264083,
+      "molecules": 10981,
+      "shard": "KBAE.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 3669823,
+      "molecules": 24776,
+      "shard": "KBAF.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 2713,
+      "molecules": 19,
+      "shard": "KBBA.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 8997,
+      "molecules": 79,
+      "shard": "KBBB.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 1359,
+      "molecules": 11,
+      "shard": "KBBC.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 795,
+      "molecules": 7,
+      "shard": "KBBD.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 48536,
+      "molecules": 436,
+      "shard": "KBBE.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 106725,
+      "molecules": 865,
+      "shard": "KBBF.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 5655,
+      "molecules": 43,
+      "shard": "KBCA.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 23192,
+      "molecules": 198,
+      "shard": "KBCB.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 1602,
+      "molecules": 12,
+      "shard": "KBCC.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 1539,
+      "molecules": 14,
+      "shard": "KBCD.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 93169,
+      "molecules": 691,
+      "shard": "KBCE.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 592410,
+      "molecules": 4422,
+      "shard": "KBCF.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 23672,
+      "molecules": 200,
+      "shard": "KBEA.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 54367,
+      "molecules": 426,
+      "shard": "KBEB.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 8207,
+      "molecules": 71,
+      "shard": "KBEC.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 9458,
+      "molecules": 97,
+      "shard": "KBED.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 191165,
+      "molecules": 1499,
+      "shard": "KBEE.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 1085300,
+      "molecules": 7502,
+      "shard": "KBEF.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 2316,
+      "molecules": 23,
+      "shard": "KBGA.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 10623,
+      "molecules": 105,
+      "shard": "KBGB.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 1317,
+      "molecules": 12,
+      "shard": "KBGC.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 1785,
+      "molecules": 20,
+      "shard": "KBGD.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 47451,
+      "molecules": 390,
+      "shard": "KBGE.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 144201,
+      "molecules": 1122,
+      "shard": "KBGF.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 179,
+      "molecules": 2,
+      "shard": "KBIB.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 762,
+      "molecules": 5,
+      "shard": "KBIC.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 906,
+      "molecules": 9,
+      "shard": "KBIE.smi",
+      "tranche": "KB"
+    },
+    {
+      "bytes": 1969,
+      "molecules": 17,
+      "shard": "KBIF.smi",
+      "tranche": "KB"
+    }
+  ],
+  "source": "ZINC20 2D tranches, files.docking.org",
+  "total_megabytes": 80.7,
+  "total_molecules": 858750,
+  "tranches_requested": [
+    "JA",
+    "JB",
+    "KA",
+    "KB"
+  ],
+  "why_zinc": "purchasable compound space, largely unassayed, so a decoy drawn from it is plausibly inactive. ChEMBL would seed real actives into the decoy set."
+}

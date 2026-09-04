@@ -58,6 +58,7 @@ import argparse
 import json
 import os
 import sys
+import time
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -71,8 +72,14 @@ RDLogger.DisableLog("rdApp.*")
 IC50 = os.path.join(HERE, "validation-run", "ic50", "ic50.json")
 OUT = os.path.join(HERE, "validation-inputs", "enrichment")
 
+# PubChem renamed these fields. "SMILES" is now the STEREO-BEARING one and
+# "ConnectivitySMILES" is the flat one; the old IsomericSMILES/CanonicalSMILES
+# names still resolve but come back under the new keys. Taking the flat string
+# is how three ligands in this project lost their stereochemistry once, so the
+# preference order below is deliberate and the stereocentre count is reported.
 PUBCHEM = ("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/%d/"
-           "property/IsomericSMILES,CanonicalSMILES/JSON")
+           "property/SMILES,ConnectivitySMILES/JSON")
+SMILES_KEYS = ("SMILES", "IsomericSMILES", "ConnectivitySMILES", "CanonicalSMILES")
 
 # The ten screened compounds, by the PubChem CID recorded in compounds.js.
 # Every SMILES is fetched from PubChem rather than typed, because a
@@ -102,6 +109,12 @@ WINDOWS = {
 MAX_SIMILARITY = 0.35
 
 
+def normal(text):
+    """Case- and punctuation-insensitive key, so 'Betulinic Acid' finds
+    'Betulinic acid'."""
+    return "".join(c for c in text.lower() if c.isalnum())
+
+
 def props(mol):
     return {
         "heavy":  mol.GetNumHeavyAtoms(),
@@ -125,11 +138,36 @@ def fingerprint(mol):
     return AllChem.GetMorganFingerprintAsBitVect(mol, 2, nBits=2048)
 
 
-def fetch_smiles(cid):
-    with urllib.request.urlopen(PUBCHEM % cid, timeout=30) as response:
-        payload = json.load(response)
-    row = payload["PropertyTable"]["Properties"][0]
-    return row.get("IsomericSMILES") or row["CanonicalSMILES"]
+def fetch_smiles(cid, attempts=8):
+    """
+    PubChem throttles: it answers 503 PUGREST.ServerBusy under load and asks
+    for no more than 5 requests a second. Back off and retry rather than
+    letting a busy server look like a missing compound.
+    """
+    delay = 3.0
+    last = None
+    for attempt in range(1, attempts + 1):
+        try:
+            request = urllib.request.Request(
+                PUBCHEM % cid, headers={"User-Agent": "talanai-enrichment/0.1"})
+            with urllib.request.urlopen(request, timeout=45) as response:
+                payload = json.load(response)
+            row = payload["PropertyTable"]["Properties"][0]
+            smiles = next((row[k] for k in SMILES_KEYS if row.get(k)), None)
+            if not smiles:
+                raise ValueError("no SMILES in the response for CID %d" % cid)
+            time.sleep(0.3)                     # stay under the rate limit
+            return smiles
+        except Exception as error:              # noqa: BLE001
+            last = error
+            if attempt == attempts:
+                break
+            print("        CID %d attempt %d/%d failed (%s), retrying in %.0fs"
+                  % (cid, attempt, attempts, type(error).__name__, delay))
+            time.sleep(delay)
+            delay = min(delay * 2, 60.0)
+    raise SystemExit("could not fetch SMILES for CID %d after %d attempts: %s"
+                     % (cid, attempts, last))
 
 
 def load_actives():
@@ -139,7 +177,7 @@ def load_actives():
     """
     with open(IC50, encoding="utf-8") as handle:
         ic50 = json.load(handle)
-    measured = ic50.get("compounds", {})
+    measured = {normal(k): v for k, v in ic50.get("compounds", {}).items()}
 
     cache = os.path.join(OUT, "screened_smiles.json")
     known = {}
@@ -152,14 +190,37 @@ def load_actives():
         if name not in known:
             print("      fetching SMILES for %s (CID %d)" % (name, cid))
             known[name] = fetch_smiles(cid)
+            os.makedirs(OUT, exist_ok=True)
+            with open(cache, "w", encoding="utf-8") as handle:
+                json.dump(known, handle, indent=2, sort_keys=True)
         mol = Chem.MolFromSmiles(known[name])
         if mol is None:
             raise SystemExit("could not parse the SMILES for %s" % name)
 
-        entry = measured.get(name) or measured.get(name.replace(" ", "_"))
-        yeast = (entry or {}).get("yeast_values") or []
+        # Match on a normalised key. ic50.json writes "Betulinic acid" while
+        # compounds.js writes "Betulinic Acid", and an exact-match lookup
+        # silently dropped the three triterpenes, which are the most potent
+        # actives in the set. A lookup MISS and a genuine ABSENCE of data are
+        # different facts and must not look the same.
+        entry = measured.get(normal(name))
+        if entry is None:
+            raise SystemExit(
+                "%s is not present in ic50.json under any spelling. That is a "
+                "lookup failure, not an absence of data: fix the key rather "
+                "than letting the compound quietly leave the active set. "
+                "Known keys: %s" % (name, ", ".join(sorted(measured))))
+        yeast = entry.get("yeast_values") or []
+        # A flattened SMILES parses perfectly well and silently changes the
+        # molecule, so count the stereocentres and say how many are assigned.
+        centres = Chem.FindMolChiralCenters(mol, includeUnassigned=True,
+                                            useLegacyImplementation=False)
+        assigned = sum(1 for _, tag in centres if tag != "?")
         row = {"name": name, "cid": cid, "smiles": known[name],
-               "props": props(mol), "n_yeast_ic50_sources": len(yeast)}
+               "props": props(mol), "n_yeast_ic50_sources": len(yeast),
+               "stereocentres": len(centres), "stereocentres_assigned": assigned}
+        if centres and assigned < len(centres):
+            print("      *** %s: only %d of %d stereocentres are assigned"
+                  % (name, assigned, len(centres)))
         if yeast:
             rows.append(row)
         else:
