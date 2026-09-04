@@ -111,6 +111,32 @@ Name, then optional formula, then optional prepared structure file. The
 formula is what makes the ligand-efficiency column possible; without it that
 column reads `-` rather than guessing.
 
+## Checksums
+
+`checksum` records what a preparation recipe actually produced. One line per
+file, repeatable, allowed in `receptor`, `ligands`, `reference` and `control`:
+
+    checksum      quercetin.pdbqt 3f1a9c...
+
+The filename is matched on its basename, so a file named in one block and
+checksummed in another is still covered, and the same file does not need
+pinning twice.
+
+Generate them with `tal checksum <file>`, which digests every prepared file the
+experiment names and prints the lines to paste back.
+
+R604 asks for these because a recipe does not determine its own output. Under
+the recipe this study records, a re-prepared quercetin docked half a kilocalorie
+weaker than the published one, on the same receptor, box, seed and
+exhaustiveness. The engine reproduces perfectly; the conformer does not. Where
+ring-aware selection applies it constrains the choice and the number comes back
+(rutin, to 0.013). Where it does not, the fallback is lowest gas-phase energy,
+which has nothing to do with docking.
+
+If a checksum is recorded and the file on disk disagrees, R604 REFUSES. Do not
+update the checksum to match whatever is there now: that is the check deleting
+itself.
+
 ## Pose file
 
 ```

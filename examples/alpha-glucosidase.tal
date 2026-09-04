@@ -30,6 +30,7 @@ receptor 3A4A
   resolution    1.6 A
   file          D:\THESIS_VSC\BALAKATDBV2\talanaidock\dist\TalanaiDock\app\docking_assets\docking_data\prepared\receptor.pdbqt
   prepare       meeko, polar H and Gasteiger charges
+  checksum      receptor.pdbqt 87068d49698b6519d0e7b0628a7ec3eed633535a70d331aa9ca35640d97fc463
   prepare_note  The 2026-08-04 correction moved the screen off the raw cleaned
                 3A4A onto the Meeko-prepared receptor with AutoDock
                 hydrogen-bond atom typing. protocol.js records receptorPrep as
@@ -50,6 +51,8 @@ control
   ligand_file    D:\THESIS_VSC\BALAKATDBV2\talanaidock\dist\TalanaiDock\app\docking_assets\docking_data\validation\glc_ligand.pdbqt
   reference_file D:\THESIS_VSC\BALAKATDBV2\talanaidock\dist\TalanaiDock\app\docking_assets\docking_data\validation\glc_3a4a_601.pdb
   receptor_file  D:\THESIS_VSC\BALAKATDBV2\talanaidock\dist\TalanaiDock\app\docking_assets\docking_data\prepared\receptor.pdbqt
+  checksum       glc_ligand.pdbqt 22c7165d9ddb1d6af309fd71509e0d3b7bc2af21e28ba6a35aa27bae1b1ba531
+  checksum       glc_3a4a_601.pdb ad7d342694349cede587748ff3dc7a3e60969517ae99d67d6a5ca5b69db69b40
   seed           42
   result         0.519 A
   source         docking_assets/docking_data/validation/validation.json, generated 2026-06-16
@@ -79,6 +82,11 @@ ligands
   compound      Quercetin       C15H10O7    quercetin.pdbqt
   compound      Kaempferol      C15H10O6    kaempferol.pdbqt
   compound      Oleanolic_Acid  C30H48O3    oleanolic.pdbqt
+  checksum      rutin.pdbqt      2353b3eef3c6d689f34edc8e78607a7dda626995c707a0f01457ee7c33a5750c
+  checksum      betulinic.pdbqt  d8453d141a887a0981e541075137d38e336b41d9b2cba5d4d9c0afc624c76fba
+  checksum      quercetin.pdbqt  eeb05b8dd0063f6b552774830f7e669bc6306b875a571c1412b8632f9a789f46
+  checksum      kaempferol.pdbqt 4b1c5e91f596f06a3f12fa4d91892d2ff6eeb019fb8bc6c55c68a2599b7f942b
+  checksum      oleanolic.pdbqt  9701b4c62764d5cd0a3b9a7535607fd27e3e601521bfbbbfab42a3c79e2e46d5
 
 reference Acarbose
   formula       C25H43NO18

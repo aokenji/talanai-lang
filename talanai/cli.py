@@ -1,8 +1,9 @@
 """
-The five commands.
+The six commands.
 
     tal check    <file>            validate. No engine needed. Instant.
     tal explain  <file>            validate, plus rankings and the methods text
+    tal checksum <file>            digest the prepared files, for R604
     tal control  <file>            run the redocking control that unlocks docking
     tal run      <file>            dock, only if the file validates
     tal report   <file>            write csv, methods and the run record
@@ -17,7 +18,7 @@ from __future__ import annotations
 import os
 import sys
 
-from . import chem, engine, model, parse, report, rules
+from . import chem, engine, model, parse, pdb, report, rules
 from . import control as control_runner
 
 USAGE = __doc__
@@ -329,8 +330,84 @@ def command_report(path, args):
     return 0
 
 
+def command_checksum(path, args):
+    """
+    Print a checksum line for every prepared file this experiment names, ready
+    to paste back into the .tal.
+
+    R604 asks for these because a preparation recipe does not determine its own
+    output. Re-preparing quercetin from its SMILES under the recorded recipe
+    produced a conformer worth half a kilocalorie less than the published one,
+    on the same receptor, box and seed. A digest is what turns "prepared this
+    way" into "prepared into exactly this file".
+
+        tal checksum examples/alpha-glucosidase.tal
+    """
+    experiment = load(path)
+    if experiment is None:
+        return 2
+
+    named = rules.structure_files(experiment)
+    if not named:
+        print("")
+        print("  %s names no prepared structure files." % os.path.basename(path))
+        print("")
+        return 0
+
+    base = os.path.dirname(os.path.abspath(path))
+    print("")
+    print("  CHECKSUMS for %s" % os.path.basename(path))
+    print("  " + "=" * 74)
+
+    found, missing = [], []
+    for what, raw in named:
+        resolved = pdb.resolve(raw, base)
+        if resolved:
+            found.append((what, raw, rules._digest(resolved)))
+        else:
+            missing.append((what, raw))
+
+    if missing:
+        print("")
+        print("  NOT ON THIS MACHINE, so no digest can be taken:")
+        for what, raw in missing:
+            print("    %-22s %s" % (what, raw))
+        print("")
+        print("  A checksum can only be recorded where the file is. Run this")
+        print("  on the machine that holds the prepared files.")
+
+    if not found:
+        print("")
+        return 1
+
+    by_block = {}
+    for what, raw, digest in found:
+        block = ("receptor" if what == "receptor"
+                 else "control" if what.startswith("control ")
+                 else "ligands")
+        by_block.setdefault(block, []).append((os.path.basename(raw), digest))
+
+    print("")
+    print("  Paste these into the matching blocks:")
+    for block in ("receptor", "ligands", "control"):
+        if block not in by_block:
+            continue
+        print("")
+        print("  %s" % block)
+        for name, digest in by_block[block]:
+            print("    checksum      %s %s" % (name, digest))
+
+    print("")
+    print("  %d file(s) digested with %s.%s"
+          % (len(found), rules.CHECKSUM_ALGORITHM,
+             " %d could not be reached." % len(missing) if missing else ""))
+    print("")
+    return 0
+
+
 COMMANDS = {
     "check": command_check,
+    "checksum": command_checksum,
     "explain": command_explain,
     "control": command_control,
     "run": command_run,

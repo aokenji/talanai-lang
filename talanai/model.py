@@ -32,7 +32,7 @@ from . import chem
 SCHEMA = {
     "study": {"author", "date", "doi", "claim_scope", "claim", "note"},
     "receptor": {"name", "organism", "surrogate_for", "resolution", "prepare",
-                 "prepare_note", "file", "note"},
+                 "prepare_note", "file", "note", "checksum"},
     "site": {"center", "size", "anchored_on", "anchor_note", "must_enclose",
              "blind", "note"},
     # A control records its OWN configuration, because a control run under
@@ -40,9 +40,11 @@ SCHEMA = {
     "control": {"redock", "measure", "require", "result", "source",
                 "result_note", "note", "prepare", "box_size",
                 "exhaustiveness", "receptor_file", "ligand_file",
-                "reference_file", "seed"},
-    "ligands": {"source", "dir", "prepare", "protonate", "compound", "note"},
-    "reference": {"formula", "prepare", "protonate", "role", "note"},
+                "reference_file", "seed", "checksum"},
+    "ligands": {"source", "dir", "prepare", "protonate", "compound", "note",
+                "checksum"},
+    "reference": {"formula", "prepare", "protonate", "role", "note", "file",
+                  "checksum"},
     "dock": {"engine", "exhaustiveness", "modes", "energy_range", "seeds",
              "cpu", "vina_path", "note"},
     "rank": {"by", "note"},

@@ -74,6 +74,7 @@ It never reports a pass it did not earn.
 | R601 | REFUSE | Ligands and reference were prepared differently | June 2026, this project: TalanaiDock reproduced Quercetin at −7.525 only once Meeko preparation was removed. A Vina score belongs to a pair of prepared files, not to a molecule, so two preparations are two assays |
 | R602 | REFUSE | Receptor preparation not declared | Waters, hetatms, hydrogens and charges all move the score. It is the most commonly omitted item in published docking methods |
 | R603 | WARN | Ligand protonation state not declared | The structure drawn in a paper is not what exists at pH 7.4 |
+| R604 | REFUSE / WARN / PASS | A prepared file does not match its recorded checksum; or none is recorded | September 2026, this project: re-preparing quercetin under the recorded recipe (“rdkit ETKDGv3 + MMFF94 with ring-aware conformer selection”) scored −8.380 against a published −8.818, while the published FILE scored −8.877 under the same receptor, box, seed and exhaustiveness. The engine reproduces; the conformer does not. Rutin, whose saturated rings let ring-awareness constrain the choice, reproduced to 0.013. A recipe alone is a description; a recipe plus a digest is a protocol |
 
 ## R7xx  reading the results
 

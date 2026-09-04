@@ -20,6 +20,7 @@ never reports a pass it did not earn.
 
 from __future__ import annotations
 
+import hashlib
 import os
 import re
 
@@ -774,6 +775,150 @@ def r603_ligand_protonation(exp):
         "the form that exists in solution is not always the form in the file",
         "add 'protonate pH 7.4'", exp.ligands.line)]
 
+
+
+# R604: the digest a prepared structure file hashes to. sha256 because it is in
+# the standard library, it is what the docking backend's run manifests already
+# record, and nothing here needs to resist an adversary, only accident.
+CHECKSUM_ALGORITHM = "sha256"
+
+
+def _digest(path):
+    hasher = hashlib.new(CHECKSUM_ALGORITHM)
+    with open(path, "rb") as handle:
+        for chunk in iter(lambda: handle.read(65536), b""):
+            hasher.update(chunk)
+    return hasher.hexdigest()
+
+
+def declared_checksums(exp):
+    """{lowercased basename: digest} from every block that may carry one."""
+    out = {}
+    for block in (exp.receptor, exp.ligands, exp.reference, exp.control):
+        if block is None:
+            continue
+        for entry in block.all("checksum"):
+            parts = entry.split()
+            if len(parts) >= 2:
+                out[os.path.basename(parts[0]).lower()] = parts[1].strip().lower()
+    return out
+
+
+def structure_files(exp):
+    """[(what it is, path as written)] for every prepared file the file names."""
+    named = []
+    if exp.receptor and exp.receptor.one("file"):
+        named.append(("receptor", exp.receptor.one("file")))
+    directory = exp.ligands.one("dir") if exp.ligands else None
+    for compound in exp.compounds():
+        if not compound.filename:
+            continue
+        path = (os.path.join(directory, compound.filename)
+                if directory else compound.filename)
+        named.append((compound.name, path))
+    if exp.control:
+        for key in ("ligand_file", "reference_file", "receptor_file"):
+            value = exp.control.one(key)
+            if value:
+                named.append(("control " + key, value))
+    return named
+
+
+@rule
+def r604_preparation_is_reproducible(exp):
+    """
+    A preparation recipe that does not determine its own output is not a
+    protocol.
+
+    THE INCIDENT
+        The screen records its ligand preparation as "rdkit ETKDGv3 + MMFF94
+        with ring-aware conformer selection". Re-preparing quercetin from its
+        SMILES under exactly that recipe, then docking it on the same receptor,
+        same box, same seed and same exhaustiveness, returned -8.380 kcal/mol
+        against the published -8.818. The published ligand FILE, docked under
+        those identical settings, returned -8.877.
+
+        So the engine, the receptor, the box and the seed all reproduce
+        perfectly. What does not reproduce is the conformer, and for quercetin
+        that is worth about half a kilocalorie. Rutin, whose saturated rings
+        let ring-aware selection constrain the choice, reproduced to 0.013.
+        Where ring-awareness does not apply, the fallback is lowest gas-phase
+        energy, which has no relationship to how a molecule docks.
+
+    WHAT THIS RULE ASKS FOR
+        Not a better recipe. A record of what the recipe produced: one
+        checksum line per prepared file, so anyone regenerating can tell in a
+        second whether they got your molecule or a different one.
+
+            ligands
+              dir       path/to/prepared
+              prepare   rdkit ETKDGv3 + MMFF94, ring-aware
+              compound  Quercetin C15H10O7 quercetin.pdbqt
+              checksum  quercetin.pdbqt 3f1a...
+
+        A recipe alone is a description. A recipe plus a digest is a protocol.
+    """
+    named = structure_files(exp)
+    if not named:
+        return []
+
+    declared = declared_checksums(exp)
+    base = os.path.dirname(os.path.abspath(exp.path))
+
+    if not declared:
+        return [Finding(
+            WARN, "R604", "preparation is not pinned to what it produced",
+            "%d prepared file(s) are named but none carries a checksum, so "
+            "re-running the recipe cannot be checked against this study."
+            % len(named),
+            "run 'tal checksum %s' and paste the lines it prints"
+            % os.path.basename(exp.path))]
+
+    mismatched, verified, absent, uncovered = [], [], [], []
+    for what, path in named:
+        key = os.path.basename(path).lower()
+        found = pdb.resolve(path, base)
+        if key not in declared:
+            uncovered.append("%s (%s)" % (os.path.basename(path), what))
+            continue
+        if not found:
+            absent.append(os.path.basename(path))
+            continue
+        actual = _digest(found)
+        if actual == declared[key]:
+            verified.append(os.path.basename(path))
+        else:
+            mismatched.append("%s: declared %s..., on disk %s..."
+                              % (os.path.basename(path),
+                                 declared[key][:12], actual[:12]))
+
+    out = []
+    if mismatched:
+        out.append(Finding(
+            REFUSE, "R604", "a prepared file is not the one this study used",
+            "; ".join(mismatched),
+            "the file on disk has changed since the checksum was recorded. "
+            "Re-run the study or restore the file; do not update the checksum "
+            "to match whatever is there now"))
+    if uncovered:
+        out.append(Finding(
+            WARN, "R604", "some prepared files carry no checksum",
+            ", ".join(uncovered),
+            "run 'tal checksum %s' again; a partly pinned preparation is only "
+            "partly reproducible" % os.path.basename(exp.path)))
+    if verified and not mismatched:
+        out.append(Finding(
+            PASS, "R604", "preparation is pinned to what it produced",
+            "%d prepared file(s) match their recorded %s digest"
+            % (len(verified), CHECKSUM_ALGORITHM)))
+    elif absent and not mismatched and not verified:
+        out.append(Finding(
+            RECORD, "R604", "preparation checksums: UNVERIFIED",
+            "%d checksum(s) recorded, but none of the files is on this "
+            "machine to check against: %s" % (len(absent), ", ".join(absent)),
+            "the digests still travel with the file; this only says they "
+            "could not be confirmed here"))
+    return out
 
 # ==========================================================================
 # R7xx  reading the results

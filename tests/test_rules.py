@@ -346,5 +346,83 @@ class TestR307RingGeometry(unittest.TestCase):
                                   msg="chair and boat must not measure the same")
 
 
+class TestR604PreparationChecksums(unittest.TestCase):
+    """
+    R604 exists because a preparation recipe does not determine its own
+    output: re-preparing quercetin under the recorded recipe scored -8.380
+    against a published -8.818, while the published FILE scored -8.877 under
+    identical settings, same receptor, box and seed. These tests pin the three
+    answers the rule can give.
+    """
+
+    LIGANDS_BLOCK = (
+        "ligands\n"
+        "  prepare meeko\n"
+        "  protonate pH 7.4\n"
+        "  compound Rutin C27H30O16\n"
+    )
+
+    def setUp(self):
+        self.ligand = _write_pdb([
+            _atom_line(1, "C1", "LIG", "A", 1, 0.0, 0.0, 0.0, "C"),
+            _atom_line(2, "O1", "LIG", "A", 1, 1.5, 0.0, 0.0, "O"),
+        ])
+        self.digest = rules._digest(self.ligand)
+        self.name = os.path.basename(self.ligand)
+
+    def tearDown(self):
+        if os.path.isfile(self.ligand):
+            os.unlink(self.ligand)
+
+    def _tal(self, checksum_line=""):
+        replacement = (
+            "ligands\n"
+            "  prepare meeko\n"
+            "  protonate pH 7.4\n"
+            "  compound Rutin C27H30O16 %s\n" % self.ligand
+        )
+        if checksum_line:
+            replacement += "  %s\n" % checksum_line
+        assert BASE.count(self.LIGANDS_BLOCK) == 1
+        return BASE.replace(self.LIGANDS_BLOCK, replacement)
+
+    def test_named_file_with_no_checksum_warns(self):
+        self.assertIn("R604", codes(build(self._tal()), rules.WARN))
+
+    def test_matching_checksum_passes(self):
+        experiment = build(self._tal("checksum %s %s" % (self.name, self.digest)))
+        self.assertNotIn("R604", codes(experiment, rules.REFUSE))
+        self.assertNotIn("R604", codes(experiment, rules.WARN))
+        self.assertIn("R604", codes(experiment, rules.PASS))
+
+    def test_a_changed_file_refuses(self):
+        text = self._tal("checksum %s %s" % (self.name, "0" * 64))
+        self.assertIn("R604", codes(build(text), rules.REFUSE))
+
+    def test_a_refusal_locks_docking(self):
+        text = self._tal("checksum %s %s" % (self.name, "0" * 64))
+        self.assertTrue(rules.docking_is_locked(rules.run_all(build(text))))
+
+    def test_a_checksum_for_a_missing_file_is_unverified_not_a_pass(self):
+        text = self._tal("checksum nowhere.pdbqt %s" % ("a" * 64))
+        found = codes(build(text))
+        # The named ligand has no checksum of its own, so the rule must say so
+        # rather than passing on the strength of a digest it could not check.
+        self.assertNotIn("R604", codes(build(text), rules.PASS))
+        self.assertIn("R604", found)
+
+    def test_checksum_is_repeatable_and_allowed_where_files_are_named(self):
+        # One line per file, so it must not be a single-value key: R004 refuses
+        # a repeated single-value key, which would make the rule unusable.
+        self.assertNotIn("checksum", model.SINGLE_VALUE_KEYS)
+        for block in ("receptor", "ligands", "reference", "control"):
+            self.assertIn("checksum", model.SCHEMA[block])
+
+    def test_a_file_that_names_nothing_is_not_nagged(self):
+        # The baseline names no prepared files at all. A rule about pinning
+        # files must stay silent there rather than inventing an obligation.
+        self.assertNotIn("R604", codes(build(BASE)))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
