@@ -51,13 +51,17 @@ SCHEMA = {
     "report": set(),
     "results": {"affinity", "pose_cluster_rmsd", "pose_file", "note"},
     "replication": {"date", "pipeline", "kind", "rerun", "note"},
+    # An enrichment benchmark: known actives against property-matched decoys.
+    # matched_on is the load-bearing key. See R605.
+    "enrichment": {"actives", "decoys", "ratio", "source", "matched_on",
+                   "metric", "result", "note"},
     # library files
     "library": {"scope", "reported_in", "compound", "note", "source"},
 }
 
 EXPERIMENT_BLOCKS = ("study", "receptor", "site", "control", "ligands",
                      "reference", "dock", "rank", "report", "results",
-                     "replication")
+                     "replication", "enrichment")
 
 REQUIRED_BLOCKS = ("study", "receptor", "site", "control", "ligands", "dock")
 
@@ -137,6 +141,10 @@ class Experiment:
     @property
     def results(self):
         return self.block("results")
+
+    @property
+    def enrichment(self):
+        return self.block("enrichment")
 
     @property
     def replication(self):

@@ -920,6 +920,78 @@ def r604_preparation_is_reproducible(exp):
             "could not be confirmed here"))
     return out
 
+
+# R605: terms that count as controlling for aromaticity in a decoy match.
+# Aromatic ring count and the sp3 fraction are two ways of measuring the same
+# axis; either satisfies the rule.
+AROMATICITY_TERMS = ("aromatic", "aromaticity", "arom", "fsp3", "sp3",
+                     "ring_count", "rings")
+
+
+@rule
+def r605_enrichment_controls_aromaticity(exp):
+    """
+    An enrichment benchmark that does not match its decoys on aromaticity is
+    not measuring the protocol. It is measuring the scoring function's taste
+    in scaffolds.
+
+    THE INCIDENT
+        This project ran one: nine actives with published yeast IC50 values
+        against property-matched decoys, 252 dockings. Decoys were matched on
+        heavy atoms, molecular weight, logP, rotatable bonds and hydrogen-bond
+        counts. Not on aromaticity.
+
+        Across all 248 scored molecules, aromaticity turned out to be the
+        strongest predictor of the Vina score in the whole dataset:
+
+            Spearman, aromatic ring count vs score   -0.544
+            0 aromatic rings    n= 25   median  -8.668
+            1-2 aromatic rings  n=104   median  -9.149
+            3+ aromatic rings   n=119   median -10.000
+
+        About 0.85 kcal/mol per aromatic ring. The three triterpene actives are
+        saturated cages, median 0 aromatic rings and sp3 fraction 0.90; the
+        decoys matched to them came from drug-like screening space with a
+        median of 4 aromatic rings and sp3 fraction 0.19. They were asked to
+        out-score a chemical class the function systematically prefers, on the
+        one axis nobody controlled, and lost 19 times in 20 for ROC AUC 0.10.
+
+        Read naively that is "the protocol ranks its best compounds worst". It
+        is nothing of the kind. It is a decoy set built wrong.
+
+    WHY THIS REFUSES RATHER THAN WARNS
+        A benchmark missing this control does not produce a weaker result, it
+        produces an uninterpretable one, and an uninterpretable enrichment
+        number is worse than none because it reads like evidence. Same reason
+        R106 refuses a control that validated a different preparation.
+    """
+    if exp.enrichment is None:
+        return []
+
+    matched = " ".join(exp.enrichment.all("matched_on")).lower()
+    if not matched.strip():
+        return [Finding(
+            REFUSE, "R605", "the enrichment match is not declared",
+            "an enrichment block with no matched_on says nothing about what "
+            "the decoys control for, so the number it reports cannot be read",
+            "list the properties the decoys were matched on, and include an "
+            "aromaticity term")]
+
+    if not any(term in matched for term in AROMATICITY_TERMS):
+        return [Finding(
+            REFUSE, "R605", "the enrichment does not control for aromaticity",
+            "matched on: %s. Aromaticity is absent, and in this project's own "
+            "data it predicts the Vina score more strongly than anything in "
+            "that list (Spearman -0.544, about 0.85 kcal/mol per ring)"
+            % ", ".join(exp.enrichment.all("matched_on")),
+            "match decoys on aromatic ring count or sp3 fraction as well. For "
+            "saturated natural products that may be impossible from standard "
+            "screening libraries, and reporting THAT is the honest result")]
+
+    return [Finding(
+        PASS, "R605", "enrichment controls for aromaticity",
+        "matched on: %s" % ", ".join(exp.enrichment.all("matched_on")))]
+
 # ==========================================================================
 # R7xx  reading the results
 # ==========================================================================

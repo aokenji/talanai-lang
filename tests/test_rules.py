@@ -424,5 +424,57 @@ class TestR604PreparationChecksums(unittest.TestCase):
         self.assertNotIn("R604", codes(build(BASE)))
 
 
+class TestR605EnrichmentAromaticity(unittest.TestCase):
+    """
+    R605 exists because this project ran an enrichment benchmark whose decoys
+    were matched on size, weight, logP, rotatable bonds and H-bond counts but
+    not on aromaticity, which turned out to predict the Vina score more
+    strongly than any of them (Spearman -0.544). The triterpene arm returned
+    ROC AUC 0.10 and meant nothing.
+    """
+
+    def _tal(self, matched_on=None, block=True):
+        if not block:
+            return BASE
+        lines = ["enrichment", "  actives 9", "  decoys 180", "  ratio 20:1"]
+        if matched_on is not None:
+            lines.append("  matched_on %s" % matched_on)
+        return BASE + "\n".join(lines) + "\n"
+
+    def test_no_enrichment_block_is_silent(self):
+        # A screen that claims no enrichment must not be nagged about one.
+        self.assertNotIn("R605", codes(build(self._tal(block=False))))
+
+    def test_matching_without_aromaticity_refuses(self):
+        text = self._tal("heavy_atoms molecular_weight logp rotatable_bonds hbd hba")
+        self.assertIn("R605", codes(build(text), rules.REFUSE))
+
+    def test_undeclared_matching_refuses(self):
+        self.assertIn("R605", codes(build(self._tal(matched_on=None)), rules.REFUSE))
+
+    def test_aromatic_ring_count_satisfies_it(self):
+        text = self._tal("heavy_atoms molecular_weight logp aromatic_rings")
+        self.assertNotIn("R605", codes(build(text), rules.REFUSE))
+        self.assertIn("R605", codes(build(text), rules.PASS))
+
+    def test_sp3_fraction_also_satisfies_it(self):
+        # Aromaticity and saturation are two readings of one axis; either
+        # controls it, so the rule must not insist on a particular word.
+        text = self._tal("heavy_atoms molecular_weight logp fsp3")
+        self.assertNotIn("R605", codes(build(text), rules.REFUSE))
+        self.assertIn("R605", codes(build(text), rules.PASS))
+
+    def test_a_refusal_locks_docking(self):
+        text = self._tal("heavy_atoms molecular_weight logp")
+        self.assertTrue(rules.docking_is_locked(rules.run_all(build(text))))
+
+    def test_the_block_is_known_to_the_schema(self):
+        # An unknown block only WARNs (R002), so without this the rule would
+        # never see the data it exists to check.
+        self.assertIn("enrichment", model.SCHEMA)
+        self.assertIn("enrichment", model.EXPERIMENT_BLOCKS)
+        self.assertNotIn("R002", codes(build(self._tal("aromatic_rings"))))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

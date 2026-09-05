@@ -607,6 +607,62 @@ Record: `talanai-lang/run_stereo_fix.py`, run files and `summary.json` at
 `talanai-lang/validation-run/stereo-fix/`. Applied to the live site and
 pushed to `main` at `65ee938`.
 
+## 4h. Enrichment: attempted, and why it could not be built (2026-09-05)
+
+Section 6 lists "no decoy or enrichment test" as work not done. It has now been
+attempted, over 252 dockings, and the honest outcome is that the panel is
+**unresolved** with a documented reason. Full record: `ENRICHMENT-FINDINGS.md`.
+
+| Set | actives | ROC AUC | 95% CI | |
+|---|---|---|---|---|
+| Six flavonoids | 6 | 0.588 | 0.456 to 0.728 | could not tell |
+| Triterpenes, neutral COOH | 3 | 0.082 | 0.018 to 0.193 | anti-correlated |
+| Triterpenes, deprotonated COO- | 3 | 0.102 | 0.068 to 0.153 | anti-correlated |
+| All nine, correct forms | 9 | 0.421 | 0.299 to 0.565 | could not tell |
+
+⚠️ **The triterpene arm is an artefact of the decoy set and must not be
+reported as a result about the protocol.** Decoys were matched on heavy atoms,
+weight, logP, rotatable bonds and hydrogen-bond counts, but NOT on aromaticity.
+Across all 248 scored molecules, aromaticity is the strongest predictor of the
+Vina score in the dataset:
+
+    Spearman, aromatic ring count vs score   -0.544   (~0.85 kcal/mol per ring)
+    0 aromatic rings   n= 25   median  -8.668
+    1-2 aromatic rings n=104   median  -9.149
+    3+ aromatic rings  n=119   median -10.000
+
+The triterpene actives are saturated cages (median 0 aromatic rings, fraction
+sp3 0.90). Their decoys, drawn from ZINC drug-like space, are quinolines and
+fluorophenyl amides (median 4 aromatic rings, fraction sp3 0.19). They were
+asked to out-score a chemical class the scoring function systematically
+prefers, on the one axis nobody controlled, and lost 19 times in 20.
+
+**The generalisable finding: a valid decoy set for terpenoid natural products
+cannot be built from standard screening libraries, which are dominated by
+aromatic medicinal-chemistry scaffolds.** That is a property of the available
+chemical space, not of this protocol, and it is why the panel stays open.
+
+A protonation hypothesis was tested and rejected. The first arm used PubChem's
+neutral SMILES, so the acids were docked as COOH rather than the C-28
+carboxylate adopted on 2026-08-13. Corrected properly, with 60 fresh disjoint
+decoys and actives verified at charge -1: AUC moved 0.082 to 0.102. Not the
+explanation.
+
+The flavonoid arm IS matched on aromaticity (3 rings against a decoy median of
+2, a gap running slightly in the actives' favour) and is the trustworthy one.
+It returns 0.588 with the interval across chance. Six actives cannot resolve
+it, which the power simulation predicted before any docking ran: below roughly
+0.6 kcal/mol of separation this design cannot decide, and a null effect reads
+conclusive in only 1 percent of runs.
+
+**What would resolve it:** more actives, not better decoys. Yeast
+alpha-glucosidase has published IC50 values for many flavonoids beyond the six
+here, and that arm is already correctly constructed. The binding constraint is
+the size of the active set.
+
+R605 in the rule set now refuses an enrichment benchmark that does not declare
+aromaticity among its matching criteria. That rule exists because of this run.
+
 ## 5. What this does and does not touch
 
 **Does not touch.** That the compounds occupy the catalytic site. Every control

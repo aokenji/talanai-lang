@@ -111,6 +111,36 @@ Name, then optional formula, then optional prepared structure file. The
 formula is what makes the ligand-efficiency column possible; without it that
 column reads `-` rather than guessing.
 
+## Enrichment
+
+An optional `enrichment` block describes a decoy benchmark: known actives
+against property-matched decoys, which is the test of whether a ranking
+discriminates at all.
+
+    enrichment
+      actives     9 with published yeast alpha-glucosidase IC50
+      decoys      180
+      ratio       20:1
+      source      ZINC20 2D tranches
+      matched_on  heavy_atoms molecular_weight logp rotatable_bonds hbd hba aromatic_rings
+      metric      roc_auc
+      result      0.588
+
+`matched_on` is the load-bearing key and R605 REFUSES a block whose match
+omits aromaticity, or which declares no match at all. Either an aromatic ring
+count or an sp3 fraction satisfies it; they are two readings of one axis.
+
+The reason is measured, not assumed. In this project's own benchmark,
+aromaticity predicted the Vina score more strongly than any property that was
+matched: Spearman -0.544, roughly 0.85 kcal/mol per aromatic ring. Saturated
+natural products matched to drug-like decoys therefore lose a rigged contest,
+and the number that comes out looks like a finding about the protocol.
+
+For some chemistry this control cannot be satisfied from standard screening
+libraries at all, because those libraries are dominated by aromatic
+medicinal-chemistry scaffolds. Reporting that is the honest result; quietly
+dropping the criterion is not.
+
 ## Checksums
 
 `checksum` records what a preparation recipe actually produced. One line per
