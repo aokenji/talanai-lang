@@ -94,7 +94,14 @@ def prepare(smiles, stem, confs):
     if os.path.isfile(path) and os.path.isfile(meta):
         with open(meta, encoding="utf-8") as handle:
             cached = json.load(handle)
-        return path, cached["all_chairs"], cached["note"]
+        # Key the cache on the MOLECULE, not just the tag. The deprotonated
+        # arm reuses the same tags (active__ursolic_acid) with different
+        # SMILES, and a tag-only cache silently handed it the neutral ligand
+        # file: all three triterpenes came back at byte-identical scores to
+        # the run they were supposed to correct. A cache that returns the
+        # wrong molecule is worse than no cache.
+        if cached.get("smiles") == smiles:
+            return path, cached["all_chairs"], cached["note"]
 
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
@@ -199,11 +206,21 @@ def build_worklist():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--decoys", default=None,
+                        help="decoy manifest to run (default the neutral arm)")
+    parser.add_argument("--out", default=None,
+                        help="where run records go (default validation-run/enrichment)")
     parser.add_argument("--limit", type=int, default=0,
                         help="stop after this many NEW dockings (for a dry run)")
     parser.add_argument("--prep-only", action="store_true",
                         help="prepare ligands and stop, no docking")
     args = parser.parse_args()
+
+    global DECOYS, OUT
+    if args.decoys:
+        DECOYS = os.path.join(HERE, args.decoys) if not os.path.isabs(args.decoys) else args.decoys
+    if args.out:
+        OUT = os.path.join(HERE, args.out) if not os.path.isabs(args.out) else args.out
 
     if not os.path.isfile(DECOYS):
         raise SystemExit("no %s - run make_decoys.py first" % DECOYS)

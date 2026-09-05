@@ -1,0 +1,12 @@
+{
+  "all_chairs": true,
+  "n_conformers": 150,
+  "n_qualifying": 23,
+  "note": "all chairs",
+  "smiles": "C[C@H]1[C@H]2[C@H](C[C@H]3[C@@H]4CC[C@H]5C[C@@H](O)CC[C@]5(C)[C@H]4CC(=O)[C@@]32C)O[C@]12CC[C@@H](C)CO2",
+  "thetas": [
+    4.083876917900522,
+    176.14271833217308,
+    2.01697900927258
+  ]
+}

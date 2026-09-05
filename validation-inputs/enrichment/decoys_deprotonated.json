@@ -1,0 +1,863 @@
+{
+  "actives": [
+    {
+      "cid": 64971,
+      "n_yeast_ic50_sources": 2,
+      "name": "Betulinic Acid",
+      "neutral_smiles": "CC(=C)[C@@H]1CC[C@]2([C@H]1[C@H]3CC[C@@H]4[C@]5(CC[C@@H](C([C@@H]5CC[C@]4([C@@]3(CC2)C)C)(C)C)O)C)C(=O)O",
+      "props": {
+        "charge": -1,
+        "hba": 3,
+        "hbd": 1,
+        "heavy": 33,
+        "logp": 5.754800000000007,
+        "mw": 455.7030000000003,
+        "rotb": 2
+      },
+      "protonation": "C-28 carboxylate (COO-), as the thesis screened",
+      "smiles": "C=C(C)[C@@H]1CC[C@]2(C(=O)[O-])CC[C@]3(C)[C@H](CC[C@@H]4[C@@]5(C)CC[C@H](O)C(C)(C)[C@@H]5CC[C@]43C)[C@@H]12",
+      "stereocentres": 10,
+      "stereocentres_assigned": 10
+    },
+    {
+      "cid": 10494,
+      "n_yeast_ic50_sources": 4,
+      "name": "Oleanolic Acid",
+      "neutral_smiles": "C[C@]12CC[C@@H](C([C@@H]1CC[C@@]3([C@@H]2CC=C4[C@]3(CC[C@@]5([C@H]4CC(CC5)(C)C)C(=O)O)C)C)(C)C)O",
+      "props": {
+        "charge": -1,
+        "hba": 3,
+        "hbd": 1,
+        "heavy": 33,
+        "logp": 5.8989000000000065,
+        "mw": 455.7030000000003,
+        "rotb": 1
+      },
+      "protonation": "C-28 carboxylate (COO-), as the thesis screened",
+      "smiles": "CC1(C)CC[C@]2(C(=O)[O-])CC[C@]3(C)C(=CC[C@@H]4[C@@]5(C)CC[C@H](O)C(C)(C)[C@@H]5CC[C@]43C)[C@@H]2C1",
+      "stereocentres": 8,
+      "stereocentres_assigned": 8
+    },
+    {
+      "cid": 64945,
+      "n_yeast_ic50_sources": 5,
+      "name": "Ursolic Acid",
+      "neutral_smiles": "C[C@@H]1CC[C@@]2(CC[C@@]3(C(=CC[C@H]4[C@]3(CC[C@@H]5[C@@]4(CC[C@@H](C5(C)C)O)C)C)[C@@H]2[C@H]1C)C)C(=O)O",
+      "props": {
+        "charge": -1,
+        "hba": 3,
+        "hbd": 1,
+        "heavy": 33,
+        "logp": 5.754800000000007,
+        "mw": 455.7030000000003,
+        "rotb": 1
+      },
+      "protonation": "C-28 carboxylate (COO-), as the thesis screened",
+      "smiles": "C[C@H]1[C@H](C)CC[C@]2(C(=O)[O-])CC[C@]3(C)C(=CC[C@@H]4[C@@]5(C)CC[C@H](O)C(C)(C)[C@@H]5CC[C@]43C)[C@H]12",
+      "stereocentres": 10,
+      "stereocentres_assigned": 10
+    }
+  ],
+  "arm": "deprotonated triterpenes",
+  "caveat": "Decoys are PRESUMED inactive, not measured inactive.",
+  "charge_matching": "DROPPED. An exact charge match is unusable here: one candidate at charge -1 in the whole 1.7M library. Defensible for AutoDock Vina specifically, which has no electrostatic term, so formal charge is not a scoring variable. Its physical consequences, hydrogen-bond donor count and logP, ARE matched. This is still a relaxation and must be reported with the result.",
+  "decoys": {
+    "Betulinic Acid": [
+      {
+        "library_id": "248331509",
+        "props": {
+          "charge": 0,
+          "hba": 2,
+          "hbd": 0,
+          "heavy": 33,
+          "logp": 4.974200000000004,
+          "mw": 443.5910000000003,
+          "rotb": 2
+        },
+        "smiles": "CC1=C(c2ccccc2)[C@]2(C)[C@@H]1[C@H]1C=C[C@H]2n2c(=O)n([C@H]3C[C@H]4CC[C@@]3(C)C4(C)C)c(=O)n21"
+      },
+      {
+        "library_id": "12375578",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 2,
+          "heavy": 28,
+          "logp": 4.843100000000002,
+          "mw": 432.33200000000005,
+          "rotb": 4
+        },
+        "smiles": "O=C1C[C@H](c2ccccc2Cl)c2c(nc(SCc3ccccc3Cl)[nH]c2=O)N1"
+      },
+      {
+        "library_id": "1114373",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 29,
+          "logp": 4.783320000000004,
+          "mw": 426.8660000000001,
+          "rotb": 4
+        },
+        "smiles": "Cc1cc(Cl)ccc1O[C@@H](C)C(=O)N1CCN(c2cccc(C(F)(F)F)c2)CC1"
+      },
+      {
+        "library_id": "1136520",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 0,
+          "heavy": 29,
+          "logp": 4.9421000000000035,
+          "mw": 426.25500000000017,
+          "rotb": 4
+        },
+        "smiles": "O=C(Cc1ccc(Cl)cc1)Oc1ccc(Cl)cc1N1C(=O)c2ccccc2C1=O"
+      },
+      {
+        "library_id": "1127432",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 2,
+          "heavy": 29,
+          "logp": 4.854100000000002,
+          "mw": 442.33100000000013,
+          "rotb": 3
+        },
+        "smiles": "O=C(NC(=S)Nc1cc2nn(-c3ccccc3)nc2cc1Cl)c1cccc(Cl)c1"
+      },
+      {
+        "library_id": "1144640",
+        "props": {
+          "charge": 0,
+          "hba": 5,
+          "hbd": 0,
+          "heavy": 30,
+          "logp": 4.9466000000000045,
+          "mw": 445.6540000000005,
+          "rotb": 4
+        },
+        "smiles": "O=C(CSc1nc2sc3c(c2c(=O)n1C1CCCCC1)CCCC3)N1CCCCC1"
+      },
+      {
+        "library_id": "993245",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 1,
+          "heavy": 27,
+          "logp": 4.881520000000004,
+          "mw": 425.3260000000002,
+          "rotb": 4
+        },
+        "smiles": "Cc1cc(Br)cc2c(C(=O)NC[C@H]3CCCO3)cc(-c3ccccc3)nc12"
+      },
+      {
+        "library_id": "96203755",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 32,
+          "logp": 4.831920000000004,
+          "mw": 442.43700000000024,
+          "rotb": 2
+        },
+        "smiles": "Cc1ccc(C(=O)N2CCn3cccc3[C@H]2c2ccc3c(c2)OCCO3)cc1C(F)(F)F"
+      },
+      {
+        "library_id": "96766512",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 0,
+          "heavy": 31,
+          "logp": 4.8194200000000045,
+          "mw": 435.9340000000002,
+          "rotb": 4
+        },
+        "smiles": "Cc1cc(N2CCN(Cc3ccccc3Cl)CC2)n2ncc(-c3ccc(F)cc3)c2n1"
+      },
+      {
+        "library_id": "17097717",
+        "props": {
+          "charge": 0,
+          "hba": 5,
+          "hbd": 1,
+          "heavy": 31,
+          "logp": 4.917320000000004,
+          "mw": 431.8790000000002,
+          "rotb": 4
+        },
+        "smiles": "Cc1c(Cl)ccc2c(C(=O)NCc3ccc4c(c3)OCO4)cc(-c3ccccn3)nc12"
+      },
+      {
+        "library_id": "8234224",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 31,
+          "logp": 4.972800000000005,
+          "mw": 430.62900000000036,
+          "rotb": 0
+        },
+        "smiles": "C[C@H]1[C@H]2[C@H](C[C@H]3[C@@H]4CC[C@H]5C[C@@H](O)CC[C@]5(C)[C@H]4CC(=O)[C@@]32C)O[C@]12CC[C@@H](C)CO2"
+      },
+      {
+        "library_id": "1153051",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 27,
+          "logp": 4.792120000000002,
+          "mw": 442.7040000000001,
+          "rotb": 3
+        },
+        "smiles": "Cc1cc2nn(-c3ccc(Cl)cc3)nc2cc1NC(=O)c1cncc(Br)c1"
+      },
+      {
+        "library_id": "13882230",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 1,
+          "heavy": 27,
+          "logp": 4.936620000000004,
+          "mw": 449.7800000000001,
+          "rotb": 3
+        },
+        "smiles": "Cc1ccc(NC(=O)C23C[C@@H]4C[C@H](C2)CC(n2cnc(Cl)n2)(C4)C3)c(Br)c1"
+      },
+      {
+        "library_id": "2477893",
+        "props": {
+          "charge": 0,
+          "hba": 5,
+          "hbd": 2,
+          "heavy": 29,
+          "logp": 4.909100000000002,
+          "mw": 437.83400000000006,
+          "rotb": 4
+        },
+        "smiles": "O=C(CSc1nnc2c(n1)[nH]c1ccccc12)Nc1cc(C(F)(F)F)ccc1Cl"
+      },
+      {
+        "library_id": "8442347",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 0,
+          "heavy": 30,
+          "logp": 4.828400000000003,
+          "mw": 436.8950000000001,
+          "rotb": 4
+        },
+        "smiles": "O=c1/c(=C/c2cc(Cl)ccc2OCc2ccccc2F)sc2nc3ccccc3n12"
+      },
+      {
+        "library_id": "1188857",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 1,
+          "heavy": 28,
+          "logp": 4.810420000000003,
+          "mw": 435.2770000000001,
+          "rotb": 3
+        },
+        "smiles": "Cc1cccc(N2C(=O)c3ccc(C(=O)Nc4ccc(Br)cc4)cc3C2=O)c1"
+      },
+      {
+        "library_id": "254799963",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 28,
+          "logp": 4.8232000000000035,
+          "mw": 431.29300000000006,
+          "rotb": 4
+        },
+        "smiles": "O=C(NN=Cc1ccccn1)c1cc(-c2ccc(Br)cc2)nc2ccccc12"
+      },
+      {
+        "library_id": "999533",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 31,
+          "logp": 4.774300000000005,
+          "mw": 428.4580000000002,
+          "rotb": 1
+        },
+        "smiles": "C[C@H]1CC[C@@H](C)N(C(=O)c2cc3nc4c(c(C(F)(F)F)n3n2)CCc2ccccc2-4)C1"
+      },
+      {
+        "library_id": "3627949",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 31,
+          "logp": 4.931220000000004,
+          "mw": 434.5170000000003,
+          "rotb": 4
+        },
+        "smiles": "Cc1ccc(C(=O)Nc2ccc3c(c2)oc2ccc(S(=O)(=O)N4CCCC4)cc23)cc1"
+      },
+      {
+        "library_id": "9972725",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 1,
+          "heavy": 32,
+          "logp": 4.952400000000004,
+          "mw": 445.58800000000025,
+          "rotb": 3
+        },
+        "smiles": "COc1ccc([C@H]2c3[nH]c4ccccc4c3C[C@@H]3C(=O)N(C4CCCCC4)C(=S)N23)cc1"
+      }
+    ],
+    "Oleanolic Acid": [
+      {
+        "library_id": "1213488",
+        "props": {
+          "charge": 0,
+          "hba": 5,
+          "hbd": 2,
+          "heavy": 27,
+          "logp": 4.977100000000003,
+          "mw": 442.2940000000001,
+          "rotb": 3
+        },
+        "smiles": "O=C(NC(=S)Nc1ccc2oc(-c3cccc(Br)c3)nc2c1)c1ccco1"
+      },
+      {
+        "library_id": "8612878",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 32,
+          "logp": 4.999940000000005,
+          "mw": 429.44700000000006,
+          "rotb": 3
+        },
+        "smiles": "Cc1cc(C)c2c(=O)c3c(oc2c1)C(=O)N(Cc1ccc(F)cc1)[C@H]3c1cccc(O)c1"
+      },
+      {
+        "library_id": "9972723",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 1,
+          "heavy": 32,
+          "logp": 4.952400000000004,
+          "mw": 445.58800000000025,
+          "rotb": 3
+        },
+        "smiles": "COc1ccc([C@H]2c3[nH]c4ccccc4c3C[C@H]3C(=O)N(C4CCCCC4)C(=S)N32)cc1"
+      },
+      {
+        "library_id": "987338",
+        "props": {
+          "charge": 0,
+          "hba": 5,
+          "hbd": 0,
+          "heavy": 29,
+          "logp": 4.941080000000005,
+          "mw": 425.9410000000002,
+          "rotb": 3
+        },
+        "smiles": "Cc1cc2nc(S[C@@H]3CC(=O)N(c4ccc(C)c(Cl)c4)C3=O)nc(C)c2cc1C"
+      },
+      {
+        "library_id": "2789530",
+        "props": {
+          "charge": 0,
+          "hba": 5,
+          "hbd": 0,
+          "heavy": 29,
+          "logp": 4.926600000000003,
+          "mw": 440.8820000000001,
+          "rotb": 2
+        },
+        "smiles": "CC[C@@H]1CCc2c(sc3ncn4nc(-c5c(Cl)c(C(F)(F)F)nn5C)nc4c23)C1"
+      },
+      {
+        "library_id": "2999203",
+        "props": {
+          "charge": 0,
+          "hba": 2,
+          "hbd": 1,
+          "heavy": 29,
+          "logp": 4.988800000000003,
+          "mw": 428.81300000000016,
+          "rotb": 3
+        },
+        "smiles": "O=C(Nc1ccc(Cl)c(C(F)(F)F)c1)C1CCN(C(=O)c2ccc(F)cc2)CC1"
+      },
+      {
+        "library_id": "20109896",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 33,
+          "logp": 4.907600000000003,
+          "mw": 434.49900000000014,
+          "rotb": 3
+        },
+        "smiles": "COc1cccc([C@H]2c3[nH]c4ccccc4c3CCN2C(=O)c2cccc3nccnc23)c1"
+      },
+      {
+        "library_id": "13809822",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 31,
+          "logp": 4.916800000000005,
+          "mw": 428.45800000000014,
+          "rotb": 1
+        },
+        "smiles": "C[C@H]1CCC[C@@H](C)N1C(=O)c1cc2nc3c(c(C(F)(F)F)n2n1)CCc1ccccc1-3"
+      },
+      {
+        "library_id": "848604",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 28,
+          "logp": 4.957900000000003,
+          "mw": 429.2290000000002,
+          "rotb": 2
+        },
+        "smiles": "O=C(c1nn2c(C(F)(F)F)cc(-c3ccc(Cl)cc3)nc2c1Cl)N1CCCC1"
+      },
+      {
+        "library_id": "1092964",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 34,
+          "logp": 4.979600000000004,
+          "mw": 443.5020000000002,
+          "rotb": 2
+        },
+        "smiles": "CC(=O)C12c3ccccc3C(c3ccccc31)[C@@H]1C(=O)N(c3cccc4ccccc34)C(=O)[C@@H]12"
+      },
+      {
+        "library_id": "1084432",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 2,
+          "heavy": 32,
+          "logp": 4.996200000000004,
+          "mw": 441.5560000000001,
+          "rotb": 3
+        },
+        "smiles": "CC(=O)N1c2ccccc2CCc2ccc(NC(=S)NC(=O)/C=C/c3ccccc3)cc21"
+      },
+      {
+        "library_id": "12281326",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 0,
+          "heavy": 30,
+          "logp": 4.941800000000005,
+          "mw": 429.9440000000003,
+          "rotb": 3
+        },
+        "smiles": "COc1cc(-c2cccc(Cl)c2)cc2c1OCCN(C(=O)[C@H]1CCOC(C)(C)C1)C2"
+      },
+      {
+        "library_id": "2879766",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 2,
+          "heavy": 31,
+          "logp": 4.949600000000002,
+          "mw": 446.42500000000024,
+          "rotb": 3
+        },
+        "smiles": "COc1c(F)c(F)c(C(=O)NC(=S)Nc2ccc3c(c2)Cc2ccccc2-3)c(F)c1F"
+      },
+      {
+        "library_id": "257357942",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 31,
+          "logp": 4.972800000000005,
+          "mw": 430.62900000000025,
+          "rotb": 0
+        },
+        "smiles": "C[C@@H]1CC[C@]2(OC1)O[C@@H]1C[C@@H]3[C@@H]4CC[C@H]5C[C@H](O)CC[C@]5(C)[C@@H]4C(=O)C[C@]3(C)[C@H]1[C@H]2C"
+      },
+      {
+        "library_id": "1092965",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 34,
+          "logp": 4.979600000000004,
+          "mw": 443.5020000000002,
+          "rotb": 2
+        },
+        "smiles": "CC(=O)C12c3ccccc3C(c3ccccc31)[C@H]1C(=O)N(c3cccc4ccccc34)C(=O)[C@@H]12"
+      },
+      {
+        "library_id": "23128728",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 31,
+          "logp": 4.952300000000005,
+          "mw": 436.98700000000036,
+          "rotb": 3
+        },
+        "smiles": "O=C(c1nc2ccc(Cl)cn2c1CN1CCc2ccccc2C1)N1CCCCCCC1"
+      },
+      {
+        "library_id": "2382343615",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 32,
+          "logp": 4.998620000000003,
+          "mw": 432.6120000000003,
+          "rotb": 3
+        },
+        "smiles": "Cc1ccc2c(c1)CN(C)CC[C@H](c1ccccc1)CCCN(Cc1cnc[nH]1)CCO2"
+      },
+      {
+        "library_id": "9611675",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 0,
+          "heavy": 32,
+          "logp": 4.932000000000005,
+          "mw": 447.96600000000035,
+          "rotb": 3
+        },
+        "smiles": "CC(=O)c1ccc(N2CCN(C(=O)c3ccc4c(Cl)c5c(nc4c3)CCCC5)CC2)cc1"
+      },
+      {
+        "library_id": "17057457",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 33,
+          "logp": 4.976000000000004,
+          "mw": 447.6230000000004,
+          "rotb": 2
+        },
+        "smiles": "CC1(C)C[C@]2(CCCN(Cc3nc4c(c(=O)[nH]3)C3(CCCC3)Cc3ccccc3-4)C2)CCO1"
+      },
+      {
+        "library_id": "780572",
+        "props": {
+          "charge": 0,
+          "hba": 5,
+          "hbd": 1,
+          "heavy": 31,
+          "logp": 4.936500000000004,
+          "mw": 426.54900000000026,
+          "rotb": 3
+        },
+        "smiles": "S=C(Nc1ccc2nc(-c3ccccn3)c(-c3ccccn3)nc2c1)N1CCCCC1"
+      }
+    ],
+    "Ursolic Acid": [
+      {
+        "library_id": "9371723",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 1,
+          "heavy": 32,
+          "logp": 4.824900000000004,
+          "mw": 443.8860000000001,
+          "rotb": 2
+        },
+        "smiles": "C[C@@]12C(=O)N(c3ccc(Cl)c(C(=O)O)c3)C(=O)[C@@H]1C1c3ccccc3C2c2ccccc21"
+      },
+      {
+        "library_id": "19962560",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 0,
+          "heavy": 31,
+          "logp": 4.8648200000000035,
+          "mw": 428.8790000000001,
+          "rotb": 3
+        },
+        "smiles": "CC(=O)c1ccc(-n2ccc3c(cnc4c(-c5cccc(Cl)c5)c(C)nn43)c2=O)cc1"
+      },
+      {
+        "library_id": "865663",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 2,
+          "heavy": 27,
+          "logp": 4.834200000000004,
+          "mw": 445.2830000000001,
+          "rotb": 2
+        },
+        "smiles": "CC(C)(C)NC(=O)c1nn2c(c1Br)N[C@H](c1ccccc1)C[C@H]2C(F)(F)F"
+      },
+      {
+        "library_id": "13306014",
+        "props": {
+          "charge": 0,
+          "hba": 2,
+          "hbd": 0,
+          "heavy": 28,
+          "logp": 4.8457000000000034,
+          "mw": 430.3010000000001,
+          "rotb": 1
+        },
+        "smiles": "O=C1[C@H]2C3c4ccccc4C(c4ccccc43)[C@H]2C(=O)N1c1ccc(Br)cc1"
+      },
+      {
+        "library_id": "2234488",
+        "props": {
+          "charge": 0,
+          "hba": 5,
+          "hbd": 0,
+          "heavy": 29,
+          "logp": 4.860990000000004,
+          "mw": 426.4940000000002,
+          "rotb": 2
+        },
+        "smiles": "COc1cc2c3c(c1)-c1c(sn(-c4cccc(F)c4)c1=S)C(C)(C)N3C(=O)C2=O"
+      },
+      {
+        "library_id": "1169223",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 2,
+          "heavy": 32,
+          "logp": 4.839600000000003,
+          "mw": 441.49100000000016,
+          "rotb": 3
+        },
+        "smiles": "O=C(NC(=S)Nc1ccc2nn(-c3cccc4ccccc34)nc2c1)c1cccc(F)c1"
+      },
+      {
+        "library_id": "720985",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 32,
+          "logp": 4.785900000000003,
+          "mw": 436.43700000000007,
+          "rotb": 3
+        },
+        "smiles": "CN(Cc1ccccc1)C(=O)c1cc2nc3c(c(C(F)(F)F)n2n1)CCc1ccccc1-3"
+      },
+      {
+        "library_id": "1704302521",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 32,
+          "logp": 4.820900000000004,
+          "mw": 427.52300000000025,
+          "rotb": 3
+        },
+        "smiles": "O=C(N1CCC[C@]2(CCc3cnc(-c4ccccc4)nc32)C1)C1(c2ccccc2F)CC1"
+      },
+      {
+        "library_id": "2041551015",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 2,
+          "heavy": 31,
+          "logp": 4.764600000000005,
+          "mw": 432.6450000000002,
+          "rotb": 0
+        },
+        "smiles": "C[C@H]1CC[C@]2(OC1)O[C@@H]1C[C@H]3[C@@H]4CC[C@H]5C[C@@H](O)[C@@H](O)C[C@]5(C)[C@H]4CC[C@]3(C)[C@@H]1[C@@H]2C"
+      },
+      {
+        "library_id": "2877233",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 30,
+          "logp": 4.8034000000000034,
+          "mw": 432.4710000000002,
+          "rotb": 2
+        },
+        "smiles": "O=C(c1cnn2c1N[C@@H](c1cccs1)C[C@H]2C(F)(F)F)N1CCc2ccccc2C1"
+      },
+      {
+        "library_id": "2779027",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 31,
+          "logp": 4.757100000000003,
+          "mw": 426.37300000000016,
+          "rotb": 2
+        },
+        "smiles": "O=C(c1cc2nc(-c3ccc(F)cc3)cc(C(F)(F)F)n2n1)N1CCc2ccccc21"
+      },
+      {
+        "library_id": "17095566",
+        "props": {
+          "charge": 0,
+          "hba": 5,
+          "hbd": 2,
+          "heavy": 28,
+          "logp": 4.843990000000003,
+          "mw": 427.5760000000002,
+          "rotb": 2
+        },
+        "smiles": "C[C@@H]1CCc2c(sc3[nH]c(=S)n(NC(=O)c4csc5ccccc45)c(=O)c23)C1"
+      },
+      {
+        "library_id": "758174",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 27,
+          "logp": 4.802320000000004,
+          "mw": 427.3420000000001,
+          "rotb": 3
+        },
+        "smiles": "COc1cccc2c(C)cc(N3CCC(O)(c4ccc(Br)cc4)CC3)nc12"
+      },
+      {
+        "library_id": "33071263",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 2,
+          "heavy": 27,
+          "logp": 4.770900000000004,
+          "mw": 433.39400000000006,
+          "rotb": 3
+        },
+        "smiles": "O=C(NC1CCCCCCC1)[C@@H]1CCCN(c2nc3cc(Br)ccc3[nH]2)C1"
+      },
+      {
+        "library_id": "136475122",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 2,
+          "heavy": 31,
+          "logp": 4.764600000000005,
+          "mw": 432.6450000000004,
+          "rotb": 0
+        },
+        "smiles": "C[C@H]1[C@H]2[C@H](C[C@H]3[C@@H]4CC[C@H]5C[C@@H](O)[C@H](O)C[C@]5(C)[C@H]4CC[C@@]32C)O[C@@]12CC[C@@H](C)CO2"
+      },
+      {
+        "library_id": "14995375",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 0,
+          "heavy": 33,
+          "logp": 4.757640000000005,
+          "mw": 445.5380000000002,
+          "rotb": 2
+        },
+        "smiles": "Cc1ccc2nc(C)cc(C(=O)N3CCC[C@@H]4CN(C(=O)c5ccc(F)cc5)CC[C@@H]43)c2c1"
+      },
+      {
+        "library_id": "2497214",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 0,
+          "heavy": 27,
+          "logp": 4.815900000000004,
+          "mw": 448.338,
+          "rotb": 3
+        },
+        "smiles": "CC(=O)N(c1ccc2oc3c(c2c1)CCCC3)S(=O)(=O)c1ccc(Br)cc1"
+      },
+      {
+        "library_id": "9371720",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 1,
+          "heavy": 32,
+          "logp": 4.824900000000004,
+          "mw": 443.8860000000001,
+          "rotb": 2
+        },
+        "smiles": "C[C@]12C(=O)N(c3ccc(Cl)c(C(=O)O)c3)C(=O)[C@H]1C1c3ccccc3C2c2ccccc21"
+      },
+      {
+        "library_id": "978123",
+        "props": {
+          "charge": 0,
+          "hba": 3,
+          "hbd": 1,
+          "heavy": 30,
+          "logp": 4.839500000000004,
+          "mw": 434.84900000000016,
+          "rotb": 2
+        },
+        "smiles": "O=C(NC1CCCC1)c1nn2c(C(F)(F)F)c3c(nc2c1Cl)-c1ccccc1CC3"
+      },
+      {
+        "library_id": "1158870",
+        "props": {
+          "charge": 0,
+          "hba": 4,
+          "hbd": 1,
+          "heavy": 27,
+          "logp": 4.835200000000001,
+          "mw": 442.1870000000001,
+          "rotb": 3
+        },
+        "smiles": "COc1cc(Br)cc2cc(C(=O)Nc3cccc(C(F)(F)F)c3)c(=O)oc12"
+      }
+    ]
+  },
+  "decoys_disjoint_from_neutral_arm": true,
+  "matching_windows": {
+    "hba": 2,
+    "hbd": 1,
+    "heavy": 6,
+    "logp": 1.0,
+    "mw": 40.0,
+    "rotb": 2
+  },
+  "supersedes": "the three triterpene entries in decoys.json, which were docked as neutral COOH and are NOT what the thesis screened",
+  "total_decoys": 60
+}

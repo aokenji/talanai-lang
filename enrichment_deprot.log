@@ -1,0 +1,82 @@
+
+  ENRICHMENT RUN
+  ==========================================================================
+  3 actives, 60 decoys, 63 dockings total
+  exhaustiveness 32, seed 42, one seed on BOTH sides for symmetry
+  0 already recorded, 63 to go
+
+  DOCKING  (ligands are prepared as they come up)
+  --------------------------------------------------------------------------
+    [   1/  63] active__betulinic_acid               -9.076     80s   eta  1.4 h  all chairs
+    [   2/  63] active__oleanolic_acid               -7.586     61s   eta  1.2 h  all chairs
+    [   3/  63] active__ursolic_acid                 -8.794     78s   eta  1.2 h  all chairs
+    [   4/  63] decoy__betulinic_acid__001         PREP FAILED  RuntimeError
+    [   5/  63] decoy__betulinic_acid__002           -9.939    103s   eta  1.3 h  no saturated six-ring
+    [   6/  63] decoy__betulinic_acid__003           -9.984    105s   eta  1.4 h  no saturated six-ring
+    [   7/  63] decoy__betulinic_acid__004           -9.254    118s   eta  1.4 h  no saturated six-ring
+    [   8/  63] decoy__betulinic_acid__005          -10.310     83s   eta  1.4 h  no saturated six-ring
+    [   9/  63] decoy__betulinic_acid__006           -9.978    100s   eta  1.4 h  all chairs
+    [  10/  63] decoy__betulinic_acid__007           -9.554     73s   eta  1.3 h  no saturated six-ring
+    [  11/  63] decoy__betulinic_acid__008          -10.600    144s   eta  1.4 h  no saturated six-ring
+    [  12/  63] decoy__betulinic_acid__009          -10.090    106s   eta  1.4 h  no saturated six-ring
+    [  13/  63] decoy__betulinic_acid__010          -10.770     95s   eta  1.3 h  no saturated six-ring
+    [  14/  63] decoy__betulinic_acid__011           -8.991     37s   eta  1.2 h  all chairs
+    [  15/  63] decoy__betulinic_acid__012          -10.170     74s   eta  1.2 h  no saturated six-ring
+    [  16/  63] decoy__betulinic_acid__013           -9.825     64s   eta  1.2 h  all chairs
+    [  17/  63] decoy__betulinic_acid__014          -10.120    116s   eta  1.1 h  no saturated six-ring
+    [  18/  63] decoy__betulinic_acid__015          -10.420    123s   eta  1.1 h  no saturated six-ring
+    [  19/  63] decoy__betulinic_acid__016          -10.330     63s   eta  1.1 h  no saturated six-ring
+    [  20/  63] decoy__betulinic_acid__017           -9.995     67s   eta  1.1 h  no saturated six-ring
+    [  21/  63] decoy__betulinic_acid__018          -10.200     75s   eta  1.0 h  no saturated six-ring
+    [  22/  63] decoy__betulinic_acid__019           -9.856    102s   eta  1.0 h  no saturated six-ring
+    [  23/  63] decoy__betulinic_acid__020          -10.230     90s   eta  1.0 h  all chairs
+    [  24/  63] decoy__oleanolic_acid__001           -9.526     66s   eta  1.0 h  no saturated six-ring
+    [  25/  63] decoy__oleanolic_acid__002          -10.530    100s   eta  0.9 h  no saturated six-ring
+    [  26/  63] decoy__oleanolic_acid__003          -10.470     87s   eta  0.9 h  all chairs
+    [  27/  63] decoy__oleanolic_acid__004           -9.831     97s   eta  0.9 h  no saturated six-ring
+    [  28/  63] decoy__oleanolic_acid__005           -9.862     59s   eta  0.9 h  no saturated six-ring
+    [  29/  63] decoy__oleanolic_acid__006           -9.175    110s   eta  0.8 h  no saturated six-ring
+    [  30/  63] decoy__oleanolic_acid__007          -10.770    121s   eta  0.8 h  no saturated six-ring
+    [  31/  63] decoy__oleanolic_acid__008          -10.390     70s   eta  0.8 h  no saturated six-ring
+    [  32/  63] decoy__oleanolic_acid__009           -9.142     64s   eta  0.8 h  no saturated six-ring
+    [  33/  63] decoy__oleanolic_acid__010          -11.000     68s   eta  0.7 h  no saturated six-ring
+    [  34/  63] decoy__oleanolic_acid__011           -7.571    252s   eta  0.7 h  no saturated six-ring
+    [  35/  63] decoy__oleanolic_acid__012           -8.404    263s   eta  0.8 h  all chairs
+    [  36/  63] decoy__oleanolic_acid__013           -9.438     88s   eta  0.7 h  no saturated six-ring
+    [  37/  63] decoy__oleanolic_acid__014           -9.753     37s   eta  0.7 h  all chairs
+    [  38/  63] decoy__oleanolic_acid__015          -11.550     74s   eta  0.7 h  no saturated six-ring
+    [  39/  63] decoy__oleanolic_acid__016           -7.205    269s   eta  0.7 h  no saturated six-ring
+    [  40/  63] decoy__oleanolic_acid__017           -7.428    440s   eta  0.7 h  no saturated six-ring
+    [  41/  63] decoy__oleanolic_acid__018           -9.810     85s   eta  0.7 h  no saturated six-ring
+    [  42/  63] decoy__oleanolic_acid__019          -10.810     67s   eta  0.6 h  all chairs
+    [  43/  63] decoy__oleanolic_acid__020           -9.762     74s   eta  0.6 h  no saturated six-ring
+    [  44/  63] decoy__ursolic_acid__001            -10.150     72s   eta  0.6 h  no saturated six-ring
+    [  45/  63] decoy__ursolic_acid__002            -10.090     79s   eta  0.5 h  no saturated six-ring
+    [  46/  63] decoy__ursolic_acid__003             -8.802     84s   eta  0.5 h  no saturated six-ring
+    [  47/  63] decoy__ursolic_acid__004             -9.971     42s   eta  0.5 h  no saturated six-ring
+    [  48/  63] decoy__ursolic_acid__005            -10.000     45s   eta  0.4 h  no saturated six-ring
+    [  49/  63] decoy__ursolic_acid__006            -10.580     88s   eta  0.4 h  no saturated six-ring
+    [  50/  63] decoy__ursolic_acid__007            -10.090     91s   eta  0.4 h  no saturated six-ring
+    [  51/  63] decoy__ursolic_acid__008            -10.200    105s   eta  0.3 h  no saturated six-ring
+    [  52/  63] decoy__ursolic_acid__009            -10.310     44s   eta  0.3 h  all chairs
+    [  53/  63] decoy__ursolic_acid__010            -10.090     82s   eta  0.3 h  no saturated six-ring
+    [  54/  63] decoy__ursolic_acid__011            -11.180     71s   eta  0.2 h  no saturated six-ring
+    [  55/  63] decoy__ursolic_acid__012             -9.687     56s   eta  0.2 h  no saturated six-ring
+    [  56/  63] decoy__ursolic_acid__013             -8.852     55s   eta  0.2 h  no saturated six-ring
+    [  57/  63] decoy__ursolic_acid__014             -7.103    164s   eta  0.2 h  no saturated six-ring
+    [  58/  63] decoy__ursolic_acid__015             -9.479     43s   eta  0.1 h  all chairs
+    [  59/  63] decoy__ursolic_acid__016            -11.680    100s   eta  0.1 h  no saturated six-ring
+    [  60/  63] decoy__ursolic_acid__017             -9.369     62s   eta  0.1 h  no saturated six-ring
+    [  61/  63] decoy__ursolic_acid__018            -10.120     69s   eta  0.1 h  no saturated six-ring
+    [  62/  63] decoy__ursolic_acid__019             -9.497     69s   eta  0.0 h  no saturated six-ring
+    [  63/  63] decoy__ursolic_acid__020             -9.045     59s   eta  0.0 h  no saturated six-ring
+
+  1 ligand(s) could not be prepared and are excluded from the
+  benchmark. Each has a record saying why, so the decoy count
+  stays auditable rather than quietly shrinking.
+
+  62 dockings this session, 95.6 s each on average.
+  Projected for the remaining 1: 0.0 hours.
+  Records in D:\THESIS_VSC\talanai-lang\validation-run/enrichment-deprotonated
+  Next: python analyze_enrichment.py
+

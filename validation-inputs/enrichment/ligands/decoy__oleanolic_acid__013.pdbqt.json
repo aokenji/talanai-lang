@@ -1,0 +1,8 @@
+{
+  "all_chairs": true,
+  "n_conformers": 150,
+  "n_qualifying": 150,
+  "note": "no saturated six-ring",
+  "smiles": "COc1c(F)c(F)c(C(=O)NC(=S)Nc2ccc3c(c2)Cc2ccccc2-3)c(F)c1F",
+  "thetas": []
+}

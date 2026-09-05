@@ -1,0 +1,97 @@
+{
+  "bedroc_alpha": 20.0,
+  "bootstrap_rounds": 10000,
+  "generated_from": "D:\\THESIS_VSC\\talanai-lang\\validation-run\\enrichment",
+  "no_ef1_percent": "EF at 1 percent is omitted deliberately: one percent of this set is two molecules, and a ratio computed on two slots carries no information.",
+  "results": [
+    {
+      "bedroc_alpha20": 0.0044,
+      "bedroc_ci95": [
+        0.0,
+        0.0115
+      ],
+      "best_ranked_active": 35.0,
+      "decoys_per_active": 19.7,
+      "enrichment_factors": [
+        {
+          "actives_expected_by_chance": 0.44,
+          "actives_found": 0,
+          "ef": 0.0,
+          "fraction": 0.05,
+          "top_n": 9
+        },
+        {
+          "actives_expected_by_chance": 0.92,
+          "actives_found": 0,
+          "ef": 0.0,
+          "fraction": 0.1,
+          "top_n": 19
+        },
+        {
+          "actives_expected_by_chance": 1.79,
+          "actives_found": 1,
+          "ef": 0.559,
+          "fraction": 0.2,
+          "top_n": 37
+        }
+      ],
+      "n_active": 9,
+      "n_decoy": 177,
+      "n_total": 186,
+      "roc_auc": 0.4206,
+      "roc_auc_chance": 0.5,
+      "roc_auc_ci95": [
+        0.3076,
+        0.5505
+      ],
+      "set": "all",
+      "worst_ranked_active": 158.0
+    },
+    {
+      "bedroc_alpha20": 0.0037,
+      "bedroc_ci95": [
+        0.0,
+        0.0097
+      ],
+      "best_ranked_active": 35.0,
+      "decoys_per_active": 18.7,
+      "enrichment_factors": [
+        {
+          "actives_expected_by_chance": 0.46,
+          "actives_found": 0,
+          "ef": 0.0,
+          "fraction": 0.05,
+          "top_n": 9
+        },
+        {
+          "actives_expected_by_chance": 0.92,
+          "actives_found": 0,
+          "ef": 0.0,
+          "fraction": 0.1,
+          "top_n": 18
+        },
+        {
+          "actives_expected_by_chance": 1.78,
+          "actives_found": 1,
+          "ef": 0.562,
+          "fraction": 0.2,
+          "top_n": 35
+        }
+      ],
+      "n_active": 9,
+      "n_decoy": 168,
+      "n_total": 177,
+      "roc_auc": 0.4081,
+      "roc_auc_chance": 0.5,
+      "roc_auc_ci95": [
+        0.2983,
+        0.5364
+      ],
+      "set": "all_chairs_only",
+      "worst_ranked_active": 149.0
+    }
+  ],
+  "scope": "Score separation only. The redocking gate does not pass for this protocol, so nothing here supports a pose or interaction claim.",
+  "small_sample_caveat": "About ten actives. Every interval here is wide, and an interval spanning 0.5 means the benchmark could not tell, not that the protocol failed.",
+  "ties": "average ranks"
+}

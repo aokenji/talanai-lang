@@ -1,0 +1,5 @@
+{
+  "Betulinic Acid": "C=C(C)[C@@H]1CC[C@]2(C(=O)[O-])CC[C@]3(C)[C@H](CC[C@@H]4[C@@]5(C)CC[C@H](O)C(C)(C)[C@@H]5CC[C@]43C)[C@@H]12",
+  "Oleanolic Acid": "CC1(C)CC[C@]2(C(=O)[O-])CC[C@]3(C)C(=CC[C@@H]4[C@@]5(C)CC[C@H](O)C(C)(C)[C@@H]5CC[C@]43C)[C@@H]2C1",
+  "Ursolic Acid": "C[C@H]1[C@H](C)CC[C@]2(C(=O)[O-])CC[C@]3(C)C(=CC[C@@H]4[C@@]5(C)CC[C@H](O)C(C)(C)[C@@H]5CC[C@]43C)[C@H]12"
+}

@@ -1,0 +1,10 @@
+{
+  "all_chairs": true,
+  "n_conformers": 150,
+  "n_qualifying": 51,
+  "note": "all chairs",
+  "smiles": "COc1ccc([C@H]2c3[nH]c4ccccc4c3C[C@@H]3C(=O)N(C4CCCCC4)C(=S)N23)cc1",
+  "thetas": [
+    179.48863577548454
+  ]
+}
